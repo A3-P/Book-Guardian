@@ -32,6 +32,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    #"unfold",          #Theme1
+    "jazzmin",          #Theme2
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",

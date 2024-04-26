@@ -1,0 +1,22 @@
+nav{
+    display: flex;
+    position: fixed;
+    top: 36vh;
+    background-color: var(--color-card);
+    color: var(--color-main);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    padding: 12px;
+    border-radius: 0 20px 20px 0;
+    font-size: 1.6rem;
+    justify-content: space-between;
+    overflow: hidden;
+}
+nav i{
+    margin: 12px 6px 12px 12px;
+    cursor: pointer;
+}
+
+nav i:hover{
+    color: var(--color-main-hover);
+}

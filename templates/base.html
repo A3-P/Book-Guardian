@@ -7,10 +7,21 @@
 <body data-color="blue" data-theme="dark">
 
     <!-- Main -->
-    {% block content %}{% endblock content %}
+    {% block content %}
+
+    {% endblock content %}
 
     <!-- Footer -->
     {% include "partials/_footer.html" %}
 
+
+    <script>
+        window.addEventListener("blur", function () {
+            document.title = "Book Guardian - Pagina Inicial";
+        });
+        window.addEventListener("focus", function () {
+            document.title = "Pagina Inicial";
+        });
+    </script>
 </body>
 </html>

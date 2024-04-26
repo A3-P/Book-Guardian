@@ -24,6 +24,9 @@ class BookGuardian(models.Model):
             ("A", "Aventura"),
             ("AC", "Ação"),
             ("S", "Suspense"),
-        ), blank=True, null=True)
+        ),
+        blank=True,
+        null=True,
+    )
     read = models.BooleanField(default=False)
     created_at = models.DateField(auto_now_add=True)

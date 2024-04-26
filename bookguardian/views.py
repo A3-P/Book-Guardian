@@ -17,4 +17,4 @@ class LoginRoute(LoginView):
     redirect_authenticated_user = True
 
     def get_success_url(self):
-        return reverse_lazy('index')
+        return reverse_lazy('bookguardian:index')

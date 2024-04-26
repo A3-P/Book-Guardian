@@ -1,0 +1,35 @@
+[data-theme="dark"] {
+    /* --color-bg: #0e1120; */
+    /* --color-card: #47537c57; */
+    /* --colorLogin-btn: #4F4DE5; */
+    /* --colorHover-btn: #6260dd; */
+    /* --color-Container: #fff; */
+    /* --colorPlaceholder: #fff; */
+    /* --color-bgBox: #fff; */
+
+    --color-bg: #0e1120;        /* cor do fundo */
+    --color-card: #47537c57;     /* cor dos cards */
+    --color-fg: #fff;            /* cor da fonte */  
+    --color-btn: #4F4DE5;        /* cor do botao */
+    --color-btn-hover: #6260dd;  /* cor do botao ao passar o mouse */
+    --color-fg-alt: rgb(93, 176, 214);  /* cor da fonte alternativa */
+    --color-border: #666666;     /* cor do border */
+}
+
+[data-theme="light"] {
+    /* --color-bg: #f6f6f6; */
+    /* --color-card: #fff; */
+    /* --colorLogin-btn: #4F4DE5; */
+    /* --colorPlaceholder: #000; */
+    /* --colorHover-btn: #6260dd; */
+
+
+    --color-bg: #f6f6f6;        /* cor do fundo */
+    --color-card: #fff;     /* cor dos cards */
+    --color-fg: #000;            /* cor da fonte */  
+    --color-btn: #4F4DE5;        /* cor do botao */
+    --color-btn-hover: #6260dd;  /* cor do botao ao passar o mouse */
+    --color-fg-alt: rgb(93, 176, 214);  /* cor da fonte alternativa */
+    --color-border: #b8b8b8;     /* cor do border */
+}
+

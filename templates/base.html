@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+   {% include "partials/_head.html" %}
+    <title>{% block title %}{% endblock title %}</title>
 </head>
-<body>
+<body data-color="blue" data-theme="dark">
+
+    <!-- Main -->
+    {% block content %}{% endblock content %}
+
+    <!-- Footer -->
+    {% include "partials/_footer.html" %}
 
 </body>
 </html>

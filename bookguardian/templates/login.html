@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %} Login {% endblock title %}
+{% block content %}
+
+<div class ="login-container show" id="logincontainer" >
+    <h2>Login</h2>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Nome de Usuário" required>
+        <br>
+        <input type="password" name="password" placeholder="Senha" required>
+        <br>
+        <input type="submit" value="Login">
+    </form>
+    <!-- TODO Coloca Rota Do registro-->
+    <p>Não possui uma conta ? <a href="#" id="singIn" class="signup-link">Registre-se aqui</a>.</p>
+</div>
+
+{% endblock content %}
+

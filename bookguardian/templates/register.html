@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class ="login-container show" id="singincontainer" >
+    <h2>Cadastro</h2>
+    <form method="POST" action="{% url 'bookguardian:register-user' %}">
+        {% csrf_token %}
+        {{form.username}}
+
+        {{form.password1}}
+
+        {{form.password2}}
+
+        <input class="button" type="submit" value="Register">
+    </form>
+    <!--TODO é adiona rota de login -->
+    <p>Ja possui uma conta ? <a href="#" id="logIn" class="signup-link">Entre aqui</a>.</p>
+</div>
+{% endblock content %}

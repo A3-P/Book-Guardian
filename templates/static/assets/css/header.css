@@ -1,0 +1,158 @@
+header{
+    display: flex;
+    position: sticky;
+    overflow: visible;
+    top: 0;
+    margin-bottom: 1rem;
+    width: 50%;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--color-card);
+    color: var(--color-fg);
+    border-radius: 0 0 25px 25px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+#mainHeader{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 3;
+}
+header h1{
+    text-transform: uppercase;
+    font-weight: 900;
+    width: 40%;
+}
+#search{
+    background-color: var(--color-subCard);
+    border: none;
+    width: 86%;
+}
+#searchDiv{
+    border: none; /*1px solid var(--color-fg); */
+    background-color: var(--color-subCard);
+    padding: 7px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 40%;
+}
+#searchDiv i{
+    border-left: 1px solid var(--color-fg);
+    padding-left: 8px;
+    cursor: pointer;
+}
+
+#searchDiv input:focus{
+    outline: none;
+}
+header h6{
+    height: 100%;
+    width: 4%;
+    flex-direction: column;
+}
+header h6 i{
+    background-color: var(--color-main);
+    outline: var(--color-main);
+    padding: 1px;
+    border-radius: 100%;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+header h6 i:hover{
+    background-color: var(--color-main-hover);
+    color: var(--color-fg-hover);
+}
+header h6 i, header h6{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+#profileMenuHeader{
+    z-index: 4;
+    background-color: var(--color-card);
+    position: fixed;
+    width: 10rem;
+    height: 6rem;
+    top: 6rem;
+    right: 25%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+#profileMenuHeader button{
+    background-color: var(--color-main);
+    color: var(--color-fg);
+    border: none;
+    border-radius: 8px;
+    height: 2.4rem;
+    width: 90%;
+    font-size: 1.2rem;
+}
+#profileMenuHeader button:hover{
+    background-color: var(--color-main-hover);
+}
+#filter{
+    z-index: 2;
+    width: 95%;
+    height: 2rem;
+    display: none;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: left;
+    margin-bottom: 20px;
+    flex-direction: row;
+    padding: 10px;
+}
+#filter label {
+    font-weight: 900;
+}
+#filter select,
+#filter input[type="checkbox"] {
+    margin-right: 1rem;
+    background-color: var(--color-subCard);
+    color: var(--color-fg);
+    border: none;
+    height: 100%;
+    padding: 5px;
+    border-radius: 5px;
+}
+#filter button {
+    background-color: var(--color-main);
+    color: var(--color-fg);
+    border: none;
+    cursor: pointer;
+    height: 100%;
+    width: 7rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    padding: 5px;
+}
+#filter button:hover {
+    background-color: var(--color-main-hover);
+    color: var(--color-fg-hover);
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-100%);
+    }
+}
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}

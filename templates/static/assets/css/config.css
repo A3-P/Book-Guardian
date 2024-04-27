@@ -1,0 +1,72 @@
+#config{
+    color: var(--color-fg);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: left;
+    width: 90%;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: auto
+}
+.choiceTheme{
+    width: 15rem;
+    height: 10rem;
+    border: 3px solid var(--color-main);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    margin: 1rem;
+    cursor: pointer;
+}
+.choiceTheme h5{
+    padding: 1.8rem;
+    color: #fff;
+}
+.configConainerRow{
+    display: flex;
+    flex-direction: row;
+}
+.configConainerRow button{
+    margin-right: 30px;
+    border: none;
+    padding: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    width: 10rem;
+    color: var(--color-fg);
+    font-weight: 700;
+}
+#autoTheme{
+    flex-direction: row;
+    background: linear-gradient(to right, #0e1120 50%, #f6f6f6 50%);
+
+}
+#autoTheme h5{
+    background: linear-gradient(to right, #fff 50%, #2d3242 50%);
+}
+#saveConfig{
+    background-color: var(--color-main);
+    width: 15rem;
+}
+#saveConfig:hover{
+    background-color: var(--color-main-hover);
+}
+#cancelConfig{
+    background-color: var(--color-bg);
+    border: 3px solid var(--color-main);
+}
+#cancelConfig:hover{
+    border-color: var(--color-main-hover);
+}
+#configNavBtn{
+    width: 100%;
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    margin-right: 4rem;
+}

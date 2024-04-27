@@ -6,15 +6,23 @@ from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views.generic.edit import FormView
 from django.views.generic.list import ListView
-
+from django.contrib.auth.mixins import LoginRequiredMixin
 from . import models
 
-
-class HomeList(ListView):
+class HomeList(LoginRequiredMixin, ListView):
     model = models.BookGuardian
     template_name = "index.html"
     context_object_name = "bookguardian"
+    login_url = '/login/'  # Define a URL para redirecionar se o usuário não estiver logado
 
+    def get_queryset(self):
+        user = self.request.user
+        if user.is_authenticated:
+            queryset = models.BookGuardian.objects.filter(user=user)
+        else:
+            # Redireciona o usuário para outra página se não estiver autenticado
+            return reverse_lazy("bookguardian:login")
+        return queryset
 
 # User
 class LoginRoute(LoginView):

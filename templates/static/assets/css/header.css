@@ -77,10 +77,12 @@ header h6 i, header h6{
     background-color: var(--color-card);
     position: fixed;
     width: 10rem;
-    height: 6rem;
+    height: 13rem;
     top: 6rem;
     right: 25%;
     display: none;
+    flex-direction: column;
+    justify-content: space-between;
     justify-content: center;
     align-items: center;
     padding: 15px;
@@ -88,16 +90,33 @@ header h6 i, header h6{
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
 }
 #profileMenuHeader button{
-    background-color: var(--color-main);
-    color: var(--color-fg);
-    border: none;
     border-radius: 8px;
     height: 2.4rem;
     width: 90%;
     font-size: 1.2rem;
+    margin-bottom: 30px;
+    cursor: pointer;
 }
-#profileMenuHeader button:hover{
+#goToLoginPage:hover{
     background-color: var(--color-main-hover);
+}
+#goToLoginPage{
+    color: var(--color-fg);
+    background-color: var(--color-main);
+    border: none;
+}
+#goToRegisterPage{
+    color: var(--color-fg);
+    background-color: transparent;
+    border: 3px solid var(--color-main);
+}
+#logout{
+    color: var(--color-main);
+    font-size: 1.3rem;
+    background-color: transparent;
+}
+#logout:hover{
+    color: var(--color-main-hover);
 }
 #filter{
     z-index: 2;

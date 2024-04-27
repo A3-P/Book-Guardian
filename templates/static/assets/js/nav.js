@@ -18,7 +18,7 @@ profileBtn.addEventListener("click", function () {
 });
 
 goToLoginPage.addEventListener("click", function () {
-    window.location.href = "nadoxLoginScreen/index.html";
+    window.location.href = "/login";
 });
 
 

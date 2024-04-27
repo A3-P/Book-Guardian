@@ -7,7 +7,7 @@
   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
   <link rel="stylesheet" href="  {% static "assets/css/color.css" %} " />
 
-  {% if request.path == "/login/" %}
+  {% if request.path == "/login/" or  request.path == "/register/" %}
           <link rel="stylesheet" href=" {% static "assets/css/login.css" %} ">
     {% else %}
         <link rel="stylesheet" href="  {% static "assets/css/body.css" %} " />

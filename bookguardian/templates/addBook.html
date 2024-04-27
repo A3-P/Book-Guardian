@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar livro</title>
+    <link rel="stylesheet" href="../css/body.css">
+    <link rel="stylesheet" href="../css/color.css">
+    <link rel="stylesheet" href="../css/newBook.css">
+    <link rel="stylesheet" href="../css/imports.css">
+</head>
+<body data-color="pink" data-theme="light">
+    <div class="rowContainer">
+        <div id="newBookDiv">
+            <h2>Cadastro de Livro</h2>
+            <form id="newBookForm" action="/submit" method="post" enctype="multipart/form-data">
+                <label for="titleInp">Titulo:</label>
+                <input type="text" id="titleInp" name="title" placeholder="Titulo" required>
+            
+                <label for="authorInp">Autor(a):</label>
+                <input type="text" id="authorInp" name="author" placeholder="Autor" required>
+                
+                <label for="descriptionInp">Descricao:</label>
+                <textarea id="descriptionInp" name="description"
+                placeholder="Descricao" required rows="4" style="resize: vertical;"></textarea>
+            
+                <label for="imageInp">Imagem da capa:</label>
+                <input type="file" id="imageInp" name="image">
+
+                <div id="formSelects">
+                    <label for="genre">Gênero:</label>
+                    <select id="genre">
+                        <option value="">Generico</option>
+                        <option value="fiction">Ficcao cientifica</option>
+                        <option value="romance">Romance</option>
+                        <option value="horror">Terror</option>
+                        <option value="nonFiction">Nao ficcao</option>
+                        <option value="fantasy">Fantasia</option>
+                        <option value="mangaAndComic">Manga e HQ</option>
+                    </select>
+                    
+                
+                    <label for="status">Status:</label>
+                    <select id="status" name="status">
+                        <option value="read">Ja li</option>
+                        <option value="wantRead">Quero ler</option>
+                    </select>
+                </div>
+            </form>
+            
+        </div>
+        <div id="addBtnsNavegation">
+            <button id="addBook">Adicionar</button>
+            <button id="cancelBook">Cancelar</button>
+        </div>
+    </div>
+    <script src="../js/themeAndColor.js"></script>
+    <script src="../js/newBook.js"></script>
+</body>
+</html>

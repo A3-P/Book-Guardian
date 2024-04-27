@@ -1,4 +1,7 @@
-{% extends "base.html" %} {% block title %} Pagina Inicial {% endblock title %}
+{% extends "base.html" %}
+ {% block title %} Pagina Inicial
+ {% endblock title %}
+
 {% block content %}
 <header>
     <div id="mainHeader">
@@ -15,15 +18,29 @@
         <h6>
             <i id="profileBtn" class="fi fi-rr-circle-user" title="Perfil"></i>
             <div id="profileMenuHeader">
-                {% if not user %}
+                {% if not request.user.is_authenticated %}
+
+                <a href="{% url 'bookguardian:login' %}">
                     <button id="goToLoginPage">Entrar</button>
+                </a>
+
+                <a href="{% url 'bookguardian:register-user' %}">
                     <button id="goToRegisterPage">Cadastrar</button>
+                </a>
+
                 {% endif %}
-                {% if user %}
-                    <i class="fi fi-rr-exit" id="logout"> Sair</i>
+
+                {% if request.user.is_authenticated %}
+
+                <a href="{% url 'bookguardian:logout' %}">
+                    <i class="fi fi-rr-exit" id="s"> Sair</i>
+                </a>
+
                 {% endif %}
+
+
             </div>
-            
+
         </h6>
     </div>
     <div id="filter">
@@ -211,5 +228,7 @@
             </div>
         </a>
     </section>
+
+
 </main>
 {% endblock content %}

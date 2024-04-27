@@ -6,9 +6,9 @@ const logincontainer = document.getElementById("logincontainer").style;
 singIn.addEventListener("click", function() {
     singincontainer.display = "block";
     logincontainer.display = "none";
-});   
+});
 
 login.addEventListener("click", function() {
     singincontainer.display = "none";
     logincontainer.display = "block";
-}); 
+});

@@ -1,35 +1,41 @@
-[data-theme="dark"] {
-    /* --color-bg: #0e1120; */
-    /* --color-card: #47537c57; */
-    /* --colorLogin-btn: #4F4DE5; */
-    /* --colorHover-btn: #6260dd; */
-    /* --color-Container: #fff; */
-    /* --colorPlaceholder: #fff; */
-    /* --color-bgBox: #fff; */
-
-    --color-bg: #0e1120;        /* cor do fundo */
-    --color-card: #47537c57;     /* cor dos cards */
-    --color-fg: #fff;            /* cor da fonte */  
-    --color-btn: #4F4DE5;        /* cor do botao */
-    --color-btn-hover: #6260dd;  /* cor do botao ao passar o mouse */
-    --color-fg-alt: rgb(93, 176, 214);  /* cor da fonte alternativa */
-    --color-border: #666666;     /* cor do border */
+[data-color="pink"]{
+    --color-main: rgb(255, 59, 163);
+    --color-main-hover: rgb(216, 18, 124);
+}
+[data-color="blue"]{
+    --color-main: #0ebbff;
+    --color-main-hover: #2a85af;
 }
 
-[data-theme="light"] {
-    /* --color-bg: #f6f6f6; */
-    /* --color-card: #fff; */
-    /* --colorLogin-btn: #4F4DE5; */
-    /* --colorPlaceholder: #000; */
-    /* --colorHover-btn: #6260dd; */
 
+[data-theme="dark"]{
+    --color-bg: #0e1120;
+    --color-card: #2d3242;
+    --color-subCard:#474e66;
+    --color-fg: #fff;
+    --color-fg-hover: #e7e7e7;
 
-    --color-bg: #f6f6f6;        /* cor do fundo */
-    --color-card: #fff;     /* cor dos cards */
-    --color-fg: #000;            /* cor da fonte */  
-    --color-btn: #4F4DE5;        /* cor do botao */
-    --color-btn-hover: #6260dd;  /* cor do botao ao passar o mouse */
-    --color-fg-alt: rgb(93, 176, 214);  /* cor da fonte alternativa */
-    --color-border: #b8b8b8;     /* cor do border */
+    --color-btn: #4F4DE5;
+    --color-btn-hover: #6260dd;
+    --color-fg-alt: rgb(93, 176, 214);
+    --color-border: #666666;
+}
+[data-theme="light"]{
+    --color-bg: #f6f6f6;
+    --color-card: #fff;
+    --color-subCard:#f0f0f0;
+    --color-fg: #000;
+    --color-fg-hover: #292929;
+
+    --color-btn: #4F4DE5;
+    --color-btn-hover: #6260dd;
+    --color-fg-alt: rgb(93, 176, 214);
+    --color-border: #b8b8b8;
 }
 
+.read{
+    color: #53ff43;
+}
+.nonRead{
+    color: #ff8635;
+}

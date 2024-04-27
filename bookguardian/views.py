@@ -23,11 +23,12 @@ class LoginRoute(LoginView):
         return reverse_lazy("bookguardian:index")
 
 
+
 class RegisterUser(FormView):
     template_name = 'register.html'
     form_class = UserCreationForm
     redirect_authenticated_user = True
-    #success_url = reverse_lazy('bookguardian:index')
+    success_url = reverse_lazy('bookguardian:index')
 
     def form_valid(self, form):
         user = form.save()
@@ -40,3 +41,10 @@ class RegisterUser(FormView):
             return redirect('bookguardian:index')
         return super(RegisterUser, self).get(*args, **kwargs)
 
+    def get_form(self, form_class=None):
+        form = super(RegisterUser, self).get_form(form_class)
+
+        form.fields['username'].widget.attrs['placeholder'] = "Digite o seu Email"
+        form.fields['password1'].widget.attrs['placeholder'] = 'Digite a sua Senha'
+        form.fields['password2'].widget.attrs['placeholder'] = 'Confirme a Senha'
+        return form

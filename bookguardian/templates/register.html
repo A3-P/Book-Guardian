@@ -3,26 +3,18 @@
 {% block content %}
 <div class ="login-container show" id="singincontainer" >
     <h2>Cadastro</h2>
-    <form method="POST">
+    <form method="POST" action="{% url 'bookguardian:register-user' %}">
         {% csrf_token %}
+        {{form.username}}
 
+        {{form.password1}}
 
-        <input type="text" id="newEmail" name="username" placeholder="Username" required>
-        <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
-        <input type="password2" id="confirmPassword" name="password2" placeholder="Confirme sua senha" required>
-        <label for="foto">Sua foto de perfil:</label>
-        <input type="file" id="userImg" name="userImg" accept="image/*">
-        <input style="margin-top:10px ;" class="button" type="submit" value="Register">
-        {% comment %} <input type="submit" value="Cadastrar" placeholder="Cadastrar"> {% endcomment %}
+        {{form.password2}}
+
+        <input class="button" type="submit" value="Register">
     </form>
+    <!--TODO é adiona rota de login -->
     <p>Ja possui uma conta ? <a href="#" id="logIn" class="signup-link">Entre aqui</a>.</p>
 </div>
 {% endblock content %}
- {% comment %} <label>{{form.username.label}}</label>
-        {{form.username}}
 
-        <label>{{form.password1.label}}</label>
-        {{form.password1}}
-
-        <label>{{form.password2.label}}</label>
-        {{form.password2}} {% endcomment %}

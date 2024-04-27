@@ -1,7 +1,4 @@
-{% extends "base.html" %}
- {% block title %} Pagina Inicial
- {% endblock title %}
-
+{% extends "base.html" %} {% block title %} Pagina Inicial {% endblock title %}
 {% block content %}
 <header>
     <div id="mainHeader">
@@ -28,19 +25,22 @@
                     <button id="goToRegisterPage">Cadastrar</button>
                 </a>
 
+                {% endif %} {% if request.user.is_authenticated %}
+
+                <div id="userNav">
+                    <a href="{% url 'bookguardian:logout' %}">
+                        <i class="fi fi-rr-exit" id="logout"> Sair</i>
+                    </a>
+    
+                    <a href="{% url 'bookguardian:logout' %}">
+                        <i class="fi fi-rr-shuffle" id="changeAccont">
+                            Trocar de conta</i
+                        >
+                    </a>
+                </div>
+                
                 {% endif %}
-
-                {% if request.user.is_authenticated %}
-
-                <a href="{% url 'bookguardian:logout' %}">
-                    <i class="fi fi-rr-exit" id="s"> Sair</i>
-                </a>
-
-                {% endif %}
-
-
             </div>
-
         </h6>
     </div>
     <div id="filter">
@@ -71,27 +71,17 @@
         <i id="configBtn" class="fi fi-sr-settings" title="Configuracoes"></i>
     </nav>
     <section>
-        {% if request.user.is_authenticated %}
+        {% if request.user.is_authenticated %} {% for book in bookguardian %}
 
-        {% for book in bookguardian %}
-
-
-            <a href="#" class="card">
-                <i class="fi fi-sr-bookmark read"></i>
-                <img
-                    src="{{ book.book_image.url }}"
-                    alt="capa"
-                />
-                <div class="backCard">
-                    <p id="title">{{ book.title }}</p>
-                    <p id="autora">{{ book.author_book }}</p>
-                </div>
-            </a>
-        {% endfor %}
-
-      {% endif %}
+        <a href="#" class="card">
+            <i class="fi fi-sr-bookmark read"></i>
+            <img src="{{ book.book_image.url }}" alt="capa" />
+            <div class="backCard">
+                <p id="title">{{ book.title }}</p>
+                <p id="autora">{{ book.author_book }}</p>
+            </div>
+        </a>
+        {% endfor %} {% endif %}
     </section>
-
-
 </main>
 {% endblock content %}

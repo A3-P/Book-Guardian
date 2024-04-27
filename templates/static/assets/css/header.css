@@ -54,7 +54,7 @@ header h6{
     width: 4%;
     flex-direction: column;
 }
-header h6 i{
+#profileBtn{
     background-color: var(--color-main);
     outline: var(--color-main);
     padding: 1px;
@@ -62,11 +62,11 @@ header h6 i{
     font-size: 1.8rem;
     cursor: pointer;
 }
-header h6 i:hover{
+#profileBtn:hover{
     background-color: var(--color-main-hover);
     color: var(--color-fg-hover);
 }
-header h6 i, header h6{
+#profileBtn, header h6{
     display: flex;
     align-items: center;
     text-align: center;
@@ -77,7 +77,7 @@ header h6 i, header h6{
     background-color: var(--color-card);
     position: fixed;
     width: 10rem;
-    height: 13rem;
+    height: auto;
     top: 6rem;
     right: 25%;
     display: none;
@@ -85,16 +85,25 @@ header h6 i, header h6{
     justify-content: space-between;
     justify-content: center;
     align-items: center;
-    padding: 15px;
+    padding: 15px 1rem;
     border-radius: 15px;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+#profileMenuHeader a{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    text-decoration: none;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 15px 0 15px 0;
 }
 #profileMenuHeader button{
     border-radius: 8px;
     height: 2.4rem;
     width: 90%;
     font-size: 1.2rem;
-    margin-bottom: 30px;
     cursor: pointer;
 }
 #goToLoginPage:hover{
@@ -110,12 +119,21 @@ header h6 i, header h6{
     background-color: transparent;
     border: 3px solid var(--color-main);
 }
-#logout{
-    color: var(--color-main);
-    font-size: 1.3rem;
-    background-color: transparent;
+#goToRegisterPage:hover{
+    background-color: var(--color-main-hover);
+    border: none;
 }
-#logout:hover{
+#logout, #changeAccont{
+    color: var(--color-main);
+    font-size: 1rem;
+    background-color: transparent;
+    align-self: flex-start;
+    text-align: left;
+    width: 100%;
+    justify-self: left;
+    justify-content: left;
+}
+#logout:hover, #changeAccont:hover{
     color: var(--color-main-hover);
 }
 #filter{

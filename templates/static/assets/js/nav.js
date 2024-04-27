@@ -1,7 +1,6 @@
 // profile
 const profileBtn = document.getElementById("profileBtn");
 const profileMenuHeader = document.getElementById("profileMenuHeader").style;
-const goToLoginPage = document.getElementById("goToLoginPage");
 
 profileMenuHeader.display = "none";
 
@@ -16,12 +15,6 @@ profileBtn.addEventListener("click", function () {
         }, 300);
     }
 });
-
-//NÃO PRESISA DISO
-// goToLoginPage.addEventListener("click", function () {
-//     window.location.href = "/login";
-// });
-
 
 // filter
 const filterBtn = document.getElementById("filterBtn");

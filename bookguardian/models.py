@@ -12,18 +12,18 @@ class BookGuardian(models.Model):
     )
     title = models.CharField(max_length=200)
     description = models.TextField(null=True, blank=True)
-    author_book = models.CharField(max_length=100)
-    genero = models.CharField(
+    author_book = models.CharField(max_length=100, blank=True, null=True, default="desconhecido")
+    category = models.CharField(
         default="generico",
         max_length=50,
         # Status
         choices=(
+            ("F", "Ficcao"),
             ("R", "Romance"),
-            ("D", "Drama"),
             ("T", "Terro"),
-            ("A", "Aventura"),
-            ("AC", "Ação"),
-            ("S", "Suspense"),
+            ("FA", "Fantasia"),
+            ("NF", "Nao ficcao"),
+            ("MHQ", "Manga e HQ"),
         ),
         blank=True,
         null=True,

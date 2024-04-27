@@ -9,4 +9,6 @@ urlpatterns = [
     path("", views.HomeList.as_view(), name="index"),
     # User
     path("login/", views.LoginRoute.as_view(), name="login"),
+    path("register/", views.RegisterUser.as_view(), name="register-user")
 ]
+

@@ -17,9 +17,10 @@ profileBtn.addEventListener("click", function () {
     }
 });
 
-goToLoginPage.addEventListener("click", function () {
-    window.location.href = "/login";
-});
+//NÃO PRESISA DISO
+// goToLoginPage.addEventListener("click", function () {
+//     window.location.href = "/login";
+// });
 
 
 // filter

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css -->
+    <link rel="stylesheet" href="../css/imports.css">
+    <link rel="stylesheet" href="../css/body.css">
+    <link rel="stylesheet" href="../css/color.css">
+    <link rel="stylesheet" href="../css/config.css">
+    <title>Configuracoes</title>
+</head>
+<body data-theme="light" data-color="pink">
+    <div id="config">
+        <h3>Tema</h3>
+        <div class="configConainerRow">
+            <div class="optnT">
+                <div style="background-color: #0e1120;" id="darkTheme" class="choiceTheme">
+                    <h5 style="background-color: #2d3242;"><p style="color:
+                    #fff;">________  <br> ________<br> ________</p></h5>
+                </div>
+                <input type="radio" name="themeRadio" id="darkRadio">
+                <label for="darkRadio">Escuro</label>
+            </div>
+
+            <div class="optnT">
+                <div style="background-color: #f6f6f6;" id="lightTheme" class="choiceTheme">
+                    <h5 style="background-color: #fff;"><p style="color:
+                    #000;">________  <br> ________<br> ________</p></h5>
+                </div>
+                <input type="radio" name="themeRadio" id="lightRadio">
+                <label for="lightRadio">Claro</label>
+            </div>
+
+            <div class="optnT">
+                <div id="autoTheme" class="choiceTheme">
+                    <h5><p><span style="color: #000">____</span>____<br> <span style="color: #000">____</span>____<br> <span style="color: #000">____</span>____</p></h5></h5>
+                </div>
+                <input type="radio" name="themeRadio" id="autoRadio">
+                <label for="autoRadio">Automatico</label>
+            </div>
+
+        </div>
+
+        <h3 style="margin-top: 8rem;">Cor</h3>
+        <div class="configConainerRow">
+            <button id="pink" style="background-color: rgb(255, 59, 163);">Rosa</button>
+            <button id="blue" style="background-color: #0ebbff;">Azul</button></div>
+        </div>
+
+        <div class="configConainerRow" id="configNavBtn">
+            <button id="saveConfig">
+                Salvar
+            </button>
+            <button id="cancelConfig">
+                Cancelar
+            </button>
+        </div>
+    </div>
+
+
+
+    <script src="../js/themeAndColor.js"></script>
+</body>
+</html>

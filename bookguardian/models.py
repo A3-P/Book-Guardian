@@ -12,7 +12,9 @@ class BookGuardian(models.Model):
     )
     title = models.CharField(max_length=200)
     description = models.TextField(null=True, blank=True)
-    author_book = models.CharField(max_length=100, blank=True, null=True, default="desconhecido")
+    author_book = models.CharField(
+        max_length=100, blank=True, null=True, default="desconhecido"
+    )
     category = models.CharField(
         default="generico",
         max_length=50,

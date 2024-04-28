@@ -1,9 +1,8 @@
-nav{
+nav {
     display: flex;
     position: fixed;
     top: 36vh;
     background-color: var(--color-card);
-    color: var(--color-main);
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
     flex-direction: column;
     padding: 12px;
@@ -12,11 +11,16 @@ nav{
     justify-content: space-between;
     overflow: hidden;
 }
-nav i{
+nav a {
+    color: var(--color-main);
+    text-decoration: none;
+    text-transform: none;
     margin: 12px 6px 12px 12px;
+}
+nav i {
     cursor: pointer;
 }
 
-nav i:hover{
+nav i:hover {
     color: var(--color-main-hover);
 }

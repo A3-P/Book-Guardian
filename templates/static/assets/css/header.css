@@ -1,4 +1,4 @@
-header{
+header {
     display: flex;
     position: sticky;
     overflow: visible;
@@ -13,24 +13,24 @@ header{
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
     z-index: 2;
 }
-#mainHeader{
+#mainHeader {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
     z-index: 3;
 }
-header h1{
+header h1 {
     text-transform: uppercase;
     font-weight: 900;
     width: 40%;
 }
-#search{
+#search {
     background-color: var(--color-subCard);
     border: none;
     width: 86%;
 }
-#searchDiv{
+#searchDiv {
     border: none; /*1px solid var(--color-fg); */
     background-color: var(--color-subCard);
     padding: 7px;
@@ -40,21 +40,21 @@ header h1{
     justify-content: space-between;
     width: 40%;
 }
-#searchDiv i{
+#searchDiv i {
     border-left: 1px solid var(--color-fg);
     padding-left: 8px;
     cursor: pointer;
 }
 
-#searchDiv input:focus{
+#searchDiv input:focus {
     outline: none;
 }
-header h6{
+header h6 {
     height: 100%;
     width: 4%;
     flex-direction: column;
 }
-#profileBtn{
+#profileBtn {
     background-color: var(--color-main);
     outline: var(--color-main);
     padding: 1px;
@@ -62,17 +62,18 @@ header h6{
     font-size: 1.8rem;
     cursor: pointer;
 }
-#profileBtn:hover{
+#profileBtn:hover {
     background-color: var(--color-main-hover);
     color: var(--color-fg-hover);
 }
-#profileBtn, header h6{
+#profileBtn,
+header h6 {
     display: flex;
     align-items: center;
     text-align: center;
     justify-content: center;
 }
-#profileMenuHeader{
+#profileMenuHeader {
     z-index: 4;
     background-color: var(--color-card);
     position: fixed;
@@ -89,7 +90,7 @@ header h6{
     border-radius: 15px;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
 }
-#profileMenuHeader a{
+#profileMenuHeader a {
     display: flex;
     text-align: center;
     justify-content: center;
@@ -99,31 +100,32 @@ header h6{
     padding: 0;
     margin: 15px 0 15px 0;
 }
-#profileMenuHeader button{
+#profileMenuHeader button {
     border-radius: 8px;
     height: 2.4rem;
     width: 90%;
     font-size: 1.2rem;
     cursor: pointer;
 }
-#goToLoginPage:hover{
+#goToLoginPage:hover {
     background-color: var(--color-main-hover);
 }
-#goToLoginPage{
+#goToLoginPage {
     color: var(--color-fg);
     background-color: var(--color-main);
     border: none;
 }
-#goToRegisterPage{
+#goToRegisterPage {
     color: var(--color-fg);
     background-color: transparent;
     border: 3px solid var(--color-main);
 }
-#goToRegisterPage:hover{
+#goToRegisterPage:hover {
     background-color: var(--color-main-hover);
     border: none;
 }
-#logout, #changeAccont{
+#logout,
+#changeAccont {
     color: var(--color-main);
     font-size: 1rem;
     background-color: transparent;
@@ -133,10 +135,11 @@ header h6{
     justify-self: left;
     justify-content: left;
 }
-#logout:hover, #changeAccont:hover{
+#logout:hover,
+#changeAccont:hover {
     color: var(--color-main-hover);
 }
-#filter{
+#filter {
     z-index: 2;
     width: 95%;
     height: 2rem;

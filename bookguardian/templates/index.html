@@ -65,10 +65,18 @@
 </header>
 <main>
     <nav>
-        <i id="addBookbtn" class="fi fi-sr-add" title="Adicionar"></i>
-        <i id="homeBtn" class="fi fi-sr-home" title="Inicio"></i>
-        <i id="filterBtn" class="fi fi-sr-filter" title="Filtros"></i>
-        <i id="configBtn" class="fi fi-sr-settings" title="Configuracoes"></i>
+        <a href="">
+            <i id="addBookbtn" class="fi fi-sr-add" title="Adicionar"></i>
+        </a>
+        <a href="">
+            <i id="homeBtn" class="fi fi-sr-home" title="Inicio"></i>
+        </a>
+        <a href="">
+            <i id="filterBtn" class="fi fi-sr-filter" title="Filtros"></i>
+        </a>
+        <a href="">
+            <i id="configBtn" class="fi fi-sr-settings" title="Configuracoes"></i>
+        </a>
     </nav>
     <section>
         {% if request.user.is_authenticated %} {% for book in bookguardian %}

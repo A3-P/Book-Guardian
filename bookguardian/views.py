@@ -9,6 +9,17 @@ from django.views.generic.list import ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from . import models
 
+class LadinPage(ListView):
+    model = models.BookGuardian
+    template_name = "ladinpage.html"
+    context_object_name = "bookguardian"
+
+class PageConfig(ListView):
+    model = models.BookGuardian
+    template_name = "configPage.html"
+    context_object_name = "bookguardian"
+
+
 class HomeList(LoginRequiredMixin, ListView):
     model = models.BookGuardian
     template_name = "index.html"
@@ -21,7 +32,7 @@ class HomeList(LoginRequiredMixin, ListView):
             queryset = models.BookGuardian.objects.filter(user=user)
         else:
             # Redireciona o usuário para outra página se não estiver autenticado
-            return reverse_lazy("bookguardian:login")
+            return reverse_lazy("bookguardian:ladinpage")
         return queryset
 
 # User
@@ -62,4 +73,4 @@ class RegisterUser(FormView):
 
 def custom_logout(request):
     logout(request)
-    return HttpResponseRedirect(reverse_lazy("bookguardian:login"))
+    return HttpResponseRedirect(reverse_lazy("bookguardian:ladinpage"))

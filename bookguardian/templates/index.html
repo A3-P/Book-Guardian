@@ -74,7 +74,7 @@
         <a href="#">
             <i id="filterBtn" class="fi fi-sr-filter" title="Filtros"></i>
         </a>
-        <a href="">
+        <a href=" {% url "bookguardian:settings"  %}">
             <i
                 id="configBtn"
                 class="fi fi-sr-settings"
@@ -83,7 +83,7 @@
         </a>
     </nav>
     <section>
-        {% if request.user.is_authenticated %} 
+        {% if request.user.is_authenticated %}
         {% for book in bookguardian %}
             <a href="#" class="card">
                 {% if book.read %}

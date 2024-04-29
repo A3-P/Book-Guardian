@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const searchBtn = document.getElementById("searchBtn");
     const msgSearch = document.querySelector("#alertMsg").style;
 
-    searchBtn.addEventListener("click", function () {
+    function performSearch() {
         const searchTerm = searchInput.value.trim().toLowerCase();
         let itemsFound = false;
 
@@ -32,6 +32,14 @@ document.addEventListener("DOMContentLoaded", function () {
             msgSearch.display = "block";
         } else {
             msgSearch.display = "none";
+        }
+    }
+
+    searchBtn.addEventListener("click", performSearch);
+
+    searchInput.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            performSearch();
         }
     });
 

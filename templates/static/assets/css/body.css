@@ -10,8 +10,7 @@ body{
     font-family: "roboto", monospace;
     height: 100vh;
     transition: ease-in-out 0.2s;
-    overflow-y: auto;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 ::selection {
     background-color: var(--color-main);

@@ -4,11 +4,11 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: left;
-    width: 90%;
-    padding: 0;
-    margin: 0;
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0 0 50px;
+    overflow-y: auto;
     overflow-x: hidden;
-    overflow-y: auto
 }
 .choiceTheme{
     width: 15rem;
@@ -48,6 +48,20 @@
 #autoTheme h5{
     background: linear-gradient(to right, #fff 50%, #2d3242 50%);
 }
+#profileConfig{
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+    justify-content: left;
+}
+#avatarInpt{
+    border: 2px solid var(--color-border);
+    padding: 1rem;
+    border-radius: 12px;
+    width: 20rem;
+    cursor: pointer;
+    margin-top: 20px;
+}
 #saveConfig{
     background-color: var(--color-main);
     width: 15rem;
@@ -64,7 +78,7 @@
 }
 #configNavBtn{
     width: 100%;
-    margin-top: 4rem;
+    padding: 1rem;
     display: flex;
     align-items: center;
     justify-content: right;

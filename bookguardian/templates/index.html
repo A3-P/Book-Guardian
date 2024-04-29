@@ -31,14 +31,14 @@
                     <a href="{% url 'bookguardian:logout' %}">
                         <i class="fi fi-rr-exit" id="logout"> Sair</i>
                     </a>
-    
+
                     <a href="{% url 'bookguardian:logout' %}">
                         <i class="fi fi-rr-shuffle" id="changeAccont">
                             Trocar de conta</i
                         >
                     </a>
                 </div>
-                
+
                 {% endif %}
             </div>
         </h6>
@@ -71,25 +71,34 @@
         <a href="">
             <i id="homeBtn" class="fi fi-sr-home" title="Inicio"></i>
         </a>
-        <a href="">
+        <a href="#">
             <i id="filterBtn" class="fi fi-sr-filter" title="Filtros"></i>
         </a>
         <a href="">
-            <i id="configBtn" class="fi fi-sr-settings" title="Configuracoes"></i>
+            <i
+                id="configBtn"
+                class="fi fi-sr-settings"
+                title="Configuracoes"
+            ></i>
         </a>
     </nav>
     <section>
-        {% if request.user.is_authenticated %} {% for book in bookguardian %}
-
-        <a href="#" class="card">
-            <i class="fi fi-sr-bookmark read"></i>
-            <img src="{{ book.book_image.url }}" alt="capa" />
-            <div class="backCard">
-                <p id="title">{{ book.title }}</p>
-                <p id="autora">{{ book.author_book }}</p>
-            </div>
-        </a>
-        {% endfor %} {% endif %}
+        {% if request.user.is_authenticated %} 
+        {% for book in bookguardian %}
+            <a href="#" class="card">
+                {% if book.read %}
+                    <i class="fi fi-sr-bookmark read"></i>
+                {% else %}
+                    <i class="fi fi-sr-bookmark nonRead"></i>
+                {% endif %}
+                <img src="{{ book.book_image.url }}" alt="capa" />
+                <div class="backCard">
+                    <p id="title">{{ book.title }}</p>
+                    <p id="autora">{{ book.author_book }}</p>
+                </div>
+            </a>
+        {% endfor %}
+    {% endif %}
     </section>
 </main>
 {% endblock content %}

@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- css -->
-    <link rel="stylesheet" href="../css/imports.css">
-    <link rel="stylesheet" href="../css/body.css">
-    <link rel="stylesheet" href="../css/color.css">
-    <link rel="stylesheet" href="../css/config.css">
-    <title>Configuracoes</title>
-</head>
-<body data-theme="light" data-color="pink">
+{% extends 'base.html' %}
+
+{% block title %} Configuracoes {% endblock title %}
+{% block content %}
+
     <div id="config">
         <h3>Tema</h3>
         <div class="configConainerRow">
@@ -42,24 +34,23 @@
 
         </div>
 
-        <h3 style="margin-top: 8rem;">Cor</h3>
+            <h3 style="margin-top: 8rem;">Cor</h3>
         <div class="configConainerRow">
             <button id="pink" style="background-color: rgb(255, 59, 163);">Rosa</button>
-            <button id="blue" style="background-color: #0ebbff;">Azul</button></div>
+            <button id="blue" style="background-color: #0ebbff;">Azul</button>
         </div>
-
-        <div class="configConainerRow" id="configNavBtn">
-            <button id="saveConfig">
-                Salvar
-            </button>
-            <button id="cancelConfig">
-                Cancelar
-            </button>
+        <h3 style="margin-top: 8rem;">Perfil</h3>
+        <div id="profileConfig">
+            <label for="avatarInpt">Foto de perfil:</label>
+            <input type="file" name="avatar" id="avatarInpt">
         </div>
-    </div>
-
-
-
-    <script src="../js/themeAndColor.js"></script>
-</body>
-</html>
+    </div>  
+    <div class="configConainerRow" id="configNavBtn">
+        <button id="saveConfig">
+            Salvar
+        </button>
+        <button id="cancelConfig">
+            Cancelar
+        </button>
+    </div>  
+    {% endblock content %}

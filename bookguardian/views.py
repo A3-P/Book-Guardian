@@ -24,6 +24,10 @@ class HomeList(LoginRequiredMixin, ListView):
             return reverse_lazy("bookguardian:login")
         return queryset
 
+class configPage(LoginView):
+    template_name = "configPage.html"
+    success_url = reverse_lazy("bookguardian:config")
+    
 # User
 class LoginRoute(LoginView):
     template_name = "login.html"

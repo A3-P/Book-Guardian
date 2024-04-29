@@ -47,21 +47,26 @@
         <div>
             <label for="genre">Gênero:</label>
             <select id="genre">
-                <option value="">Generico</option>
-                <option value="fiction">Ficcao Cientifica</option>
-                <option value="romance">Romance</option>
-                <option value="horror">Terror</option>
-                <option value="nonFiction">Nao ficcao</option>
-                <option value="fantasy">Fantasia</option>
-                <option value="mangaAndComic">Manga e HQ</option>
+                <option value="">Genérico</option>
+                <option value="F">Ficção Científica</option>
+                <option value="R">Romance</option>
+                <option value="T">Terror</option>
+                <option value="NF">Não Ficção</option>
+                <option value="FA">Fantasia</option>
+                <option value="MHQ">Manga e HQ</option>
             </select>
         </div>
         <div>
-            <label for="read">Já leu?</label>
-            <input type="checkbox" id="read" name="read" />
+            <label for="readOrNot">Já leu?</label>
+            <select id="readOrNot">
+                <option value="">todos</option>
+                <option value="read">Ja li</option>
+                <option value="nonRead">Nao li</option>
+            </select>
         </div>
-        <button type="submit">Aplicar Filtros</button>
+        <button id="applyFilters">Aplicar Filtros</button>
     </div>
+    
 </header>
 <main>
     <nav>
@@ -83,6 +88,7 @@
         </a>
     </nav>
     <section>
+        <div id="alertMsg"><h1>nenhum item encontrado :(</h1><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn6TgAUq9aRyetVWMD_JbnvGu4n-fK5rEeQzZFOEtysQ&s" alt="livro triste"></div>
         {% if request.user.is_authenticated %}
         {% for book in bookguardian %}
             <a href="#" class="card">
@@ -95,6 +101,7 @@
                 <div class="backCard">
                     <p id="title">{{ book.title }}</p>
                     <p id="autora">{{ book.author_book }}</p>
+                    <h4 style="display: none;" id="tag">{{book.category}}</h4>
                 </div>
             </a>
         {% endfor %}

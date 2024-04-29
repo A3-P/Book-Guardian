@@ -151,11 +151,11 @@ header h6 {
     flex-direction: row;
     padding: 10px;
 }
+
 #filter label {
     font-weight: 900;
 }
-#filter select,
-#filter input[type="checkbox"] {
+#filter select{
     margin-right: 1rem;
     background-color: var(--color-subCard);
     color: var(--color-fg);

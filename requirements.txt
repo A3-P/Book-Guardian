@@ -2,7 +2,6 @@ asgiref==3.7.2
 black==24.2.0
 click==8.1.7
 Django==5.0.2
-django-crispy-forms==2.1
 django-jazzmin==2.6.0
 gunicorn==21.2.0
 isort==5.13.2

@@ -8,7 +8,7 @@ from django.views.generic.edit import FormView
 from django.views.generic.list import ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from . import models
-from django.views.decorators.csrf import csrf_exempt
+
 
 class LadinPage(ListView):
     model = models.BookGuardian
@@ -47,7 +47,7 @@ class HomeList(LoginRequiredMixin, ListView):
         return queryset
 
 # User
-@csrf_exempt
+
 class LoginRoute(LoginView):
     template_name = "login.html"
     fields = "__all__"
@@ -56,7 +56,7 @@ class LoginRoute(LoginView):
     def get_success_url(self):
         return reverse_lazy("bookguardian:index")
 
-@csrf_exempt
+
 class RegisterUser(FormView):
     template_name = "register.html"
     form_class = UserCreationForm

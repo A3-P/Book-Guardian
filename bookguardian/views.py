@@ -9,6 +9,7 @@ from django.views.generic.list import ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from . import models
 
+
 class LadinPage(ListView):
     model = models.BookGuardian
     template_name = "ladinpage.html"
@@ -46,6 +47,7 @@ class HomeList(LoginRequiredMixin, ListView):
         return queryset
 
 # User
+
 class LoginRoute(LoginView):
     template_name = "login.html"
     fields = "__all__"

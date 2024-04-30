@@ -5,6 +5,7 @@ Django==5.0.2
 django-crispy-forms==2.1
 django-jazzmin==2.6.0
 gunicorn==21.2.0
+isort==5.13.2
 mypy-extensions==1.0.0
 packaging==23.2
 pathspec==0.12.1

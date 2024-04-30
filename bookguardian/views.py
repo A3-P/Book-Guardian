@@ -14,6 +14,16 @@ class LadinPage(ListView):
     template_name = "ladinpage.html"
     context_object_name = "bookguardian"
 
+class PageBook(ListView):
+    model = models.BookGuardian
+    template_name = "bookPage.html"
+    context_object_name = "bookguardian"
+
+class PageNewBook(ListView):
+    model = models.BookGuardian
+    template_name = "addBook.html"
+    context_object_name = "bookguardian"
+
 class PageConfig(ListView):
     model = models.BookGuardian
     template_name = "configPage.html"

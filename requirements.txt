@@ -1,5 +1,5 @@
 asgiref==3.7.2
-black==24.2.0
+black==24.3.0
 click==8.1.7
 Django==5.0.2
 django-jazzmin==2.6.0

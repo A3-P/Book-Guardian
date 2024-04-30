@@ -1,1 +1,1 @@
-web: gunicorn bookguardian.wsgi
+web: gunicorn setup.wsgi

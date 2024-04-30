@@ -1,7 +1,7 @@
 asgiref==3.7.2
 black==24.3.0
 click==8.1.7
-Django==5.0.2
+Django==5.0.3
 django-jazzmin==2.6.0
 gunicorn==22.0.0
 isort==5.13.2

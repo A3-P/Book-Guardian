@@ -5,6 +5,7 @@ colorama==0.4.6
 Django==5.0.4
 django-jazzmin==3.0.0
 django-unfold==0.22.0
+gunicorn==22.0.0
 isort==5.13.2
 mypy-extensions==1.0.0
 packaging==24.0
@@ -15,3 +16,4 @@ psutil==5.9.8
 sqlparse==0.5.0
 taskipy==1.12.2
 tomli==2.0.1
+whitenoise==6.6.0

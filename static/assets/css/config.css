@@ -1,0 +1,86 @@
+#config{
+    color: var(--color-fg);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: left;
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0 0 50px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.choiceTheme{
+    width: 15rem;
+    height: 10rem;
+    border: 3px solid var(--color-main);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    margin: 1rem;
+    cursor: pointer;
+}
+.choiceTheme h5{
+    padding: 1.8rem;
+    color: #fff;
+}
+.configConainerRow{
+    display: flex;
+    flex-direction: row;
+}
+.configConainerRow button{
+    margin-right: 30px;
+    border: none;
+    padding: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    width: 10rem;
+    color: var(--color-fg);
+    font-weight: 700;
+}
+#autoTheme{
+    flex-direction: row;
+    background: linear-gradient(to right, #0e1120 50%, #f6f6f6 50%);
+
+}
+#autoTheme h5{
+    background: linear-gradient(to right, #fff 50%, #2d3242 50%);
+}
+#profileConfig{
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+    justify-content: left;
+}
+#avatarInpt{
+    border: 2px solid var(--color-border);
+    padding: 1rem;
+    border-radius: 12px;
+    width: 20rem;
+    cursor: pointer;
+    margin-top: 20px;
+}
+#saveConfig{
+    background-color: var(--color-main);
+    width: 15rem;
+}
+#saveConfig:hover{
+    background-color: var(--color-main-hover);
+}
+#cancelConfig{
+    background-color: var(--color-bg);
+    border: 3px solid var(--color-main);
+}
+#cancelConfig:hover{
+    border-color: var(--color-main-hover);
+}
+#configNavBtn{
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    margin-right: 4rem;
+}

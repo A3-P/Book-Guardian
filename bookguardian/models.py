@@ -16,7 +16,7 @@ class BookGuardian(models.Model):
         max_length=100, blank=True, null=True, default="desconhecido"
     )
     category = models.CharField(
-        default="generico",
+        default=("G", "Generico"),
         max_length=50,
         # Status
         choices=(

@@ -1,4 +1,5 @@
 {% extends "base.html" %} {% block title %} Pagina Inicial {% endblock title %}
+{% load static %}
 {% block content %}
 <header>
     <div id="mainHeader">
@@ -47,7 +48,8 @@
         <div>
             <label for="genre">Gênero:</label>
             <select id="genre">
-                <option value="">Genérico</option>
+                <option value="">Todos</option>
+                <option value="G">Genérico</option>
                 <option value="F">Ficção Científica</option>
                 <option value="R">Romance</option>
                 <option value="T">Terror</option>
@@ -70,7 +72,7 @@
 </header>
 <main>
     <nav>
-        <a href="">
+        <a href="{% url "bookguardian:newbook"  %}">
             <i id="addBookbtn" class="fi fi-sr-add" title="Adicionar"></i>
         </a>
         <a href="">
@@ -88,10 +90,11 @@
         </a>
     </nav>
     <section>
-        <div id="alertMsg"><h1>nenhum item encontrado :(</h1><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn6TgAUq9aRyetVWMD_JbnvGu4n-fK5rEeQzZFOEtysQ&s" alt="livro triste"></div>
+        {% if bookguardian %}
         {% if request.user.is_authenticated %}
         {% for book in bookguardian %}
-            <a href="#" class="card">
+            <div id="alertMsg" style="display:none"><h1>nenhum item encontrado :(</h1><img src="{% static "assets/img/livroTriste.png" %}" alt="livro triste"></div>
+            <a href="{% url 'bookguardian:book' %}" class="card">
                 {% if book.read %}
                     <i class="fi fi-sr-bookmark read"></i>
                 {% else %}
@@ -105,7 +108,12 @@
                 </div>
             </a>
         {% endfor %}
+        {% endif %}
+        {% else %}
+        <div id="alertMsg" style="display:flex;margin:0; margin-top:-200px"><h1>nenhum item encontrado :(</h1><img src="{% static "assets/img/livroTriste.png" %}" alt="livro triste"></div>
+
     {% endif %}
-    </section>
+
+</section>
 </main>
 {% endblock content %}

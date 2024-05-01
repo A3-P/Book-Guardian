@@ -1,15 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adicionar livro</title>
-    <link rel="stylesheet" href="../css/body.css">
-    <link rel="stylesheet" href="../css/color.css">
-    <link rel="stylesheet" href="../css/newBook.css">
-    <link rel="stylesheet" href="../css/imports.css">
-</head>
-<body data-color="pink" data-theme="light">
+{% extends "base.html" %} {% block title %} Adicionar Livro {% endblock title %}
+{% block content %}
     <div class="rowContainer">
         <div id="newBookDiv">
             <h2>Cadastro de Livro</h2>
@@ -54,7 +44,4 @@
             <button id="cancelBook">Cancelar</button>
         </div>
     </div>
-    <script src="../js/themeAndColor.js"></script>
-    <script src="../js/newBook.js"></script>
-</body>
-</html>
+{% endblock content %}

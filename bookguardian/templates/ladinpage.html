@@ -1,7 +1,31 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
+
 <div id="ladinPage" style="color: var(--color-fg);">
-    <a href="{% url 'bookguardian:login' %}">entrar</a>
-    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem placeat, iste, corporis recusandae corrupti officia cupiditate minima alias laudantium deleniti repellat ratione. Saepe inventore eum quae sit vitae molestiae reiciendis?</h1>
+    <div id="div_1">
+        <h1>
+            PROJETO BOOK GUARDIAN
+        </h1>
+        <div id="bts">
+            <a href="{% url 'bookguardian:login' %}">LOGIN</a>
+            <a href="{% url 'bookguardian:register-user' %}">CADASTRO</a>
+        </div>
+
+    </div>
+    <div id="ladinContainer">
+        <img src="{% static "assets/img/Capturar.png" %}" alt="">
+        <div id="div_2">
+            <h2>
+            O que é ?
+                <h3>O Book Guardian é um site open source com a finalidade de uma blibioteca virtual onde o usuario possa armazanear seus livros, mangás e hq's, editando-os de forma que permitam-lhes ver quais de seus livros já foram lidos, remover livros, ver suas descrições e muito mais!!</h3>
+            </h2>
+        </div>
+        <div id="div_3">
+            <h4>Esse projeto foi desenvolvido por alunos da faculdade UNIFG de Guanambi-BA, nele foi utilizado as linguagens: HTML, CSS, JavaScript, Python e seu framework Django.</h4>
+        </div>
+    </div>
+
 </div>
+
 {% endblock content %}

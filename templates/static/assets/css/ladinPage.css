@@ -1,0 +1,93 @@
+#ladinPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    right: 100vh;
+    margin: 0 20px 0 100px;
+    padding: 3rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#ladinContainer {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+#ladinContainer img{
+    position: fixed;
+    top: 100px;
+    right: 0;
+    width: 100%;
+    z-index: -1;
+    opacity: calc(60%);
+}
+#div_2 {
+    background-color: var(--color-card);
+    border-radius: 8px;
+    padding: 40px;
+    width: 35%;
+    height: auto;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    margin-bottom: 1.5rem;
+}
+
+#div_2 h3 {
+    text-align: left;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+#div_3 {
+    background-color: var(--color-card);
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    padding: 40px;
+    width: 35%;
+    height: auto;
+    margin-top: 1.5rem;
+}
+
+#div_3 h4 {
+    text-align: left;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+#div_1 {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    top: 35px;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+}
+#div_1 a {
+    background-color: var(--color-btn);
+    border-radius: 6px;
+    padding: 1rem;
+    height: auto;
+    width: 8rem;
+    color: var(--color-fg);
+}
+
+#bts {
+    width: 22rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+#div_1 a:hover {
+    background-color: var(--color-btn-hover);
+}
+#div_1 h1 {
+    margin-left: 75px;
+    font-size: 2.4rem;
+    font-weight: 900;
+}

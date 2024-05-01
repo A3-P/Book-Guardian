@@ -12,6 +12,7 @@ urlpatterns = [
     path("newbook/", views.PageNewBook.as_view(), name="newbook"),
     path('book/<int:pk>/', views.PageDetailBook.as_view(), name='bookdetail'),
     path('book-update/<int:pk>/', views.PageUpdateBook.as_view(), name='bookupdate'),
+    path('book-delete/<int:pk>/', views.PageDeleteBook.as_view(), name='bookdelete'),
 
 
     # User

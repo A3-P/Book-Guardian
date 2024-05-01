@@ -1,0 +1,48 @@
+{% extends "base.html" %} {% block title %} Adicionar Livro {% endblock title %}
+{% block content %}
+    <div class="rowContainer">
+        <div id="newBookDiv">
+            <h2>Atualizando  Livro</h2>
+            <form id="newBookForm" action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <label for="titleInp">Titulo:</label>
+                <input type="text" id="titleInp" name="title" placeholder="Titulo" required>
+
+                <label for="authorInp">Autor(a):</label>
+                <input type="text" id="authorInp" name="author_book" placeholder="Autor" >
+
+                <label for="descriptionInp">Descricao:</label>
+                <textarea id="descriptionInp" name="description"
+                placeholder="Descricao"  rows="4" style="resize: vertical;"></textarea>
+
+                <label for="imageInp">Imagem da capa:</label>
+                <input type="file" id="imageInp" name="book_image">
+
+                <div id="formSelects">
+                    <label for="genre">Gênero:</label>
+                    <select id="genre" name="category">
+                        <option value="G">Generico</option>
+                        <option value="F">Ficcao cientifica</option>
+                        <option value="R">Romance</option>
+                        <option value="T">Terror</option>
+                        <option value="NF">Nao ficcao</option>
+                        <option value="FA">Fantasia</option>
+                        <option value="MHQ">Manga e HQ</option>
+                    </select>
+
+
+                    <label for="status">Status:</label>
+                    <select id="status" name="read">
+                        <option value="True">Ja li</option>
+                        <option value="False">Quero ler</option>
+                    </select>
+                </div>
+                <button type="submit" id="addBook">Adicionar</button>
+            </form>
+
+        </div>
+        <div id="addBtnsNavegation">
+            <button id="cancelBook">Cancelar</button>
+        </div>
+    </div>
+{% endblock content %}

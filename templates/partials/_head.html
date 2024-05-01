@@ -1,22 +1,17 @@
 {% load static %}
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-
-  <link rel="shortcut icon" href="static/img/book-bookmark-icon_34486.ico" type="image/x-icon"/>
-  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-  <link rel="stylesheet" href="  {% static "assets/css/color.css" %} " />
-
-    {% if request.path == "/login/"  or request.path == "/register/" %}
-        <link rel="stylesheet" href=" {% static "assets/css/login.css" %} ">
-    {% else %}
-        <link rel="stylesheet" href="  {% static "assets/css/body.css" %} " />
-        <link rel="stylesheet" href="  {% static "assets/css/card.css" %} " />
-        <link rel="stylesheet" href="  {% static "assets/css/config.css" %} " />
-        <link rel="stylesheet" href="  {% static "assets/css/header.css" %} " />
-        <link rel="stylesheet" href="  {% static "assets/css/imports.css" %} ">
-        <link rel="stylesheet" href="  {% static "assets/css/nav.css" %} ">
-        <link rel="stylesheet" href="  {% static "assets/css/newBook.css" %} ">
-        <link rel="stylesheet" href="  {% static "assets/css/ladinPage.css" %} ">
-        <link rel="stylesheet" href="  {% static "assets/css/bookPage.css" %} ">
-    {% endif %}
+<link rel="shortcut icon" href="{% static "assets/img/book-bookmark-icon_34486.ico" %}" type="image/x-icon"/>
+<link rel="stylesheet" href=" {% static "assets/css/color.css" %} " /> 
+{% if request.path == "/login/" or request.path == "/register/" %} 
+<link rel="stylesheet" href=" {% static "assets/css/login.css" %} "> 
+{% else %} <link rel="stylesheet" href=" {% static "assets/css/body.css" %} " /> <link
+rel="stylesheet" href=" {% static "assets/css/card.css" %} " /> <link
+rel="stylesheet" href=" {% static "assets/css/config.css" %} " /> <link
+rel="stylesheet" href=" {% static "assets/css/header.css" %} " /> <link
+rel="stylesheet" href=" {% static "assets/css/imports.css" %} "> <link
+rel="stylesheet" href=" {% static "assets/css/nav.css" %} "> <link
+rel="stylesheet" href=" {% static "assets/css/newBook.css" %} "> <link
+rel="stylesheet" href=" {% static "assets/css/ladinPage.css" %} "> <link
+rel="stylesheet" href=" {% static "assets/css/bookPage.css" %} "> {% endif %}

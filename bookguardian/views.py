@@ -8,17 +8,13 @@ from django.views.generic.edit import FormView
 from django.views.generic.list import ListView
 from django.views.generic import CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic.detail import DetailView
 from . import models
 
 
 class LadinPage(ListView):
     model = models.BookGuardian
     template_name = "ladinpage.html"
-    context_object_name = "bookguardian"
-
-class PageBook(ListView):
-    model = models.BookGuardian
-    template_name = "bookPage.html"
     context_object_name = "bookguardian"
 
 class PageNewBook(LoginRequiredMixin, CreateView):
@@ -30,6 +26,11 @@ class PageNewBook(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super(PageNewBook, self).form_valid(form)
+
+class PageDetailBook(LoginRequiredMixin, DetailView):
+    model = models.BookGuardian
+    context_object_name = 'bookguardian'
+    template_name = 'bookPage.html'
 
 class PageConfig(ListView):
     model = models.BookGuardian

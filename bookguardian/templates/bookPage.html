@@ -5,14 +5,14 @@
 
 {% block content %}
 <div id="bookPage">
-    <img src="https://d1pkzhm5uq4mnt.cloudfront.net/imagens/capas/mp_0f858d0d593908969481a4f5b38fb276.jpg" alt="capa">
+    <img src="{{ bookguardian.book_image.url }}" alt="capa">
     <div id="bookMainContainer">
         <div id="informacoes">
-            <h1 id="titulo">Furacão Anitta</h1>
-            <h3>Por: <span id="autor">Leo Dias</span></h3>
+            <h1 id="titulo">{{ bookguardian.title }}</h1>
+            <h3>Por: <span id="autor">{{ bookguardian.author_book }}</span></h3>
             <h3>Descricao:</h3>
-            <p id="descricao">Desde que deixou o Brasil inteiro babando com o Show das Poderosas, Anitta se tornou uma obsessão nacional. Seus clipes quebram a internet, jovens descolados copiam seu estilo e seus passos são seguidos por milhões de fãs, ávidos por qualquer informação a respeito desse furacão. </p>
-            <h3>Status: <span id="status">Nao li</span></h3>
+            <p id="descricao">{{ bookguardian.description }}</p>
+            <h3>Status: <span id="status">{{ bookguardian.read }}</span></h3>
         </div>
         <div id="bookEdit">
             <button id="editarLivro">editar <i class="fi fi-rr-edit"></i></button>

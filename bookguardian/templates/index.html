@@ -93,7 +93,7 @@
         </div>
         <button id="applyFilters">Aplicar Filtros</button>
     </div>
-    
+
 </header>
 <main>
     <nav id="nav">
@@ -119,7 +119,7 @@
         {% if request.user.is_authenticated %}
         {% for book in bookguardian %}
             <div id="alertMsg" style="display:none"><h1>nenhum item encontrado :(</h1><img src="{% static "assets/img/livroTriste.png" %}" alt="livro triste"></div>
-            <a href="{% url 'bookguardian:book' %}" class="card">
+            <a href="{% url 'bookguardian:bookdetail'  pk=book.pk %}" class="card">
                 {% if book.read %}
                     <i class="fi fi-sr-bookmark read"></i>
                 {% else %}

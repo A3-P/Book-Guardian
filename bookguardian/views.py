@@ -6,7 +6,7 @@ from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views.generic.edit import FormView
 from django.views.generic.list import ListView
-from django.views.generic import CreateView, UpdateView
+from django.views.generic import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.detail import DetailView
 from . import models
@@ -40,6 +40,14 @@ class PageUpdateBook(LoginRequiredMixin, UpdateView):
     success_url = reverse_lazy('bookguardian:index')  #
     template_name = 'updateBook.html'
 
+class PageDeleteBook(LoginRequiredMixin, DeleteView):
+    model = models.BookGuardian
+    context_object_name = 'bookguardian'
+    success_url =  reverse_lazy("bookguardian:index")
+    template_name = 'bookguardian_confirm_delete.html'
+    def get_queryset(self):
+        owner = self.request.user
+        return self.model.objects.filter(user=owner)
 
 class PageConfig(ListView):
     model = models.BookGuardian

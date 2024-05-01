@@ -17,7 +17,7 @@
         <div id="bookEdit">
             <a href=" {% url "bookguardian:bookupdate"  pk=bookguardian.pk %} ">
             <button id="editarLivro">editar <i class="fi fi-rr-edit"></i></button></a>
-            <a href="#">
+            <a href="{% url "bookguardian:bookdelete" pk=bookguardian.pk %}">
             <button id="excluirLivro">excluir <i class="fi fi-rr-trash"></i></button></a>
         </div>
     </div>

@@ -48,6 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const msgFilter = document.querySelector("#alertMsg").style;
 
     applyFiltersBtn.addEventListener("click", function () {
+        searchInput.value = ""; 
         const genre = document.getElementById("genre").value;
         const readOrNot = document.getElementById("readOrNot").value;
         let itemsFound = false;

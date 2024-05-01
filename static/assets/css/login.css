@@ -16,7 +16,7 @@ body {
     border-radius: 8px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     width: 22%;
-    height: 60%;
+    height: auto;
     text-align: center;
     color: var(--color-fg);
 }
@@ -67,8 +67,6 @@ hr {
     width: 100%;
     border: 1px solid var(--color-border);
 }
-
-
 
 /* animacao */
 

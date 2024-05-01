@@ -11,6 +11,7 @@ urlpatterns = [
     path("settings/", views.PageConfig.as_view(), name="settings"),
     path("newbook/", views.PageNewBook.as_view(), name="newbook"),
     path('book/<int:pk>/', views.PageDetailBook.as_view(), name='bookdetail'),
+    path('book-update/<int:pk>/', views.PageUpdateBook.as_view(), name='bookupdate'),
 
 
     # User

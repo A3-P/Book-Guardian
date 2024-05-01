@@ -16,6 +16,24 @@ profileBtn.addEventListener("click", function () {
     }
 });
 
+//mobile menu
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenuContainer = document.getElementById("mobileMenuContainer").style;
+
+mobileMenuContainer.display = "none";
+
+menuBtn.addEventListener("click", function () {
+    if (mobileMenuContainer.display === "none") {
+        mobileMenuContainer.display = "flex";
+        mobileMenuContainer.animation = "slideDown 0.3s ease forwards";
+    } else {
+        mobileMenuContainer.animation = "slideUp 0.3s ease forwards";
+        setTimeout(() => {
+            mobileMenuContainer.display = "none";
+        }, 300);
+    }
+});
+
 // filter
 const filterBtn = document.getElementById("filterBtn");
 const filter = document.getElementById("filter").style;

@@ -3,7 +3,7 @@
 {% block content %}
 <header>
     <div id="mainHeader">
-        <h1>Book Guardian</h1>
+        <h1 id="logo">Book Guardian</h1>
         <div id="searchDiv">
             <input
                 type="text"
@@ -12,8 +12,33 @@
                 placeholder="Pesquisar Livro"
             />
             <i class="fi fi-rr-search" id="searchBtn" title="Pesquisar"></i>
+            
         </div>
-        <h6>
+        <h6 id="mobileMenu">
+            <i class="fi fi-rr-menu-burger" id="menuBtn" title="Menu"></i>
+            <div id="mobileMenuContainer">
+                    <a href="">
+                        <i id="profileBtnMobile" class="fi fi-sr-circle-user" title="Perfil"></i>
+                    </a>
+                    <a href="{% url "bookguardian:newbook"  %}">
+                        <i id="addBookbtn" class="fi fi-sr-add" title="Adicionar"></i>
+                    </a>
+                    <a href="">
+                        <i id="homeBtn" class="fi fi-sr-home" title="Inicio"></i>
+                    </a>
+                    <a href="#">
+                        <i id="filterBtn" class="fi fi-sr-filter" title="Filtros"></i>
+                    </a>
+                    <a href=" {% url "bookguardian:settings"  %}">
+                        <i
+                            id="configBtn"
+                            class="fi fi-sr-settings"
+                            title="Configuracoes"
+                        ></i>
+                    </a>
+            </div>        
+        </h6>
+        <h6 id="profileH6">
             <i id="profileBtn" class="fi fi-rr-circle-user" title="Perfil"></i>
             <div id="profileMenuHeader">
                 {% if not request.user.is_authenticated %}
@@ -71,7 +96,7 @@
     
 </header>
 <main>
-    <nav>
+    <nav id="nav">
         <a href="{% url "bookguardian:newbook"  %}">
             <i id="addBookbtn" class="fi fi-sr-add" title="Adicionar"></i>
         </a>

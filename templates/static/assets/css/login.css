@@ -102,3 +102,16 @@ hr {
     animation: rotateIn 0.5s ease-in-out forwards;
 }
 /* animacao */
+
+
+@media (max-width: 600px) {
+    .login-container{
+        width: 75%;
+        padding: 2rem 1.2rem 1rem 1.2rem;
+    }
+    .login-container p{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+}

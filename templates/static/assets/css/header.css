@@ -13,6 +13,9 @@ header {
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
     z-index: 2;
 }
+#mobileMenu {
+    display: none;
+}
 #mainHeader {
     width: 100%;
     display: flex;
@@ -155,7 +158,7 @@ header h6 {
 #filter label {
     font-weight: 900;
 }
-#filter select{
+#filter select {
     margin-right: 1rem;
     background-color: var(--color-subCard);
     color: var(--color-fg);
@@ -195,4 +198,82 @@ header h6 {
     to {
         transform: translateY(0);
     }
+}
+
+@media (max-width: 600px) {
+    header {
+        width: 80%;
+        height: 3rem;
+        padding: 12px;
+    }
+    header #logo {
+        display: none;
+    }
+    #mainHeader {
+        align-self: flex-start;
+        height: 100%;
+    }
+    #searchDiv {
+        width: 74%;
+    }
+    #mobileMenu{
+        display: flex;
+    }
+    #menuBtn {
+        display: block;
+        font-size: 1.4rem;
+        cursor: pointer;
+        border-radius: 10px;
+        padding: 6px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        display: flex;
+    }
+    #menuBtn:hover {
+        background-color: var(--color-subCard);
+    }
+    #profileH6 {
+        display: none;
+    }
+    #mobileMenuContainer {
+        z-index: 4;
+        background-color: var(--color-card);
+        position: fixed;
+        width: auto;
+        height: auto;
+        top: 6rem;
+        right: 5%;
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 1rem;
+        border-radius: 15px;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    }
+    #mobileMenuContainer a {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        text-decoration: none;
+        width: 100%;
+        height: auto;
+        padding: 0;
+        color: var(--color-main);
+        font-size: 1.4rem;
+        margin: 10px 8px 10px 8px ;
+    }
+    #mobileMenuContainer a:hover{
+        color: var(--color-main-hover);
+    }
+    #mobileMenuContainer button {
+        border-radius: 8px;
+        height: 2.4rem;
+        width: 90%;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+
 }

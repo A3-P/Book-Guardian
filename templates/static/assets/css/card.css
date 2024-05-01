@@ -70,3 +70,18 @@
     }
 }
 
+@media (max-width: 600px){
+    .card{
+        width: 8rem;
+        height: 12rem;
+        margin: 1.2rem;
+    }
+    .card i{
+        position: absolute;
+        width: 8rem;
+        height: 12rem;
+        font-size: 1.7rem;
+        text-align: left;
+        margin: -10px 0 0 10px;
+    }
+}

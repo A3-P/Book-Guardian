@@ -20,6 +20,7 @@ class BookGuardian(models.Model):
         max_length=50,
         # Status
         choices=(
+            ("G", "Generico"),
             ("F", "Ficcao"),
             ("R", "Romance"),
             ("T", "Terro"),

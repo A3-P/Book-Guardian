@@ -6,6 +6,7 @@ from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views.generic.edit import FormView
 from django.views.generic.list import ListView
+from django.views.generic import CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from . import models
 
@@ -20,10 +21,15 @@ class PageBook(ListView):
     template_name = "bookPage.html"
     context_object_name = "bookguardian"
 
-class PageNewBook(ListView):
+class PageNewBook(LoginRequiredMixin, CreateView):
     model = models.BookGuardian
-    template_name = "addBook.html"
-    context_object_name = "bookguardian"
+    fields = ['book_image', 'title', 'description', 'category', 'author_book',  'read']
+    success_url = reverse_lazy('bookguardian:index')  #
+    template_name = 'addBook.html'
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(PageNewBook, self).form_valid(form)
 
 class PageConfig(ListView):
     model = models.BookGuardian
@@ -46,8 +52,8 @@ class HomeList(LoginRequiredMixin, ListView):
             return reverse_lazy("bookguardian:ladinpage")
         return queryset
 
-# User
 
+# User
 class LoginRoute(LoginView):
     template_name = "login.html"
     fields = "__all__"

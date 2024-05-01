@@ -94,7 +94,7 @@
         color: #fff;
     }
     #configNavBtn {
-        width: 100%;
+        width: 90%;
         margin: 1rem;
         margin: 0;
         align-items: center;
@@ -107,7 +107,7 @@
         width: 50%;
     }
     #cancelConfig {
-        width: 25%;
+        width: 30%;
     }
     .configConainerRow button {
         width: 50%;

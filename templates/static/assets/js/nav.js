@@ -34,6 +34,23 @@ menuBtn.addEventListener("click", function () {
     }
 });
 
+const profileBtnMobile = document.getElementById("profileBtnMobile");
+const subMobileMenu = document.getElementById("subMobileMenu").style;
+
+subMobileMenu.display = "none";
+
+profileBtnMobile.addEventListener("click", function () {
+    if (subMobileMenu.display === "none") {
+        subMobileMenu.display = "flex";
+        subMobileMenu.animation = "slideRight 0.3s ease forwards";
+    } else {
+        subMobileMenu.animation = "slideLeft 0.3s ease forwards";
+        setTimeout(() => {
+            subMobileMenu.display = "none";
+        }, 300);
+    }
+});
+
 // filter
 const filterBtn = document.getElementById("filterBtn");
 const filter = document.getElementById("filter").style;

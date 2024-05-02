@@ -17,7 +17,7 @@
         <h6 id="mobileMenu">
             <i class="fi fi-rr-menu-burger" id="menuBtn" title="Menu"></i>
             <div id="mobileMenuContainer">
-                    <a href="">
+                    <a href="#" >
                         <i id="profileBtnMobile" class="fi fi-sr-circle-user" title="Perfil"></i>
                     </a>
                     <a href="{% url "bookguardian:newbook"  %}">
@@ -36,7 +36,10 @@
                             title="Configuracoes"
                         ></i>
                     </a>
-            </div>        
+            </div> 
+            <div id="subMobileMenu">
+                <a href="{%url 'bookguardian:logout'%}">Sair</a>
+            </div>       
         </h6>
         <h6 id="profileH6">
             <i id="profileBtn" class="fi fi-rr-circle-user" title="Perfil"></i>
@@ -56,12 +59,6 @@
                 <div id="userNav">
                     <a href="{% url 'bookguardian:logout' %}">
                         <i class="fi fi-rr-exit" id="logout"> Sair</i>
-                    </a>
-
-                    <a href="{% url 'bookguardian:login' %}">
-                        <i class="fi fi-rr-shuffle" id="changeAccont">
-                            Trocar de conta</i
-                        >
                     </a>
                 </div>
 

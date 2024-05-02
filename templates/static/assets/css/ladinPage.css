@@ -100,3 +100,67 @@
     font-size: 2.4rem;
     font-weight: 900;
 }
+
+@media (max-width: 600px){
+
+#div_1 h1 {
+    font-size: 1.2rem;
+    font-weight: 900;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-top: 45px;
+    margin-left: 82px;
+}
+
+#bts {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: 70px;
+    width: 265px;
+    height: 10px;
+    margin-right: 220px;
+}
+
+#bts a {
+    margin-right: 20px;
+    font-size: 11px;
+}
+
+#div_2 {
+    height: 40%;
+    width: 60%;
+    display: inline;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#div_2 h2 {
+    font-size: 1.5rem;
+    display: inline;
+    margin: 0;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#div_2 h3 {
+    font-size: 1.1rem;
+    margin-top: 20px;
+    display: flex;
+    text-align: center;
+}
+
+#div_3 {
+    height: 40%;
+    width: 60%;
+    margin: 0;
+}
+
+#div_3 h4 {
+    font-size: 1.1rem;
+    display: flex;
+    text-align: center;
+    margin: 0;
+}
+}

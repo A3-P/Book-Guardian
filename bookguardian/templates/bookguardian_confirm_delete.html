@@ -1,18 +1,16 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
-<div class="header-bar">
-    <a href="{% url 'bookguardian:index' %}">&#8592; Go Back</a>
-</div>
-
-<div class="card-body">
+<div class="card-body" id="deleteContainer">
     <form method="POST">
         {% csrf_token %}
-        <h1>Ai maluco tem certeza? Confia? vai apaga o se livro: <b>"{{ bookguardian.title }}"</b> </h1>
-        <button type="submit" value="Delete">DELETA?</button>
+        <h1>
+            Deseja realmente apagar o livro: <b>{{ bookguardian.title }}</b> ?
+        </h1>
+        <div class="header-bar" id="btnNavDelete">
+            <a class="deletBtn" id="cancel" href="{% url 'bookguardian:index' %}">&#8592; Voltar</a>
+            <button class="deletBtn" id="delete" type="submit" value="Delete">Apagar</button>
+        </div>
     </form>
 </div>
-
-
 
 {% endblock content %}

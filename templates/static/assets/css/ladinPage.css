@@ -110,7 +110,7 @@
     top: 0;
     left: 0;
     margin-top: 45px;
-    margin-left: 85px;
+    margin-left: 120px;
 }
 
 #bts {
@@ -118,9 +118,9 @@
     flex-direction: row;
     align-items: flex-start;
     margin-top: 20px;
-    width: 268px;
-    height: 80px;
-    margin-left: 2px;
+    width: 266px;
+    height: 90px;
+    margin-left: 27px;
 }
 
 #bts a {
@@ -134,7 +134,7 @@
     display: inline;
     margin-top: 0px;
     text-align: center;
-    margin-left: 8px;
+    margin-left: 16px;
 }
 
 #div_2 h2 {
@@ -156,7 +156,7 @@
     height: 40%;
     width: 60%;
     margin: 0;
-    margin-left: 8px;
+    margin-left: 16px;
 }
 
 #div_3 h4 {
@@ -167,6 +167,13 @@
 }
 
 #ladinPage {
+    overflow-x: hidden;
+}
+
+#ladinPage {
+    height: 850px;
+}
+}
     overflow-x: hidden;
 }
 }

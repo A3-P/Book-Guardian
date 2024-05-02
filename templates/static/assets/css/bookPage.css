@@ -97,3 +97,45 @@
 #editarLivro:hover{
     background-color: var(--color-main-hover);
 }
+
+@media (max-width: 600px) {
+
+#bookPage img {
+    width: 75%;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    position: absolute;
+    top: 30px;
+    left: 52px;
+    bottom: 0px;
+}
+
+#informacoes {
+    position: relative;
+    top: 250px;
+    left: 95px;
+    width: 100%;
+}
+
+#bookEdit {
+    position: absolute;
+    top: 850px;
+    left: 0px;
+    width: 475px;
+    height: 60px;
+    padding: 0;
+    justify-content: center;
+
+}
+
+a #editarLivro {
+    width: 110px;
+    height: 30px;
+    margin-right: 20px;
+}
+
+a #excluirLivro {
+    width: 110px;
+    height: 30px;
+    margin-right: 100px;
+}
+}

@@ -85,6 +85,9 @@
     border-radius: 12px;
     margin: 23px;
     padding: 1rem;
+    position: fixed;
+    top: 0;
+    right: 0;
 }
 #addBtnsNavegation button{
     width: 100%;
@@ -114,4 +117,9 @@
 #cancelBook:hover {
     background-color: var(--color-main-hover);
     border: none;
+}
+
+
+@media (max-width: 600px){
+    
 }

@@ -8,7 +8,7 @@
     color: #f52222;
 }
 #deleteContainer b{
-    color: #fff;
+    color: var(--color-fg);
     text-transform: uppercase;
 }
 .deletBtn{
@@ -58,12 +58,12 @@
         margin: 0;
     }
     #deleteContainer h1{
-        word-wrap: break-word; 
+        word-wrap: break-word;
         display: block;
     }
 
     #deleteContainer b{
-        word-wrap: break-word; 
+        word-wrap: break-word;
         font-size: 0.8em;
     }
 

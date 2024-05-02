@@ -110,7 +110,7 @@
     top: 0;
     left: 0;
     margin-top: 45px;
-    margin-left: 120px;
+    margin-left: 90px;
 }
 
 #bts {
@@ -119,8 +119,8 @@
     align-items: flex-start;
     margin-top: 20px;
     width: 266px;
-    height: 90px;
-    margin-left: 27px;
+    height: 80px;
+    margin-left: 6px;
 }
 
 #bts a {
@@ -129,12 +129,12 @@
 }
 
 #div_2 {
-    height: 40%;
+    height: 100%;
     width: 60%;
     display: inline;
     margin-top: 0px;
     text-align: center;
-    margin-left: 16px;
+    margin-left: 4px;
 }
 
 #div_2 h2 {
@@ -156,7 +156,7 @@
     height: 40%;
     width: 60%;
     margin: 0;
-    margin-left: 16px;
+    margin-left: 4px;
 }
 
 #div_3 h4 {
@@ -166,11 +166,12 @@
     margin: 0;
 }
 
-#ladinPage {
-    overflow-x: hidden;
-}
 
 #ladinPage {
-    height: 850px;
+    height: 750px;
+}
+
+#ladinContainer img {
+    display: none;
 }
 }

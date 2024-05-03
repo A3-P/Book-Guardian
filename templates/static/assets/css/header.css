@@ -221,15 +221,18 @@ header h6 {
 @media (max-width: 600px) {
     header {
         width: 80%;
-        height: 3rem;
-        padding: 12px;
+        height: auto;
+        padding: 0 12px 0 12px;
+        margin-bottom: 3rem;
     }
     header #logo {
         display: none;
     }
     #mainHeader {
         align-self: flex-start;
-        height: 100%;
+        height: auto;
+        margin: 0;
+        padding: 0;
     }
     #searchDiv {
         width: 74%;
@@ -318,5 +321,8 @@ header h6 {
     }
     #subMobileMenu a:hover {
         color: var(--color-main-hover);
+    }
+    #applyFilters{
+        font-size: 12px;
     }
 }

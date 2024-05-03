@@ -51,6 +51,27 @@ profileBtnMobile.addEventListener("click", function () {
     }
 });
 
+const filterBtnMobile = document.getElementById("filterBtnMobile");
+const applyFilters = document.getElementById("applyFilters");
+
+filterBtnMobile.addEventListener("click", function () {
+    if (filter.display === "none") {
+        applyFilters.innerHTML = "Aplicar"
+        filter.display = "flex";
+        filter.animation = "slideDown 0.5s ease forwards";
+        mobileMenuContainer.top = "11rem"
+        mobileMenuContainer.animation = "slideDown 1s ease forwards";
+
+    } else {
+        mobileMenuContainer.top = "6rem"
+        filter.animation = "slideUp 0.5s ease forwards";
+        mobileMenuContainer.animation = "slideDown 1s ease forwards";
+        setTimeout(() => {
+            filter.display = "none";
+        }, 500);
+    }
+});
+
 // filter
 const filterBtn = document.getElementById("filterBtn");
 const filter = document.getElementById("filter").style;

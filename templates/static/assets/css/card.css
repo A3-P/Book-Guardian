@@ -51,6 +51,7 @@
     animation: slideIn 0.5s ease forwards;
 }
 
+
 @keyframes slideIn {
     from {
         transform: translateX(100%);

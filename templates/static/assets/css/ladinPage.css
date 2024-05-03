@@ -4,7 +4,6 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    right: 100vh;
     margin: 10px 20px 0 100px;
     padding: 0;
     overflow: auto;
@@ -102,75 +101,85 @@
 }
 
 @media (max-width: 600px){
+    #ladinPage {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        justify-content: flex-start;
+    }
+    #div_1{
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    #div_1 h1 {
+        font-size: calc(1.6rem - 0.5vw);
+        font-weight: 900;
+        margin: 0;
+    }
+    #bts {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        margin-top: 20px;
+        width: 100%;
+        height: 80px;
+    }
+    #bts a {
+        margin: 0 10px 0 10px;
+        font-size: 13px;
+    }
 
-#div_1 h1 {
-    font-size: 1.2rem;
-    font-weight: 900;
-    position: fixed;
-    top: 0;
-    left: 0;
-    margin-top: 45px;
-    margin-left: 90px;
-}
+    #ladinContainer {
+        width: 100%;
+        margin: 0;
+        margin-top: 4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: auto;
+    }
 
-#bts {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    margin-top: 20px;
-    width: 266px;
-    height: 80px;
-    margin-left: 6px;
-}
+    #div_2, #div_3{
+        width: 60%;
+        height: auto;
+    }
 
-#bts a {
-    margin-right: 20px;
-    font-size: 11px;
-}
+    #div_2 {
+        margin-top: 5rem;
+    }
 
-#div_2 {
-    height: 80%;
-    width: 60%;
-    display: inline;
-    margin-top: 0px;
-    text-align: center;
-    margin-left: 4px;
-}
+    #div_2 h2 {
+        font-size: 1.5rem;
+        margin: 0;
+        margin-top: 20px;
+        text-align: center;
+    }
 
-#div_2 h2 {
-    font-size: 1.5rem;
-    display: inline;
-    margin: 0;
-    margin-top: 20px;
-    text-align: center;
-}
+    #div_2 h3 {
+        font-size: 1.1rem;
+        margin-top: 20px;
+        display: flex;
+        text-align: center;
+    }
 
-#div_2 h3 {
-    font-size: 1.1rem;
-    margin-top: 20px;
-    display: flex;
-    text-align: center;
-}
+    #div_3 {
+        height: 8rem;
+    }
 
-#div_3 {
-    height: 40%;
-    width: 60%;
-    margin: 0;
-    margin-left: 4px;
-}
+    #div_3 h4 {
+        font-size: 1.1rem;
+        display: flex;
+        text-align: center;
+        margin: 0;
+    }
 
-#div_3 h4 {
-    font-size: 1.1rem;
-    display: flex;
-    text-align: center;
-    margin: 0;
-}
-
-#ladinPage {
-    height: 750px;
-}
-
-#ladinContainer img {
-    display: none;
-}
+    #ladinContainer img {
+        display: none;
+    }
 }

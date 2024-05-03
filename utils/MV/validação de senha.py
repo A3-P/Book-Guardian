@@ -2,15 +2,7 @@ import re
 
 
 def validar_senha(senha):
-    if len(senha) < 8:
-        return False
-    if not re.search("[A-Z]", senha):
-        return False
-    if not re.search("[a-z]", senha):
-        return False
-    if not re.search("[0-9]", senha):
-        return False
-    if not re.search("[!@#$%^&*()_+=-]", senha):
+    if len(senha) < 6:
         return False
     return True
 

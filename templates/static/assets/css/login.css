@@ -67,6 +67,19 @@ hr {
     width: 100%;
     border: 1px solid var(--color-border);
 }
+#passwordStatus{
+    background-color: #ff41419f;
+    border-radius: 1rem;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    height: 3rem;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 900;
+    color: var(--color-fg);
+}
 
 /* animacao */
 

@@ -104,7 +104,9 @@ class RegisterUser(FormView):
 
         form.fields["username"].widget.attrs["placeholder"] = "Digite o seu User"
         form.fields["password1"].widget.attrs["placeholder"] = "Digite a sua Senha"
+        form.fields["password1"].widget.attrs["id"] = "password1"
         form.fields["password2"].widget.attrs["placeholder"] = "Confirme a Senha"
+        form.fields["password2"].widget.attrs["id"] = "password2"
         return form
 
 

@@ -1,0 +1,10 @@
+#e404ErrorPage{
+    color: var(--color-fg);
+    background-color: var(--color-bg);
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+#e404ErrorPage img{
+    width: 80%;
+}

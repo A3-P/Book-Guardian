@@ -137,7 +137,7 @@
     #ladinContainer {
         width: 100%;
         margin: 0;
-        margin-top: 4rem;
+        margin-top: 10px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -151,7 +151,7 @@
     }
 
     #div_2 {
-        margin-top: 5rem;
+        margin-top: 3rem;
     }
 
     #div_2 h2 {

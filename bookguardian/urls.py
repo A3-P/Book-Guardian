@@ -1,8 +1,11 @@
 from django.urls import path
 
 from . import views
+from django.conf.urls import handler404
 
 app_name = "bookguardian"
+
+handler404 = views.Custom404View.as_view()
 
 urlpatterns = [
     # BookGuardian

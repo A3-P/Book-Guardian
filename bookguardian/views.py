@@ -10,7 +10,8 @@ from django.views.generic import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.detail import DetailView
 from . import models
-
+from django.views import View
+from django.shortcuts import render
 
 class LadinPage(ListView):
     model = models.BookGuardian
@@ -110,3 +111,9 @@ class RegisterUser(FormView):
 def custom_logout(request):
     logout(request)
     return HttpResponseRedirect(reverse_lazy("bookguardian:ladinpage"))
+
+
+
+class Custom404View(View):
+    def get(self, request, exception=None):
+        return render(request, '404.html', {}, status=404)

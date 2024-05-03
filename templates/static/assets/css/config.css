@@ -79,7 +79,7 @@
         overflow-x: hidden;
     }
     .configConainerRow {
-        overflow-x: auto;
+        overflow-x: scroll;
         width: 100%;
         padding-bottom: 1.3rem;
     }
@@ -107,6 +107,7 @@
         width: 50%;
     }
     #cancelConfig {
+        margin-right: 0;
         width: 30%;
     }
     .configConainerRow button {

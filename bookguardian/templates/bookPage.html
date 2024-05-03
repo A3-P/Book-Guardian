@@ -13,13 +13,40 @@
             <h3>Descricao:</h3>
             <p id="descricao">{{ bookguardian.description }}</p>
             <h3>Status: {% if bookguardian.read %}<span id="status" class="read" style="font-weight: 800;">Ja li </span>{% else %}<span id="status" class="nonRead">Nao li</span>{% endif %}</h3>
+            <h3>Genero: <span>
+                {% if bookguardian.category == 'G' %}
+                    Generico
+                {% elif bookguardian.category == 'F' %}
+                    Ficcao
+                {% elif bookguardian.category == 'R' %}
+                    Romance
+                {% elif bookguardian.category == 'T' %}
+                    Terror
+                {% elif bookguardian.category == 'FA' %}
+                    Fantasia
+                {% elif bookguardian.category == 'NF' %}
+                    Nao ficcao
+                {% elif bookguardian.category == 'MHQ' %}
+                    Manga e HQ
+                {% else %}
+                    Desconhecido
+                {% endif %}
+            </span></h3>
+            
         </div>
         <div id="bookEdit">
             <a href=" {% url "bookguardian:bookupdate"  pk=bookguardian.pk %} ">
-            <button id="editarLivro">editar <i class="fi fi-rr-edit"></i></button></a>
+                <button id="editarLivro">editar <i class="fi
+                fi-rr-edit"></i></button>
+            </a>
             <a href="{% url "bookguardian:bookdelete" pk=bookguardian.pk %}">
-            <button id="excluirLivro">excluir <i class="fi fi-rr-trash"></i></button></a>
+                <button id="excluirLivro">excluir <i class="fi
+                fi-rr-trash"></i></button>
+            </a>
         </div>
     </div>
 </div>
+<script>
+
+</script>
 {% endblock content %}

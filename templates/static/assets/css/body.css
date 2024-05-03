@@ -68,5 +68,6 @@ section{
     }
     section{
         margin: 0;
+        justify-content: center;
     }
 }

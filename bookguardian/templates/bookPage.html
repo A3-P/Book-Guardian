@@ -12,7 +12,7 @@
             <h3>Por: <span id="autor">{{ bookguardian.author_book }}</span></h3>
             <h3>Descrição:</h3>
             <p id="descricao">{{ bookguardian.description }}</p>
-            <h3>Status: {% if bookguardian.read %}<span id="status" class="read" style="font-weight: 800;">Ja li </span>{% else %}<span id="status" class="nonRead">Nao li</span>{% endif %}</h3>
+            <h3>Status: {% if bookguardian.read %}<span id="status" class="read" style="font-weight: 800;">Já li </span>{% else %}<span id="status" class="nonRead">Não li</span>{% endif %}</h3>
             <h3>Gênero: <span>
                 {% if bookguardian.category == 'G' %}
                     Genérico

@@ -10,14 +10,14 @@
         <div id="informacoes">
             <h1 id="titulo">{{ bookguardian.title }}</h1>
             <h3>Por: <span id="autor">{{ bookguardian.author_book }}</span></h3>
-            <h3>Descricao:</h3>
+            <h3>Descrição:</h3>
             <p id="descricao">{{ bookguardian.description }}</p>
-            <h3>Status: {% if bookguardian.read %}<span id="status" class="read" style="font-weight: 800;">Ja li </span>{% else %}<span id="status" class="nonRead">Nao li</span>{% endif %}</h3>
-            <h3>Genero: <span>
+            <h3>Status: {% if bookguardian.read %}<span id="status" class="read" style="font-weight: 800;">Já li </span>{% else %}<span id="status" class="nonRead">Não li</span>{% endif %}</h3>
+            <h3>Gênero: <span>
                 {% if bookguardian.category == 'G' %}
-                    Generico
+                    Genérico
                 {% elif bookguardian.category == 'F' %}
-                    Ficcao
+                    Ficção
                 {% elif bookguardian.category == 'R' %}
                     Romance
                 {% elif bookguardian.category == 'T' %}
@@ -25,14 +25,14 @@
                 {% elif bookguardian.category == 'FA' %}
                     Fantasia
                 {% elif bookguardian.category == 'NF' %}
-                    Nao ficcao
+                    Nâo ficção
                 {% elif bookguardian.category == 'MHQ' %}
                     Manga e HQ
                 {% else %}
                     Desconhecido
                 {% endif %}
             </span></h3>
-            
+
         </div>
         <div id="bookEdit">
             <a href=" {% url "bookguardian:bookupdate"  pk=bookguardian.pk %} ">

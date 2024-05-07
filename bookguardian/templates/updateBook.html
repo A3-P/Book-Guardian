@@ -5,14 +5,14 @@
             <h2>Editar Livro</h2>
             <form id="newBookForm" action="" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
-                <label for="titleInp">Titulo:</label>
+                <label for="titleInp">Título:</label>
                 <input type="text" id="titleInp" name="title"
                 placeholder="Titulo" required value="{{ bookguardian.title }}">
 
                 <label for="authorInp">Autor(a):</label>
                 <input type="text" id="authorInp" name="author_book" placeholder="Autor" value="{{ bookguardian.author_book }}">
 
-                <label for="descriptionInp">Descricao:</label>
+                <label for="descriptionInp">Descrição:</label>
                 <textarea id="descriptionInp" name="description"
                 placeholder="Descricao"  rows="4" style="resize: vertical;">{{ bookguardian.description }}</textarea>
 
@@ -22,11 +22,11 @@
                 <div id="formSelects">
                     <label for="genre">Gênero:</label>
                     <select id="genre" name="category">
-                        <option value="G" {% if bookguardian.category == 'G' %} selected {% endif %}>Generico</option>
-                        <option value="F" {% if bookguardian.category == 'F' %} selected {% endif %}>Ficcao cientifica</option>
+                        <option value="G" {% if bookguardian.category == 'G' %} selected {% endif %}>Genérico</option>
+                        <option value="F" {% if bookguardian.category == 'F' %} selected {% endif %}>Ficção científica</option>
                         <option value="R" {% if bookguardian.category == 'R' %} selected {% endif %}>Romance</option>
                         <option value="T" {% if bookguardian.category == 'T' %} selected {% endif %}>Terror</option>
-                        <option value="NF" {% if bookguardian.category == 'NF' %} selected {% endif %}>Nao ficcao</option>
+                        <option value="NF" {% if bookguardian.category == 'NF' %} selected {% endif %}>Não ficção</option>
                         <option value="FA" {% if bookguardian.category == 'FA' %} selected {% endif %}>Fantasia</option>
                         <option value="MHQ" {% if bookguardian.category == 'MHQ' %} selected {% endif %}>Manga e HQ</option>
                     </select>
@@ -34,7 +34,7 @@
 
                     <label for="status">Status:</label>
                     <select id="status" name="read">
-                        <option value="True" {% if bookguardian.read == 'True' %} selected {% endif %}>Ja li</option>
+                        <option value="True" {% if bookguardian.read == 'True' %} selected {% endif %}>Já li</option>
                         <option value="False" {% if bookguardian.read == 'False' %} selected {% endif %}>Quero ler</option>
                     </select>
                 </div>

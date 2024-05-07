@@ -5,13 +5,13 @@
             <h2>Cadastro de Livro</h2>
             <form id="newBookForm" action="" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
-                <label for="titleInp">Titulo:</label>
+                <label for="titleInp">Título:</label>
                 <input type="text" id="titleInp" name="title" placeholder="Titulo" required>
 
                 <label for="authorInp">Autor(a):</label>
                 <input type="text" id="authorInp" name="author_book" placeholder="Autor" required>
 
-                <label for="descriptionInp">Descricao:</label>
+                <label for="descriptionInp">Descrição:</label>
                 <textarea id="descriptionInp" name="description"
                 placeholder="Descricao" required rows="4" style="resize: vertical;"></textarea>
 
@@ -21,11 +21,11 @@
                 <div id="formSelects">
                     <label for="genre">Gênero:</label>
                     <select id="genre" name="category">
-                        <option value="G">Generico</option>
-                        <option value="F">Ficcao cientifica</option>
+                        <option value="G">Genérico</option>
+                        <option value="F">Ficção cientifica</option>
                         <option value="R">Romance</option>
                         <option value="T">Terror</option>
-                        <option value="NF">Nao ficcao</option>
+                        <option value="NF">Não ficção</option>
                         <option value="FA">Fantasia</option>
                         <option value="MHQ">Manga e HQ</option>
                     </select>
@@ -33,7 +33,7 @@
 
                     <label for="status">Status:</label>
                     <select id="status" name="read">
-                        <option value="True">Ja li</option>
+                        <option value="True">Já li</option>
                         <option value="False">Quero ler</option>
                     </select>
                 </div>

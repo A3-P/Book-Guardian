@@ -2,29 +2,45 @@
 {% load static %}
 {% block content %}
 
-<div id="ladinPage" style="color: var(--color-fg);">
-    <div id="div_1">
-        <h1>
-            PROJETO BOOK GUARDIAN
-        </h1>
-        <div id="bts">
-            <a href="{% url 'bookguardian:login' %}">LOGIN</a>
-            <a href="{% url 'bookguardian:register-user' %}">CADASTRO</a>
-        </div>
-    </div>
-    <div id="ladinContainer">
-        <img src="{% static "assets/img/Capturar.png" %}" alt="">
-        <div id="div_2">
-            <h2>
-            O que é ?
-                <h3>O Book Guardian é um site open source com a finalidade de uma biblioteca virtual onde o usuário possa armazanear seus livros, mangás e HQs, editando-os de forma que lhes permite ver quais de seus livros já foram lidos, remove-los, ver suas descrições e muito mais!!</h3>
-            </h2>
-        </div>
-        <div id="div_3">
-            <h4>Esse projeto foi desenvolvido por alunos da faculdade UNIFG de Guanambi-BA, nele foi utilizado as linguagens: HTML, CSS, JavaScript, Python e seu framework Django.</h4>
-        </div>
-    </div>
 
-</div>
+    <header class="cabecalho">
+      <img class="cabecalho-imagem" src="{% static "assets/img/book2.png" %}">
+      <nav class="cabecalho-menu">
+        <button class="conteudo-principal-escrito-botao2"> <a   href="{% url 'bookguardian:login' %}"  class="cabecalho-menu-item2">LOGIN</a></button>
+        <button class="conteudo-principal-escrito-botao2"> <a   href="{% url 'bookguardian:register-user' %}"   class="cabecalho-menu-item2">REGISTRO</a></button>
+
+      </nav>
+    </header>
+
+    <main class="conteudo">
+      <section class="conteudo-principal">
+        <div class="conteudo-principal-escrito">
+          <h1 class="conteudo-principal-escrito-titulo">BookGuardian</h1>
+          <h2 class="conteudo-principal-escrito-subtitulo">Organize seus livros de forma pratica !</h2>
+          <button class="conteudo-principal-escrito-botao">  <a   href="{% url 'bookguardian:login' %}"   class="cabecalho-menu-item2">
+            Vamos lá !  </a> </button>
+        </div>
+        <img class="conteudo-principal-imagem"src="{% static "assets/img/book.png" %}" >
+      </section>
+
+      <section class="conteudo-secundario">
+        <h3 class="conteudo-secundario-titulo">O que faz por você?</h3>
+        <p class="conteudo-secundario-paragrafo">1. <strong> Catalogação Detalhada: Permite aos usuários organizar seus livros com informações como título, autor e gênero.</strong></p>
+        <p class="conteudo-secundario-paragrafo">2. <strong>Rastreamento de Leitura: Acompanhe o progresso marcando livros como lidos, em andamento ou a le</strong></p>
+        <p class="conteudo-secundario-paragrafo">3. <strong>Organização Simplificada: Facilita a organização dos livros de forma eficiente.</strong></p>
+      </section>
+
+      <section class="conteudo-secundario">
+        <h3 class="conteudo-secundario-titulo">Acesse Demo</h3>
+        <p class="conteudo-secundario-paragrafo">Login: <strong>Userdemo</strong></p>
+        <p class="conteudo-secundario-paragrafo">Senha: <strong>bookguardian</strong></p>
+         </section>
+    </main>
+
+    <footer class="rodape">
+
+        <h3 class="conteudo-principal-escrito-titulo2">BookGuardian : <a class="cabecalho-menu-item3" href="https://github.com/wendellast">wendellast</a></h3>
+    </footer>
+
 
 {% endblock content %}

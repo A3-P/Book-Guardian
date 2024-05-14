@@ -1,21 +1,22 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %} Login {% endblock title %}
 {% block content %}
 
 <div class ="login-container show" id="logincontainer" >
     <h2>Login</h2>
-    <form method="post">
+    <form method="POST">
         {% csrf_token %}
-        <input type="text" name="username" placeholder="Nome de Usuário" required>
+        <input type="text" name="email" placeholder="Digite o seu email" required>
         <br>
         <input type="password" name="password" placeholder="Senha" required>
         <br>
         <input type="submit" value="Login">
     </form>
 
-    <p>Não possui uma conta ? <a href="{% url 'bookguardian:register-user' %}" id="singIn" class="signup-link">Registre-se aqui</a></p>
+    <p>Não possui uma conta ? <a href="{% url 'userauths:sign-up' %}" id="singIn" class="signup-link">Registre-se aqui</a></p>
 </div>
 
 {% endblock content %}
+
 

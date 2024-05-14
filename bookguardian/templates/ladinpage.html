@@ -6,8 +6,8 @@
     <header class="cabecalho">
       <img class="cabecalho-imagem" src="{% static "assets/img/book2.png" %}">
       <nav class="cabecalho-menu">
-     <a   href="{% url 'bookguardian:login' %}"  class="cabecalho-menu-item2">LOGIN</a>
-      <a   href="{% url 'bookguardian:register-user' %}"   class="cabecalho-menu-item2">REGISTRO</a>
+     <a   href="{% url 'userauths:sign-up' %}"  class="cabecalho-menu-item2">LOGIN</a>
+      <a   href="{% url 'userauths:sign-in' %}"   class="cabecalho-menu-item2">REGISTRO</a>
 
       </nav>
     </header>
@@ -17,7 +17,7 @@
         <div class="conteudo-principal-escrito">
           <h1 class="conteudo-principal-escrito-titulo">BookGuardian</h1>
           <h2 class="conteudo-principal-escrito-subtitulo">Organize seus livros de forma pratica !</h2>
-          <button class="conteudo-principal-escrito-botao">  <a   href="{% url 'bookguardian:login' %}"   class="cabecalho-menu-item2">
+          <button class="conteudo-principal-escrito-botao">  <a   href="{% url 'userauths:sign-in' %}"   class="cabecalho-menu-item2">
             Vamos lá !  </a> </button>
         </div>
 

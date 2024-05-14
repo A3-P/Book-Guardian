@@ -27,6 +27,7 @@ body {
     font-size: 2rem;
 }
 
+input[type="email"],
 input[type="text"],
 input[type="password"],
 input[type="submit"] {
@@ -67,6 +68,19 @@ hr {
     width: 100%;
     border: 1px solid var(--color-border);
 }
+#passwordStatus{
+    background-color: #ff41419f;
+    border-radius: 1rem;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    height: 3rem;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 900;
+    color: var(--color-fg);
+}
 
 /* animacao */
 
@@ -102,3 +116,16 @@ hr {
     animation: rotateIn 0.5s ease-in-out forwards;
 }
 /* animacao */
+
+
+@media (max-width: 600px) {
+    .login-container{
+        width: 75%;
+        padding: 2rem 1.2rem 1rem 1.2rem;
+    }
+    .login-container p{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+}

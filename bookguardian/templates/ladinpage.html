@@ -1,46 +1,70 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+<header>
+    <div class="menu-bg">
+        <div class="menu">
+            <div class="menu__logo">
+                <img class="cabecalho-imagem" src="{% static "assets/img/bosok2.png" %}">
+            </div>
+            <nav class="nav">
+                <ul class="nav__list" id="xd">
+                    <li>
+                        <a   href="{% url 'userauths:sign-in' %}"  class="cabecalho-menu-item2">LOGIN</a>
+                        <a   href="{% url 'userauths:sign-up' %}"   class="cabecalho-menu-item2">REGISTRO</a>
+
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <h1 class="intro">BookGuardian </h1>
+</header>
+
+<hr>
+
+<section class="somos" id="somos">
+    <h2 class="section__titulo">O que é?</h2>
+    <div class="somos-c">
+        <div class="somos-c__texto">
+            <p class="somos-c__texto2">
+                O Bookguardian é um site projetado especificamente para ajudar pessoas como você a organizar suas coleções de livros.
 
 
-    <header class="cabecalho">
-      <img class="cabecalho-imagem" src="{% static "assets/img/book2.png" %}">
-      <nav class="cabecalho-menu">
-     <a   href="{% url 'userauths:sign-up' %}"  class="cabecalho-menu-item2">LOGIN</a>
-      <a   href="{% url 'userauths:sign-in' %}"   class="cabecalho-menu-item2">REGISTRO</a>
+            </p>
+            <br>
+            <p>Com uma interface intuitiva e recursos inteligentes, ele simplifica o gerenciamento do conteúdo de sua biblioteca, tornando a experiência de catalogar e encontrar seus livros uma brisa.</p>
+        </div>
+        <div class="somos-c__img">
+            <img src="{% static "assets/img/somos.png" %}" alt="Quem somos">
+        </div>
+    </div>
+</section>
 
-      </nav>
-    </header>
+<hr>
 
-    <main class="conteudo">
-      <section class="conteudo-principal">
-        <div class="conteudo-principal-escrito">
-          <h1 class="conteudo-principal-escrito-titulo">BookGuardian</h1>
-          <h2 class="conteudo-principal-escrito-subtitulo">Organize seus livros de forma pratica !</h2>
-          <button class="conteudo-principal-escrito-botao">  <a   href="{% url 'userauths:sign-in' %}"   class="cabecalho-menu-item2">
-            Vamos lá !  </a> </button>
+<section class="cursos" id="cursos">
+    <h2 class="section__titulo">Acesse Demo</h2>
+    <div class="cursos-c">
+        <div class="curso">
+            <img src="{% static "assets/img/ai.png" %}" alt="Inteligência Artificial" class="curso__img">
+            <h3 class="curso__titulo">Email: wende</h3>
+            <h3 class="curso__titulo">Senha: wende</h3>
+
+
+        </div>
+</section>
+<hr>
+<section class="newsletter">
+    <div class="newsletter-c">
+        <div class="newsletter-info">
+
+            <p class="newsletter-info__descricao">Estude tira uma exelente nota</p>
+
         </div>
 
-      </section>
-
-      <section class="conteudo-secundario">
-        <h3 class="conteudo-secundario-titulo">O que faz por você?</h3>
-        <p class="conteudo-secundario-paragrafo">1. <strong> Catalogação Detalhada: Permite aos usuários organizar seus livros com informações como título, autor e gênero.</strong></p>
-        <p class="conteudo-secundario-paragrafo">2. <strong>Rastreamento de Leitura: Acompanhe o progresso marcando livros como lidos, em andamento ou a le</strong></p>
-        <p class="conteudo-secundario-paragrafo">3. <strong>Organização Simplificada: Facilita a organização dos livros de forma eficiente.</strong></p>
-      </section>
-
-      <section class="conteudo-secundario">
-        <h3 class="conteudo-secundario-titulo">Acesse Demo</h3>
-        <p class="conteudo-secundario-paragrafo">Login: <strong>Userdemo</strong></p>
-        <p class="conteudo-secundario-paragrafo">Senha: <strong>bookguardian</strong></p>
-         </section>
-    </main>
-
-    <footer class="rodape">
-
-        <h3 class="conteudo-principal-escrito-titulo2">BookGuardian : <a class="cabecalho-menu-item3" href="https://github.com/wendellast">wendellast</a></h3>
-    </footer>
-
+    </div>
+</section>
 
 {% endblock content %}

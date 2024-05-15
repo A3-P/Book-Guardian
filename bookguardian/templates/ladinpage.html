@@ -5,16 +5,11 @@
     <div class="menu-bg">
         <div class="menu">
             <div class="menu__logo">
-                <img class="cabecalho-imagem" src="{% static "assets/img/bosok2.png" %}">
+                <img class="cabecalho-imagem" src="{% static "assets/img/book2.png" %}">
             </div>
-            <nav class="nav">
-                <ul class="nav__list" id="xd">
-                    <li>
-                        <a   href="{% url 'userauths:sign-in' %}"  class="cabecalho-menu-item2">LOGIN</a>
-                        <a   href="{% url 'userauths:sign-up' %}"   class="cabecalho-menu-item2">REGISTRO</a>
-
-                    </li>
-                </ul>
+            <nav class="nav__list" id="xd">
+                <a   href="{% url 'userauths:sign-in' %}"  class="cabecalho-menu-item2">LOGIN</a>
+                <a   href="{% url 'userauths:sign-up' %}"   class="cabecalho-menu-item2">REGISTRO</a>
             </nav>
         </div>
     </div>
@@ -24,14 +19,12 @@
 
 <hr>
 
-<section class="somos" id="somos">
+<section class="somos">
     <h2 class="section__titulo">O que é?</h2>
     <div class="somos-c">
         <div class="somos-c__texto">
             <p class="somos-c__texto2">
                 O Bookguardian é um site projetado especificamente para ajudar pessoas como você a organizar suas coleções de livros.
-
-
             </p>
             <br>
             <p>Com uma interface intuitiva e recursos inteligentes, ele simplifica o gerenciamento do conteúdo de sua biblioteca, tornando a experiência de catalogar e encontrar seus livros uma brisa.</p>
@@ -44,27 +37,17 @@
 
 <hr>
 
-<section class="cursos" id="cursos">
+<section class="cursos">
     <h2 class="section__titulo">Acesse Demo</h2>
     <div class="cursos-c">
         <div class="curso">
             <img src="{% static "assets/img/ai.png" %}" alt="Inteligência Artificial" class="curso__img">
             <h3 class="curso__titulo">Email: wende</h3>
             <h3 class="curso__titulo">Senha: wende</h3>
-
-
         </div>
 </section>
-<hr>
-<section class="newsletter">
-    <div class="newsletter-c">
-        <div class="newsletter-info">
-
-            <p class="newsletter-info__descricao">Estude tira uma exelente nota</p>
-
-        </div>
-
-    </div>
-</section>
+<footer class="footer">
+    <p>aaaaaaaaaaaaaaaaaaaaaa</p>
+</footer>
 
 {% endblock content %}

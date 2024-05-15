@@ -41,22 +41,18 @@ html {
 }
 
 body {
-    background-color: var(--clr-white);
+    background-color: var(--color-bg);
     font-family: var(--ff-primary);
+    color: var(--color-fg);
+    margin: 0;
 }
 
-#xd{
-    color: white;
-
-
-
-}
 
 hr {
     border: none;
-    background-color: var(--clr-pink-dark);
-    height: 2px;
-    width: 140px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.3), var(--color-fg), rgba(0, 0, 0, 0.3));    height: 2px;
+    width: 60%;
+    height: 1px;
     margin: 20px auto;
 }
 
@@ -70,7 +66,6 @@ p {
     font-size: 3em;
     margin-bottom: 10px;
 }
-
 img {
     display: block;
     max-width: 100%;
@@ -81,29 +76,58 @@ img {
 /**********************************/
 
 .menu-bg {
-    background-color: var(--clr-green-light);
+    background-color: var(--color-card);
+    margin: 0;
+    width: 100%;
+    height: 5rem;
 }
 
 .menu {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 960px;
-	margin: 0 auto;
+    width: 100%;
+    height: 100%;
+	margin: 0;
 	flex-wrap: wrap;
 }
 
 .menu__logo {
-    margin: 10px;
+    height: 100%;
+    width:30%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
 }
-
-.nav__list {
+.cabecalho-imagem{
+    height: 90%;
+    margin-left: 10px;
+}
+.nav__list{
     display: flex;
     flex-wrap: wrap;
+    list-style:none;
+    margin-right: 1rem;
 }
 
 .nav__link {
     padding: 20px 10px;
+}
+
+.cabecalho-menu-item2 {
+    font-family: 'Sarala', sans-serif;
+    color: #fff;
+    font-weight: 400;
+    font-size: 23px;
+
+    background-color: var(--color-main);
+    border: none;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    border-radius: 12px;
+    padding: 7px 15px 7px 15px;
+    margin: 10px;
 }
 
 /**********************************/
@@ -123,29 +147,29 @@ img {
 /**********************************/
 
 .somos {
-    max-width: 900px;
-    margin: 0 auto;
-
-
+    width: 100%;
+    margin: 0;
+    padding: 1rem;
     font-size: 18px;
+    flex-direction: column;
 }
 
-.somos-c {
+.somos-c, .somos {
     display: flex;
 	flex-wrap: wrap;
 	align-items: center;
+    justify-content: center;
 }
-
+.somos-c{
+    max-width: 900px;
+}
 .somos-c__texto {
     flex: 6 1 160px;
-
     letter-spacing: 4px;
 }
 
 .somos-c__texto2 {
     flex: 6 1 160px;
-    ;
-
     word-spacing: normal;
     letter-spacing: 4px;
 }
@@ -158,9 +182,6 @@ img {
 /**********************************/
 /* 5. Nossos cursos
 /**********************************/
-.bob{
-    color: rgb(82, 150, 240);
-}
 .cursos {
     max-width: 960px;
     margin: 0 auto;
@@ -184,253 +205,11 @@ img {
 }
 
 /**********************************/
-/* 6. Planos
-/**********************************/
-
-.planos {
-    background: var(--clr-pink-light);
-}
-
-.planos-c {
-    max-width: 960px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-	justify-content: center;
-	align-items: flex-end;
-}
-
-.plano {
-    width: 290px;
-    margin: 10px 10px;
-    border: 2px solid var(--clr-green-light);
-}
-
-.plano__titulo {
-    font-size: 3em;
-    font-weight: bold;
-    text-align: center;
-    margin: 10px auto;
-}
-
-.plano__preco {
-    font-size: 3em;
-    display: block;
-    text-align: center;
-    font-weight: bold;
-}
-
-.plano__preco sup {
-    position: relative;
-    font-size: 1.5rem;
-    top: -20px;
-}
-
-.plano__divisor {
-    background: var(--clr-green-light);
-    width: 20px;
-    margin: 5px auto;
-}
-
-.plano-lista {
-    max-width: 195px;
-    margin: 0 auto;
-}
-
-.plano-lista__item {
-    margin: 10px 0;
-	font-style: italic;
-    display: flex;
-    align-items: center;
-}
-
-
-
-.plano-lista__item::before {
-    content: "";
-    display: block;
-    width: 5px;
-    height: 5px;
-    margin-right: 5px;
-    border-radius: 5px;
-    background: var(--clr-green-light);
-}
-
-.plano__btn-comprar {
-    display: block;
-    max-width: 180px;
-    font-size: 2em;
-    font-weight: bold;
-    margin: 15px auto;
-    padding: 10px;
-    text-align: center;
-    text-transform: uppercase;
-    border: 2px solid var(--clr-green-light);
-}
-
-.plano:last-child {
-    background: var(--clr-green-light);
-}
-
-.plano:last-child, .plano:last-child .plano__btn-comprar {
-    border: 2px solid var(--clr-pink-dark);
-}
-
-.plano:last-child .plano-lista__item::before, .plano:last-child .plano__divisor{
-    background: var(--clr-pink-dark);
-}
-
-@media (max-width: 800px) {
-    .plano:nth-child(3) {
-        order: -2
-    }
-
-    .plano:nth-child(2) {
-        order: -1
-    }
-}
-
-/**********************************/
-/* 7. Vantagens
-/**********************************/
-
-.vantagens {
-    max-width: 960px;
-	margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.vantagem {
-    max-width: 240px;
-    margin: 10px;
-}
-.bb{
-    color: rgba(57, 42, 197, 0.329);
-
-}
-.vantagem__titulo {
-    font-size: 1.7em;
-    margin-bottom: 5px;
-    margin-left: 10px;
-}
-
-.vantagem__titulo::before {
-    content: "";
-    display: inline-block;
-    width: 10px;
-    height: 25px;
-    margin-right: 5px;
-}
-
-.vantagem:nth-of-type(3n+1) .vantagem__titulo::before {
-    background: var(--clr-green-light);
-}
-
-.vantagem:nth-of-type(3n+2) .vantagem__titulo::before {
-    background: var(--clr-pink-dark);
-}
-
-.vantagem:nth-of-type(3n+3) .vantagem__titulo::before {
-    background: var(--clr-green-dark);
-}
-
-@media (max-width: 800px) {
-    .vantagem {
-        max-width: 220px;
-    }
-}
-
-/**********************************/
-/* 8. Newsletter
-/**********************************/
-
-.newsletter {
-    background: var(--clr-green-light);
-}
-
-.newsletter-c {
-    max-width: 960px;
-    margin: 0 auto;
-	padding: 50px 0;
-    display: flex;
-    flex-wrap: wrap;
-    height: 10px;
-}
-
-.cabecalho-menu-item2 {
-    font-family: 'Sarala', sans-serif;
-    color: #2F2325;
-    font-weight: 400;
-    font-size: 24px;
-
-    background-color: #ECD6C4;
-    width: 180px;
-    height: 60px;
-    border: none;
-
-    border-radius: 20px;
-    font-family: 'Sarala', sans-serif;
-    font-weight: 400;
-    font-size: 24px;
-    color: #2F2325;
-
-  }
-
-.newsletter-info {
-	flex: 1 1 260px;
-    padding-left: 10px;
-}
-
-.newsletter-info__titulo {
-    font-size: 2.62em;
-    font-weight: bold;
-}
-
-.newsletter-info__descricao {
-    font-style: italic;
-}
-
-.newsletter-form {
-	flex: 2 1 260px;
-    display: flex;
-	flex-wrap: wrap;
-}
-
-.newsletter-form__input {
-	flex: 3 1 260px;
-    font-size: 1.25em;
-    width: 325px;
-    color: black;
-    font-style: italic;
-    font-family: var(--ff-primary);
-    border: 10px solid var(--clr-pink-dark);
-    padding: 10px;
-    margin: 0px;
-    border-radius: 0px;
-}
-
-.newsletter-form__submit {
-	flex: 1 1 260px;
-    width: 192px;
-    font-family: var(--ff-primary);
-    font-size: 24px;
-    font-weight: bold;
-    text-transform: uppercase;
-    background: var(--clr-pink-dark);
-    color: black;
-    cursor: pointer;
-    border: 0px;
-    padding: 15px;
-}
-
-/**********************************/
-/* 9. Footer
+/* 6. Footer
 /**********************************/
 
 .footer {
-    background: var(--clr-pink-light);
+    background-color: var(--color-subCard);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;

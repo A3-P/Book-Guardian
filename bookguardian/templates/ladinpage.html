@@ -2,7 +2,6 @@
 {% load static %}
 {% block content %}
 <header>
-    <div class="menu-bg">
         <div class="menu">
             <div class="menu__logo">
                 <img class="cabecalho-imagem" src="{% static "assets/img/book2.png" %}">
@@ -12,8 +11,6 @@
                 <a   href="{% url 'userauths:sign-up' %}"   class="cabecalho-menu-item2">REGISTRO</a>
             </nav>
         </div>
-    </div>
-
     <h1 class="intro">BookGuardian </h1>
 </header>
 
@@ -41,13 +38,30 @@
     <h2 class="section__titulo">Acesse Demo</h2>
     <div class="cursos-c">
         <div class="curso">
-            <img src="{% static "assets/img/ai.png" %}" alt="Inteligência Artificial" class="curso__img">
-            <h3 class="curso__titulo">Email: wende</h3>
-            <h3 class="curso__titulo">Senha: wende</h3>
+            <img src="{% static "assets/img/004--Streamline-Zoo-Office.png" %}"
+            alt="Inteligência Artificial" class="curso__img">
+            <div class="demo">
+                <h3 class="curso__titulo">Email: <span>demoUser@gmail.com</span></h3>
+                <h3 class="curso__titulo">Senha: <span>demoUser</span></h3>
+            </div>
+
         </div>
 </section>
 <footer class="footer">
-    <p>aaaaaaaaaaaaaaaaaaaaaa</p>
+    <div class="footer-c">
+        <div class="membros">
+            <h3>Equipe</h3>
+            <ul>
+                <li><a href="https://github.com/Andra-sun/">Camile</a></li>
+                <li><a href="https://github.com/wendellast">Wendel</a></li>
+                <li><a href="https://github.com/nadox00">Fernando</a></li>
+                <li><a href="https://github.com/VilasBoass">Marcos</a></li>
+                <li><a href="https://github.com/LuyysHenriqueKuromi">Luis</a></li>
+            </ul>
+        </div>
+        <div class="membros"><h3>linguagens</h3><ul><li>Python</li><li>JavaScript</li><li>Html5</li><li>CSS</li></ul></div>
+    </div>
+    <p>Abril 2024</p>
 </footer>
 
 {% endblock content %}

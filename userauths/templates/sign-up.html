@@ -18,12 +18,11 @@
         <input class="button" type="submit" value="Register" id="registerBtnSubimit">
     </form>
 
-    <p>Ja possui uma conta ? <a href="{% url 'userauths:sign-up' %}" id="logIn" class="signup-link">Entre aqui</a></p>
+    <p>Ja possui uma conta ? <a href="{% url 'userauths:sign-in' %}" id="logIn" class="signup-link">Entre aqui</a></p>
 </div>
 <script>
     const passwordAlert = document.getElementById("passwordStatus");
     const passwordInput = document.getElementById("password1");
-    const password2 = document.getElementById("password2").value;
 
     passwordInput.addEventListener("input", function() {
         const passwordValue = passwordInput.value;

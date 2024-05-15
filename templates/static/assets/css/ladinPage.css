@@ -50,9 +50,9 @@ body {
 
 hr {
     border: none;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.3), var(--color-fg), rgba(0, 0, 0, 0.3));    height: 2px;
-    width: 60%;
-    height: 1px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.3), var(--color-border), rgba(0, 0, 0, 0.3));    height: 2px;
+    width: 50%;
+    height: 1.5px;
     margin: 20px auto;
 }
 
@@ -75,20 +75,16 @@ img {
 /* 2. Menu
 /**********************************/
 
-.menu-bg {
-    background-color: var(--color-card);
-    margin: 0;
-    width: 100%;
-    height: 5rem;
-}
+
 
 .menu {
+    background-color: var(--color-card);
+    margin: 0;
+    height: 5rem;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
-    height: 100%;
-	margin: 0;
 	flex-wrap: wrap;
 }
 
@@ -104,6 +100,8 @@ img {
     margin-left: 10px;
 }
 .nav__list{
+    width:60%;
+    justify-content: right;
     display: flex;
     flex-wrap: wrap;
     list-style:none;
@@ -115,28 +113,57 @@ img {
 }
 
 .cabecalho-menu-item2 {
-    font-family: 'Sarala', sans-serif;
+    font-family: var(--ff-primary);
     color: #fff;
     font-weight: 400;
-    font-size: 23px;
+    font-size: calc(0.9em + 0.6vw);
 
     background-color: var(--color-main);
+    transition: all 0.3s ease;
     border: none;
     text-decoration: none;
     text-transform: uppercase;
+    text-align: center;
 
     border-radius: 12px;
     padding: 7px 15px 7px 15px;
     margin: 10px;
+
+    max-width: 46%;
+}
+.cabecalho-menu-item2:hover{
+    background-color: var(--color-main-hover);
+    transform: scale(1.05);
 }
 
+@media (max-width: 700px) {
+    .cabecalho-menu-item2{
+        font-size: calc(2rem - 15px);
+    }
+}
+@media (max-width: 400px) {
+    .cabecalho-menu-item2{
+        font-size: calc(1.2rem - 5px);
+    }
+}
+@media (max-width: 340px) {
+    .menu__logo{
+       display: none;
+    }
+    .nav__list{
+        width: 100%;
+        justify-content: center;
+        margin: 0;
+        align-items: center;
+    }
+}
 /**********************************/
 /* 3. Header
 /**********************************/
 
 .intro {
     font-weight: bold;
-    font-size: 3em;
+    font-size: 3rem;
     text-align: center;
     margin: 0 auto;
     padding: 25px 0;
@@ -194,14 +221,37 @@ img {
 }
 
 .curso {
-    width: 280px;
+    width: 100%;
     margin: 0 20px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
-
+.curso img{
+    width: 250px;
+}
+.demo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+}
 .curso__titulo {
-    font-size: 1.5em;
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    font-size: 1.6rem;
+    text-align: left;
+    align-items: baseline;
     margin: 10px 0 5px 0;
+    font-weight: 300;
+}
+.curso__titulo span{
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-left: 20px;
 }
 
 /**********************************/
@@ -212,11 +262,35 @@ img {
     background-color: var(--color-subCard);
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     justify-content: space-between;
-    padding: 55px calc((100% - 960px) / 2);
+    text-align: center;
+    padding: 30px calc((100% - 960px) / 2);
+    padding-bottom: 5px;
+}
+.footer-c{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
-.footer__copyright, .footer__logo {
-    padding: 0px 10px;
+.membros{
+    margin-left: 2rem;
 }
-
+.membros ul{
+    list-style: none;
+    text-align: left;
+    padding: 0;
+}
+.membros ul li a{
+    text-decoration: none;
+    text-transform: capitalize;
+    color: var(--color-fg);
+}
+.membros ul li{
+    margin-bottom: 10px;
+}
+.membros ul li a:hover{
+    color: var(--color-fg-hover);
+}

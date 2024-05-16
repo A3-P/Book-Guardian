@@ -38,7 +38,7 @@
                     </a>
             </div>
             <div id="subMobileMenu">
-                <a href="{%url 'userauths:sign-out'%}">Sair</a>
+                <a href="{%url 'bookguardian:logout'%}">Sair</a>
             </div>
         </h6>
         <h6 id="profileH6">
@@ -46,18 +46,18 @@
             <div id="profileMenuHeader">
                 {% if not request.user.is_authenticated %}
 
-                <a href="{% url 'userauths:sing-in' %}">
+                <a href="{% url 'bookguardian:login' %}">
                     <button id="goToLoginPage">Entrar</button>
                 </a>
 
-                <a href="{% url 'userauths:sign-up' %}">
+                <a href="{% url 'bookguardian:register-user' %}">
                     <button id="goToRegisterPage">Cadastrar</button>
                 </a>
 
                 {% endif %} {% if request.user.is_authenticated %}
 
                 <div id="userNav">
-                    <a href="{% url 'userauths:sign-out' %}">
+                    <a href="{% url 'bookguardian:logout' %}">
                         <i class="fi fi-rr-exit" id="logout"> Sair</i>
                     </a>
                 </div>

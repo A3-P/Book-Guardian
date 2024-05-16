@@ -18,8 +18,8 @@ urlpatterns = [
     path('book-delete/<int:pk>/', views.PageDeleteBook.as_view(), name='bookdelete'),
 
 
-    # # User
-    # path("login/", views.LoginRoute.as_view(), name="login"),
-    # path("register/", views.RegisterUser.as_view(), name="register-user"),
-    # path("logout/", views.custom_logout, name="logout"),
+    # User
+    path("login/", views.LoginRoute.as_view(), name="login"),
+    path("register/", views.RegisterUser.as_view(), name="register-user"),
+    path("logout/", views.custom_logout, name="logout"),
 ]

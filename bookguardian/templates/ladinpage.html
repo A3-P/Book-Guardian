@@ -1,67 +1,30 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<header>
-        <div class="menu">
-            <div class="menu__logo">
-                <img class="cabecalho-imagem" src="{% static "assets/img/book2.png" %}">
-            </div>
-            <nav class="nav__list" id="xd">
-                <a   href="{% url 'userauths:sign-in' %}"  class="cabecalho-menu-item2">LOGIN</a>
-                <a   href="{% url 'userauths:sign-up' %}"   class="cabecalho-menu-item2">REGISTRO</a>
-            </nav>
-        </div>
-    <h1 class="intro">BookGuardian </h1>
-</header>
 
-<hr>
-
-<section class="somos">
-    <h2 class="section__titulo">O que é?</h2>
-    <div class="somos-c">
-        <div class="somos-c__texto">
-            <p class="somos-c__texto2">
-                O Bookguardian é um site projetado especificamente para ajudar pessoas como você a organizar suas coleções de livros.
-            </p>
-            <br>
-            <p>Com uma interface intuitiva e recursos inteligentes, ele simplifica o gerenciamento do conteúdo de sua biblioteca, tornando a experiência de catalogar e encontrar seus livros uma brisa.</p>
-        </div>
-        <div class="somos-c__img">
-            <img src="{% static "assets/img/somos.png" %}" alt="Quem somos">
+<div id="ladinPage" style="color: var(--color-fg);">
+    <div id="div_1">
+        <h1>
+            PROJETO BOOK GUARDIAN
+        </h1>
+        <div id="bts">
+            <a href="{% url 'bookguardian:login' %}">LOGIN</a>
+            <a href="{% url 'bookguardian:register-user' %}">CADASTRO</a>
         </div>
     </div>
-</section>
-
-<hr>
-
-<section class="cursos">
-    <h2 class="section__titulo">Acesse Demo</h2>
-    <div class="cursos-c">
-        <div class="curso">
-            <img src="{% static "assets/img/004--Streamline-Zoo-Office.png" %}"
-            alt="Inteligência Artificial" class="curso__img">
-            <div class="demo">
-                <h3 class="curso__titulo">Email: <span>demoUser@gmail.com</span></h3>
-                <h3 class="curso__titulo">Senha: <span>demoUser</span></h3>
-            </div>
-
+    <div id="ladinContainer">
+        <img src="{% static "assets/img/Capturar.png" %}" alt="">
+        <div id="div_2">
+            <h2>
+            O que é ?
+                <h3>O Book Guardian é um site open source com a finalidade de uma biblioteca virtual onde o usuário possa armazanear seus livros, mangás e HQs, editando-os de forma que lhes permite ver quais de seus livros já foram lidos, remove-los, ver suas descrições e muito mais!!</h3>
+            </h2>
         </div>
-</section>
-<footer class="footer">
-    <div class="footer-c">
-        <div class="membros">
-            <h3>Equipe</h3>
-            <ul>
-                <li><a href="https://github.com/Andra-sun/">Camile</a></li>
-                <li><a href="https://github.com/wendellast">Wendel</a></li>
-                <li><a href="https://github.com/nadox00">Fernando</a></li>
-                <li><a href="https://github.com/VilasBoass">Marcos</a></li>
-                <li><a href="https://github.com/LuyysHenriqueKuromi">Luis</a></li>
-            </ul>
+        <div id="div_3">
+            <h4>Esse projeto foi desenvolvido por alunos da faculdade UNIFG de Guanambi-BA, nele foi utilizado as linguagens: HTML, CSS, JavaScript, Python e seu framework Django.</h4>
         </div>
-        <div class="membros"><h3>linguagens</h3><ul><li>Python</li><li>JavaScript</li><li>Html5</li><li>CSS</li></ul></div>
     </div>
-    <p>Abril 2024</p>
-</footer>
+
+</div>
 
 {% endblock content %}

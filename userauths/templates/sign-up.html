@@ -3,9 +3,10 @@
 {% block content %}
 <div class ="login-container show" id="singincontainer" >
     <h2>Cadastro</h2>
-    <form method="POST" action="{% url 'bookguardian:register-user' %}">
+    <form method="POST" action="{% url 'userauths:sign-up' %}">
         {% csrf_token %}
         {{form.username}}
+        {{form.email}}
 
         {{form.password1}}
         <div id="passwordStatus">
@@ -17,12 +18,11 @@
         <input class="button" type="submit" value="Register" id="registerBtnSubimit">
     </form>
 
-    <p>Ja possui uma conta ? <a href="{% url 'bookguardian:login' %}" id="logIn" class="signup-link">Entre aqui</a></p>
+    <p>Ja possui uma conta ? <a href="{% url 'userauths:sign-in' %}" id="logIn" class="signup-link">Entre aqui</a></p>
 </div>
 <script>
     const passwordAlert = document.getElementById("passwordStatus");
     const passwordInput = document.getElementById("password1");
-    const password2 = document.getElementById("password2").value;
 
     passwordInput.addEventListener("input", function() {
         const passwordValue = passwordInput.value;
@@ -45,3 +45,4 @@
     });
 </script>
 {% endblock content %}
+

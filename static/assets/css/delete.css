@@ -1,0 +1,76 @@
+#deleteContainer{
+    background-color: var(--color-card);
+    border-radius: 20px;
+    padding: 2rem;
+    width: 50%;
+    height: auto;
+    border: 3px solid #f52222;
+    color: #f52222;
+}
+#deleteContainer b{
+    color: var(--color-fg);
+    text-transform: uppercase;
+}
+.deletBtn{
+    height: 3rem;
+    width: 10rem;
+    border: none;
+    background-color: var(--color-main);
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 900;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+#btnNavDelete{
+    margin-top: 5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+#delete:hover{
+    background-color: #ce2f2f;
+}
+#cancel{
+    border: none;
+    background-color: var(--color-main);
+}
+#cancel:hover{
+    background-color: var(--color-main-hover);
+}
+
+@media (max-width: 600px) {
+    #deleteContainer{
+        width: 70%;
+        padding: 1rem;
+        font-size: 0.8rem;
+        text-align: left;
+    }
+
+    #btnNavDelete{
+        flex-direction: column;
+        margin: 0;
+    }
+    #deleteContainer h1{
+        word-wrap: break-word;
+        display: block;
+    }
+
+    #deleteContainer b{
+        word-wrap: break-word;
+        font-size: 0.8em;
+    }
+
+    .deletBtn, #cancel{
+        width: 80%;
+        margin-top: 3rem;
+    }
+}
+
+

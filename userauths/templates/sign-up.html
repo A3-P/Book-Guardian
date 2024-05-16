@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class ="login-container show" id="singincontainer" >
+    <h2>Cadastro</h2>
+    <form method="POST" action="{% url 'userauths:sign-up' %}">
+        {% csrf_token %}
+        {{form.username}}
+        {{form.email}}
+
+        {{form.password1}}
+        <div id="passwordStatus">
+            X Minimo de 6 letras
+        </div>
+
+        {{form.password2}}
+
+        <input class="button" type="submit" value="Register" id="registerBtnSubimit">
+    </form>
+
+    <p>Ja possui uma conta ? <a href="{% url 'userauths:sign-in' %}" id="logIn" class="signup-link">Entre aqui</a></p>
+</div>
+<script>
+    const passwordAlert = document.getElementById("passwordStatus");
+    const passwordInput = document.getElementById("password1");
+
+    passwordInput.addEventListener("input", function() {
+        const passwordValue = passwordInput.value;
+        passwordAlert.style.display="flex";
+        passwordAlert.style.animation="slideDown 10s ease forwards";
+
+        if (passwordValue.length < 6) {
+            passwordAlert.innerHTML = "X Mínimo de 6 letras";
+            passwordAlert.style.backgroundColor = "#ff41419f";
+
+        } else {
+            passwordAlert.innerHTML = "✓ Mínimo de 6 letras";
+            passwordAlert.style.backgroundColor = "#57ff419f";
+        }
+    });
+    passwordInput.addEventListener("blur", function() {
+        passwordAlert.style.display = "none";
+        passwordAlert.style.animation="slideUp 10s ease forwards";
+
+    });
+</script>
+{% endblock content %}
+

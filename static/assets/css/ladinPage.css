@@ -1,185 +1,443 @@
-#ladinPage {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin: 10px 20px 0 100px;
-    padding: 0;
-    overflow: auto;
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Sarala:wght@400;700&display=swap');
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
 }
 
-#ladinContainer {
-    height: 100%;
-    margin-bottom: 0;
-    margin-top: 40px;
+/**********************************/
+/* 0. Variáveis
+/* 1. Container
+/* 2. Menu
+/* 3. Header
+/* 4. Quem somos
+/* 5. Nossos cursos
+/* 6. Planos
+/* 7. Vantagens
+/* 8. Newsletter
+/* 9. Footer
+/**********************************/
+
+/**********************************/
+/* 0. Variáveis
+/**********************************/
+
+:root {
+    --ff-primary: "Sarala", Helvetica, Arial, sans-serif;
+
+    --clr-green-dark: #049A40;
+    --clr-green-light:#0BF96A;
+    --clr-pink-dark:  #E10BF9;
+    --clr-pink-light: #F3A0FD;
+    --clr-white:      #F5F5F5;
+}
+
+/**********************************/
+/* 1. Estilos gerais
+/**********************************/
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--clr-white);
+    font-family: var(--ff-primary);
+}
+
+#xd{
+    color: white;
+
+
+
+}
+
+hr {
+    border: none;
+    background-color: var(--clr-pink-dark);
+    height: 2px;
+    width: 140px;
+    margin: 20px auto;
+}
+
+p {
+    line-height: 21.82px;
+    padding: 0 10px;
+}
+
+.section__titulo {
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/**********************************/
+/* 2. Menu
+/**********************************/
+
+.menu-bg {
+    background-color: var(--clr-green-light);
+}
+
+.menu {
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: space-between;
-    overflow: auto;
-}
-#ladinContainer img {
-    position: fixed;
-    top: 100px;
-    right: 0;
-    width: 100%;
-    z-index: -1;
-    opacity: calc(60%);
-}
-#div_2 {
-    background-color: var(--color-card);
-    border-radius: 8px;
-    padding: 40px;
-    width: 35%;
-    height: 60%;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-        rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    margin-bottom: 1.5rem;
+    max-width: 960px;
+	margin: 0 auto;
+	flex-wrap: wrap;
 }
 
-#div_2 h3 {
-    text-align: left;
-    font-size: 22px;
-    font-weight: 500;
+.menu__logo {
+    margin: 10px;
 }
 
-#div_3 {
-    background-color: var(--color-card);
-    border-radius: 8px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-        rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    padding: 40px;
-    width: 35%;
-    height: 20%;
-    margin-top: 1.5rem;
+.nav__list {
     display: flex;
+    flex-wrap: wrap;
+}
+
+.nav__link {
+    padding: 20px 10px;
+}
+
+/**********************************/
+/* 3. Header
+/**********************************/
+
+.intro {
+    font-weight: bold;
+    font-size: 3em;
+    text-align: center;
+    margin: 0 auto;
+    padding: 25px 0;
+}
+
+/**********************************/
+/* 4. Quem somos
+/**********************************/
+
+.somos {
+    max-width: 900px;
+    margin: 0 auto;
+
+
+    font-size: 18px;
+}
+
+.somos-c {
+    display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.somos-c__texto {
+    flex: 6 1 160px;
+
+    letter-spacing: 4px;
+}
+
+.somos-c__texto2 {
+    flex: 6 1 160px;
+    ;
+
+    word-spacing: normal;
+    letter-spacing: 4px;
+}
+
+.somos-c__img {
+    flex: 1 1 350px;
+    padding: 0 10px;
+}
+
+/**********************************/
+/* 5. Nossos cursos
+/**********************************/
+.bob{
+    color: rgb(82, 150, 240);
+}
+.cursos {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.cursos-c {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    margin-bottom: 1rem;
 }
 
-#div_3 h4 {
-    text-align: left;
-    font-size: 22px;
-    font-weight: 500;
+.curso {
+    width: 280px;
+    margin: 0 20px;
 }
 
-#div_1 {
+.curso__titulo {
+    font-size: 1.5em;
+    text-align: center;
+    margin: 10px 0 5px 0;
+}
+
+/**********************************/
+/* 6. Planos
+/**********************************/
+
+.planos {
+    background: var(--clr-pink-light);
+}
+
+.planos-c {
+    max-width: 960px;
+    margin: 0 auto;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 80%;
-    height: 10%;
-    margin-top: 10px;
+    flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-end;
 }
-#div_1 a {
-    background-color: var(--color-btn);
-    border-radius: 6px;
-    height: auto;
-    color: #fff;
-    width: 8rem;
+
+.plano {
+    width: 290px;
+    margin: 10px 10px;
+    border: 2px solid var(--clr-green-light);
+}
+
+.plano__titulo {
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px auto;
+}
+
+.plano__preco {
+    font-size: 3em;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+}
+
+.plano__preco sup {
+    position: relative;
+    font-size: 1.5rem;
+    top: -20px;
+}
+
+.plano__divisor {
+    background: var(--clr-green-light);
+    width: 20px;
+    margin: 5px auto;
+}
+
+.plano-lista {
+    max-width: 195px;
+    margin: 0 auto;
+}
+
+.plano-lista__item {
+    margin: 10px 0;
+	font-style: italic;
+    display: flex;
+    align-items: center;
+}
+
+
+
+.plano-lista__item::before {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 5px;
+    margin-right: 5px;
+    border-radius: 5px;
+    background: var(--clr-green-light);
+}
+
+.plano__btn-comprar {
+    display: block;
+    max-width: 180px;
+    font-size: 2em;
+    font-weight: bold;
+    margin: 15px auto;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    border: 2px solid var(--clr-green-light);
+}
+
+.plano:last-child {
+    background: var(--clr-green-light);
+}
+
+.plano:last-child, .plano:last-child .plano__btn-comprar {
+    border: 2px solid var(--clr-pink-dark);
+}
+
+.plano:last-child .plano-lista__item::before, .plano:last-child .plano__divisor{
+    background: var(--clr-pink-dark);
+}
+
+@media (max-width: 800px) {
+    .plano:nth-child(3) {
+        order: -2
+    }
+
+    .plano:nth-child(2) {
+        order: -1
+    }
+}
+
+/**********************************/
+/* 7. Vantagens
+/**********************************/
+
+.vantagens {
+    max-width: 960px;
+	margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.vantagem {
+    max-width: 240px;
+    margin: 10px;
+}
+.bb{
+    color: rgba(57, 42, 197, 0.329);
+
+}
+.vantagem__titulo {
+    font-size: 1.7em;
+    margin-bottom: 5px;
+    margin-left: 10px;
+}
+
+.vantagem__titulo::before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 25px;
+    margin-right: 5px;
+}
+
+.vantagem:nth-of-type(3n+1) .vantagem__titulo::before {
+    background: var(--clr-green-light);
+}
+
+.vantagem:nth-of-type(3n+2) .vantagem__titulo::before {
+    background: var(--clr-pink-dark);
+}
+
+.vantagem:nth-of-type(3n+3) .vantagem__titulo::before {
+    background: var(--clr-green-dark);
+}
+
+@media (max-width: 800px) {
+    .vantagem {
+        max-width: 220px;
+    }
+}
+
+/**********************************/
+/* 8. Newsletter
+/**********************************/
+
+.newsletter {
+    background: var(--clr-green-light);
+}
+
+.newsletter-c {
+    max-width: 960px;
+    margin: 0 auto;
+	padding: 50px 0;
+    display: flex;
+    flex-wrap: wrap;
+    height: 10px;
+}
+
+.cabecalho-menu-item2 {
+    font-family: 'Sarala', sans-serif;
+    color: #2F2325;
+    font-weight: 400;
+    font-size: 24px;
+
+    background-color: #ECD6C4;
+    width: 180px;
+    height: 60px;
+    border: none;
+
+    border-radius: 20px;
+    font-family: 'Sarala', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    color: #2F2325;
+
+  }
+
+.newsletter-info {
+	flex: 1 1 260px;
+    padding-left: 10px;
+}
+
+.newsletter-info__titulo {
+    font-size: 2.62em;
+    font-weight: bold;
+}
+
+.newsletter-info__descricao {
+    font-style: italic;
+}
+
+.newsletter-form {
+	flex: 2 1 260px;
+    display: flex;
+	flex-wrap: wrap;
+}
+
+.newsletter-form__input {
+	flex: 3 1 260px;
+    font-size: 1.25em;
+    width: 325px;
+    color: black;
+    font-style: italic;
+    font-family: var(--ff-primary);
+    border: 10px solid var(--clr-pink-dark);
+    padding: 10px;
+    margin: 0px;
+    border-radius: 0px;
+}
+
+.newsletter-form__submit {
+	flex: 1 1 260px;
+    width: 192px;
+    font-family: var(--ff-primary);
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: var(--clr-pink-dark);
+    color: black;
+    cursor: pointer;
+    border: 0px;
     padding: 15px;
 }
 
-#bts {
-    width: 22rem;
+/**********************************/
+/* 9. Footer
+/**********************************/
+
+.footer {
+    background: var(--clr-pink-light);
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    flex-direction: row;
+    padding: 55px calc((100% - 960px) / 2);
 }
 
-#div_1 a:hover {
-    background-color: var(--color-btn-hover);
-}
-#div_1 h1 {
-    margin-left: 75px;
-    font-size: 2.4rem;
-    font-weight: 900;
+.footer__copyright, .footer__logo {
+    padding: 0px 10px;
 }
 
-@media (max-width: 600px){
-    #ladinPage {
-        overflow: hidden;
-        width: 100%;
-        height: 100%;
-        padding: 0;
-        margin: 0;
-        justify-content: flex-start;
-    }
-    #div_1{
-        margin-top: 2rem;
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-    }
-    #div_1 h1 {
-        font-size: calc(1.6rem - 0.5vw);
-        font-weight: 900;
-        margin: 0;
-    }
-    #bts {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        margin-top: 20px;
-        width: 100%;
-        height: 80px;
-    }
-    #bts a {
-        margin: 0 10px 0 10px;
-        font-size: 13px;
-    }
-
-    #ladinContainer {
-        width: 100%;
-        margin: 0;
-        margin-top: 10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        height: auto;
-    }
-
-    #div_2, #div_3{
-        width: 60%;
-        height: auto;
-    }
-
-    #div_2 {
-        margin-top: 3rem;
-    }
-
-    #div_2 h2 {
-        font-size: 1.5rem;
-        margin: 0;
-        margin-top: 20px;
-        text-align: center;
-    }
-
-    #div_2 h3 {
-        font-size: 1.1rem;
-        margin-top: 20px;
-        display: flex;
-        text-align: center;
-    }
-
-    #div_3 {
-        height: 8rem;
-    }
-
-    #div_3 h4 {
-        font-size: 1.1rem;
-        display: flex;
-        text-align: center;
-        margin: 0;
-    }
-
-    #ladinContainer img {
-        display: none;
-    }
-}

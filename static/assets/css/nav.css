@@ -1,4 +1,4 @@
-#nav {
+nav {
     display: flex;
     position: fixed;
     top: 36vh;
@@ -11,21 +11,16 @@
     justify-content: space-between;
     overflow: hidden;
 }
-#nav a {
+nav a {
     color: var(--color-main);
     text-decoration: none;
     text-transform: none;
     margin: 12px 6px 12px 12px;
 }
-#nav i {
+nav i {
     cursor: pointer;
 }
 
-#nav i:hover {
+nav i:hover {
     color: var(--color-main-hover);
-}
-@media (max-width: 600px){
-    #nav{
-        display: none;
-    }
 }

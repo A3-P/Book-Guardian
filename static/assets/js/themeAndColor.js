@@ -29,15 +29,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const savedTheme = localStorage.getItem("theme");
     const savedColor = localStorage.getItem("color");
-
-    window.addEventListener("load", function () {
-        if (savedTheme !== null && savedTheme !== "auto") {
-            setTheme(savedTheme);
-        } else {
-            updateThemeBasedOnSystemPreference();
-        }
-    });
-
+    if (savedTheme) {
+        setTheme(savedTheme);
+    } else {
+        updateThemeBasedOnSystemPreference();
+    }
     if (savedColor) {
         setColor(savedColor);
     }
@@ -78,7 +74,6 @@ document.addEventListener("DOMContentLoaded", function () {
         setColor("blue");
     });
 });
-
 document.getElementById("saveConfig").addEventListener("click", function () {
     window.location.href = "/index";
 });

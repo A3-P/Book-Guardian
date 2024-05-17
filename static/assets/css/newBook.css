@@ -85,9 +85,6 @@
     border-radius: 12px;
     margin: 23px;
     padding: 1rem;
-    position: fixed;
-    top: 0;
-    right: 0;
 }
 #addBtnsNavegation button{
     width: 100%;
@@ -117,31 +114,4 @@
 #cancelBook:hover {
     background-color: var(--color-main-hover);
     border: none;
-}
-
-
-@media (max-width: 600px){
-    #newBookDiv{
-        width: 100%;
-        margin: 0;
-    }
-    #formSelects{
-        width: 100%;
-        flex-direction: column;
-    }
-    #formSelects select{
-        width: 100%;
-    }
-    #addBtnsNavegation{
-        position:sticky;
-        width: 100%;
-        margin: 2rem 0 3rem 0;
-        padding: 0;
-    }
-    #addBtnsNavegation button{
-        width: 100%;
-    }
-    #cancelBook{
-        margin-top: 2rem;
-    }
 }

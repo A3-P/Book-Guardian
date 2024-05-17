@@ -13,9 +13,6 @@ header {
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
     z-index: 2;
 }
-#mobileMenu {
-    display: none;
-}
 #mainHeader {
     width: 100%;
     display: flex;
@@ -158,7 +155,7 @@ header h6 {
 #filter label {
     font-weight: 900;
 }
-#filter select {
+#filter select{
     margin-right: 1rem;
     background-color: var(--color-subCard);
     color: var(--color-fg);
@@ -197,132 +194,5 @@ header h6 {
     }
     to {
         transform: translateY(0);
-    }
-}
-
-@keyframes slideRight {
-    from {
-        transform: translateX(100%);
-    }
-    to {
-        transform: translateX(0);
-    }
-}
-@keyframes slideLeft {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(100%);
-    }
-}
-
-
-@media (max-width: 600px) {
-    header {
-        width: 80%;
-        height: auto;
-        padding: 0 12px 0 12px;
-        margin-bottom: 3rem;
-    }
-    header #logo {
-        display: none;
-    }
-    #mainHeader {
-        align-self: flex-start;
-        height: auto;
-        margin: 0;
-        padding: 0;
-    }
-    #searchDiv {
-        width: 74%;
-    }
-    #mobileMenu {
-        display: flex;
-    }
-    #menuBtn {
-        display: block;
-        font-size: 1.4rem;
-        cursor: pointer;
-        border-radius: 10px;
-        padding: 6px;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        display: flex;
-    }
-    #menuBtn:hover {
-        background-color: var(--color-subCard);
-    }
-    #profileH6,
-    #subMobileMenu {
-        display: none;
-    }
-
-    #mobileMenuContainer {
-        z-index: 4;
-        background-color: var(--color-card);
-        position: fixed;
-        width: auto;
-        height: auto;
-        top: 6rem;
-        right: 5%;
-        display: none;
-        flex-direction: column;
-        justify-content: space-between;
-        justify-content: center;
-        align-items: center;
-        padding: 15px 1rem;
-        border-radius: 15px;
-        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
-    }
-    #mobileMenuContainer a {
-        display: flex;
-        text-align: center;
-        justify-content: center;
-        text-decoration: none;
-        width: 100%;
-        height: auto;
-        padding: 0;
-        color: var(--color-main);
-        font-size: 1.4rem;
-        margin: 10px 8px 10px 8px;
-    }
-    #mobileMenuContainer a:hover {
-        color: var(--color-main-hover);
-    }
-    #mobileMenuContainer button {
-        border-radius: 8px;
-        height: 2.4rem;
-        width: 90%;
-        font-size: 1.2rem;
-        cursor: pointer;
-    }
-    #subMobileMenu {
-        position: fixed;
-        top: 6rem;
-        right: 7rem;
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        padding: 1rem;
-        background-color: var(--color-card);
-        border-radius: 8px;
-        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
-        min-width: 5rem;
-        min-height: 2rem;
-    }
-    #subMobileMenu a {
-        text-decoration: none;
-        text-transform: capitalize;
-        color: var(--color-main);
-        font-size: 1rem;
-    }
-    #subMobileMenu a:hover {
-        color: var(--color-main-hover);
-    }
-    #applyFilters{
-        font-size: 12px;
     }
 }

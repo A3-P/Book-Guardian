@@ -12,7 +12,7 @@ dotenv.load_dotenv(dotenv.find_dotenv())
 SECRET_KEY = "django-insecure-nxjvm_=1vo=io18_+vz1ott6uu2qm(=6f#!#aemnwtwwppt*@e"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['web-production-2e20.up.railway.app', '127.0.0.1']
 

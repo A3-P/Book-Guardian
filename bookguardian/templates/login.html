@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load socialaccount %}
 {% block title %} Login {% endblock title %}
 {% block content %}
 
@@ -13,7 +13,7 @@
         <br>
         <input type="submit" value="Login">
     </form>
-
+    <a href="{% provider_login_url "google" %}?next=/">Login com Google</a>
     <p>Não possui uma conta ? <a href="{% url 'bookguardian:register-user' %}" id="singIn" class="signup-link">Registre-se aqui</a></p>
 </div>
 

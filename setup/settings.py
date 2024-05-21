@@ -1,9 +1,9 @@
 import os
 from pathlib import Path
-
+import dotenv
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+dotenv.load_dotenv(dotenv.find_dotenv())
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
@@ -33,6 +33,10 @@ INSTALLED_APPS = [
     # My apps
     "bookguardian",
     "userauths",
+     "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
+    "allauth.socialaccount.providers.google",
 ]
 
 MIDDLEWARE = [
@@ -44,7 +48,26 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
+    "allauth.account.middleware.AccountMiddleware",
 ]
+AUTHENTICATION_BACKENDS = [
+
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
+
+]
+SOCIALACCOUNT_PROVIDERS = {
+    "google": {
+        "APP": {
+            "client_id": os.getenv("client_id"),
+            "secret": os.getenv("secret"),
+            "key": "",
+        }
+    }
+}
+
+LOGIN_REDIRECT_URL = "/index/"
+LOGOUT_REDIRECT_URL = "/index/"
 
 ROOT_URLCONF = "setup.urls"
 

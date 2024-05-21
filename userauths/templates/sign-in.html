@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load socialaccount %}
 {% load static %}
 {% block title %} Login {% endblock title %}
 {% block content %}
@@ -13,7 +14,7 @@
         <br>
         <input type="submit" value="Login">
     </form>
-
+    <a href="{% provider_login_url "google" %}?next=/">Login com Google</a>
     <p>Não possui uma conta ? <a href="{% url 'userauths:sign-up' %}" id="singIn" class="signup-link">Registre-se aqui</a></p>
 </div>
 

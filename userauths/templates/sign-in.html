@@ -15,8 +15,8 @@
         <input type="submit" value="Login">
     </form>
     <a href="{% provider_login_url "google" %}?next=/"><img id="google" src="{% static "assets/img/google.png" %}"></a>
-    <p>Não possui uma conta ? <a href="{% url 'userauths:sign-up' %}" id="singIn" class="signup-link">Registre-se aqui</a></p>
-    <p>Esqueceu a senha ? </p>
+    <p>Não possui uma conta? <a href="{% url 'userauths:sign-up' %}" id="singIn" class="signup-link">Registre-se aqui</a></p>
+    <p>Esqueceu a senha?</p>
 </div>
 
 {% endblock content %}

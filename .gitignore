@@ -3,3 +3,4 @@ __pycache__
 trash
 .vscode
 .env
+*.sqlite3

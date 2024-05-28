@@ -65,7 +65,7 @@ SOCIALACCOUNT_PROVIDERS = {
         }
     }
 }
-
+LOGIN_URL = "userauths:sign-in"
 LOGIN_REDIRECT_URL = "/index/"
 LOGOUT_REDIRECT_URL = "/index/"
 
@@ -151,11 +151,10 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-if DEBUG == True:
-    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-else:
-    EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-
+# if DEBUG == True:
+#     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+# else:
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = os.getenv("EMAIL_HOST")
 EMAIL_POST = os.getenv("EMAIL_POST")
 EMAIL_USE_TLS = os.getenv("EMAIL_USE_TLS")

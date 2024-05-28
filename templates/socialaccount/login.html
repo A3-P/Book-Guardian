@@ -1,6 +1,7 @@
-{% extends "socialaccount/base_entrance.html" %}
+{% extends "base.html" %}
 {% load i18n %}
 {% load allauth %}
+{% load static %}
 {% block head_title %}
     {% trans "Sign In" %}
 {% endblock head_title %}
@@ -10,22 +11,35 @@
             {% blocktrans with provider.name as provider %}Connect {{ provider }}{% endblocktrans %}
         {% endelement %}
         <p>
-            {% blocktrans with provider.name as provider %}You are about to connect a new third-party account from {{ provider }}.{% endblocktrans %}
+            {% blocktrans with provider.name as provider %}Voce esta prestes a
+     lo       fazegin usando sua conta {{ provider }}.{% endblocktrans %}
         </p>
     {% else %}
-        {% element h1 %}
-            {% blocktrans with provider.name as provider %}Sign In Via {{ provider }}{% endblocktrans %}
-        {% endelement %}
-        <p>
-            {% blocktrans with provider.name as provider %}You are about to sign in using a third-party account from {{ provider }}.{% endblocktrans %}
-        </p>
-    {% endif %}
-    {% element form method="post" no_visible_fields=True %}
-        {% slot actions %}
-            {% csrf_token %}
-            {% element button type="submit" %}
-                {% trans "Continue" %}
+    <div id="a">
+        <div id="a1">
+            {% element h1 %}
+                {% blocktrans with provider.name as provider %}Entrada via <span>{{ provider }}</span>{% endblocktrans %}
             {% endelement %}
-        {% endslot %}
-    {% endelement %}
+
+            <p>
+                {% blocktrans with provider.name as provider %}
+                Voce gostaria de entrar em nosso site utilizando sua conta <span>{{ provider }}</span>?
+                {%endblocktrans %}
+            </p>
+            {% endif %}
+            <div id="a1_5">
+                {% element form method="post" no_visible_fields=True %}
+                {% slot actions %}
+                {% csrf_token %}
+                {% element button type="submit" %}
+                {% trans "Continuar" %}
+                {% endelement %}
+                {% endslot %}
+                {% endelement %}
+            </div>
+        </div>
+        <div id="a2">
+            <img src="{% static "assets/img/cat_confuse1.jpg" %}" alt="">
+        </div>
+    </div>
 {% endblock content %}

@@ -12,7 +12,7 @@ dotenv.load_dotenv(dotenv.find_dotenv())
 SECRET_KEY = "django-insecure-nxjvm_=1vo=io18_+vz1ott6uu2qm(=6f#!#aemnwtwwppt*@e"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['web-production-2e20.up.railway.app', '127.0.0.1']
 
@@ -66,8 +66,8 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 LOGIN_URL = "userauths:sign-in"
-LOGIN_REDIRECT_URL = "/index/"
-LOGOUT_REDIRECT_URL = "/index/"
+LOGIN_REDIRECT_URL = "bookguardian:index"
+LOGOUT_REDIRECT_URL = "bookguardian:index"
 
 ROOT_URLCONF = "setup.urls"
 

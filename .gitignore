@@ -5,3 +5,4 @@ trash
 .env
 *.sqlite3
 media/
+db.sqlite3

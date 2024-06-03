@@ -12,7 +12,7 @@ dotenv.load_dotenv(dotenv.find_dotenv())
 SECRET_KEY = "django-insecure-nxjvm_=1vo=io18_+vz1ott6uu2qm(=6f#!#aemnwtwwppt*@e"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False if os.getenv("DEBUGDB") == "False" else True
+DEBUG = False if os.getenv("DEBUGGG") == "False" else True
 
 ALLOWED_HOSTS = ['web-production-2e20.up.railway.app', '127.0.0.1']
 
@@ -96,9 +96,13 @@ WSGI_APPLICATION = "setup.wsgi.application"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': os.getenv.get('DATABASE_ENGINE'),
+        'NAME': os.getenv.get('DATABASE_NAME'),
+        'USER': os.getenv.get('DATABASE_USER'),
+        'PASSWORD': os.getenv.get('DATABASE_PASSWORD'),
+        'HOST': os.getenv.get('DATABASE_HOST'),
+        'PORT': os.getenv.get('DATABASE_PORT'),
     }
 }
 

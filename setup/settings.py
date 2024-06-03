@@ -97,12 +97,12 @@ WSGI_APPLICATION = "setup.wsgi.application"
 
 DATABASES = {
     'default': {
-        'ENGINE': os.getenv.get('DATABASE_ENGINE'),
-        'NAME': os.getenv.get('DATABASE_NAME'),
-        'USER': os.getenv.get('DATABASE_USER'),
-        'PASSWORD': os.getenv.get('DATABASE_PASSWORD'),
-        'HOST': os.getenv.get('DATABASE_HOST'),
-        'PORT': os.getenv.get('DATABASE_PORT'),
+        'ENGINE': os.getenv('DATABASE_ENGINE'),
+        'NAME': os.getenv('DATABASE_NAME'),
+        'USER': os.getenv('DATABASE_USER'),
+        'PASSWORD': os.getenv('DATABASE_PASSWORD'),
+        'HOST': os.getenv('DATABASE_HOST'),
+        'PORT': os.getenv('DATABASE_PORT'),
     }
 }
 

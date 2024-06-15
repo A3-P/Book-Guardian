@@ -3,12 +3,21 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.urls import include, path
+from allauth.socialaccount.providers.google.urls import (
+    urlpatterns as google_urlpatterns,
+)
+
+
+social_urlpatterns = [
+    path("", include(google_urlpatterns)),
+]
+
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("bookguardian.urls")),
     path("user/", include("userauths.urls")),
-    path('accounts/', include('allauth.urls')),
+    path("accounts/", include(social_urlpatterns)),
      path(
         "password_reset/", auth_views.PasswordResetView.as_view(), name="password_reset"
     ),

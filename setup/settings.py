@@ -1,18 +1,16 @@
 import os
 from pathlib import Path
 import dotenv
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 dotenv.load_dotenv(dotenv.find_dotenv())
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "django-insecure-nxjvm_=1vo=io18_+vz1ott6uu2qm(=6f#!#aemnwtwwppt*@e"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False if os.getenv("DEBUGGG") == "False" else True
+DEBUG = False if os.environ.get("DEBUGDB") == "False" else True
 
 ALLOWED_HOSTS = ['web-production-2e20.up.railway.app', '127.0.0.1']
 
@@ -22,8 +20,7 @@ CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1', 'https://web-production-2e20.up.rail
 # Application definition
 
 INSTALLED_APPS = [
-    # "unfold",          #Theme1
-    "jazzmin",  # Theme2
+    "jazzmin",  # Theme
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -33,7 +30,8 @@ INSTALLED_APPS = [
     # My apps
     "bookguardian",
     "userauths",
-     "allauth",
+    #allauth
+    "allauth",
     "allauth.account",
     "allauth.socialaccount",
     "allauth.socialaccount.providers.google",
@@ -59,15 +57,21 @@ AUTHENTICATION_BACKENDS = [
 SOCIALACCOUNT_PROVIDERS = {
     "google": {
         "APP": {
-            "client_id": os.getenv("client_id"),
-            "secret": os.getenv("secret"),
+            "client_id": os.environ.get("CLIENT_ID"),
+            "secret": os.environ.get("SECRET"),
             "key": "",
-        }
-    }
+        },
+        "SCOPE": [
+            "profile",
+            "email",
+        ],
+        "AUTH_PARAMS": {
+            "access_type": "online",
+        },
+        "OAUTH_PKCE_ENABLED": True,
+    },
 }
-LOGIN_URL = "userauths:sign-in"
-LOGIN_REDIRECT_URL = "bookguardian:index"
-LOGOUT_REDIRECT_URL = "bookguardian:index"
+
 
 ROOT_URLCONF = "setup.urls"
 
@@ -97,8 +101,12 @@ WSGI_APPLICATION = "setup.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": os.environ.get("DATABASE_ENGINE"),
+        "NAME": os.environ.get("DATABASE_NAME"),
+        "USER": os.environ.get("DATABASE_USER"),
+        "PASSWORD": os.environ.get("DATABASE_PASSWORD"),
+        "HOST": os.environ.get("DATABASE_HOST"),
+        "PORT": os.environ.get("DATABASE_PORT"),
     }
 }
 
@@ -119,8 +127,20 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
+
 AUTH_USER_MODEL = "userauths.User"
 
+SOCIALACCOUNT_PIPELINE = (
+    "allauth.socialaccount.pipeline.social_login",
+    "userauths.pipeline.link_to_existing_user",
+    "allauth.socialaccount.pipeline.social_user",
+    "allauth.socialaccount.pipeline.associate_user",
+    "allauth.socialaccount.pipeline.load_extra_data",
+    "allauth.socialaccount.pipeline.user.create_user",
+    "allauth.socialaccount.pipeline.save_social_token",
+    "allauth.socialaccount.pipeline.social_account",
+    "allauth.socialaccount.pipeline.sync_user_profile",
+)
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
@@ -132,6 +152,11 @@ USE_I18N = True
 
 USE_TZ = True
 
+LOGIN_URL = "userauths:sign-in"
+LOGIN_REDIRECT_URL = "/index"
+LOGOUT_REDIRECT_URL = "/"
+
+SITE_ID = 1
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
@@ -154,8 +179,8 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 #     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 # else:
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = os.getenv("EMAIL_HOST")
-EMAIL_POST = os.getenv("EMAIL_POST")
-EMAIL_USE_TLS = os.getenv("EMAIL_USE_TLS")
-EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
-EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
+EMAIL_HOST = os.environ.get("EMAIL_HOST")
+EMAIL_POST = os.environ.get("EMAIL_POST")
+EMAIL_USE_TLS = os.environ.get("EMAIL_USE_TLS")
+EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")

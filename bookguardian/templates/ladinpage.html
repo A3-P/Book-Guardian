@@ -2,21 +2,19 @@
 {% load static %}
 {% block content %}
 <header>
-        <div class="menu">
-            <div class="menu__logo">
-                <img class="cabecalho-imagem" src="{% static "assets/img/book2.png" %}">
-            </div>
-            <nav class="nav__list" id="xd">
-                <a   href="{% url 'userauths:sign-in' %}"  class="cabecalho-menu-item2">LOGIN</a>
-                <a   href="{% url 'userauths:sign-up' %}"   class="cabecalho-menu-item2">REGISTRO</a>
-            </nav>
+    <div class="menu">
+        <div class="menu__logo">
+            <img class="cabecalho-imagem" src="{% static "assets/img/book2.png" %}">
         </div>
-    <h1 class="intro">BookGuardian </h1>
+        <nav class="nav__list" id="xd">
+            <a href="{% url 'userauths:sign-in' %}" class="cabecalho-menu-item2">entrar</a>
+            <a href="{% url 'userauths:sign-up' %}" class="cabecalho-menu-item2">cadastrar</a>
+        </nav>
+    </div>
+    <img id="banner" src="{% static "assets/img/Home.png" %}" alt="Home">
 </header>
 
-<hr>
-
-<section class="somos">
+<section id="oque-e" class="somos">
     <h2 class="section__titulo">O que é?</h2>
     <div class="somos-c">
         <div class="somos-c__texto">
@@ -24,7 +22,9 @@
                 O Bookguardian é um site projetado especificamente para ajudar pessoas como você a organizar suas coleções de livros.
             </p>
             <br>
-            <p>Com uma interface intuitiva e recursos inteligentes, ele simplifica o gerenciamento do conteúdo de sua biblioteca, tornando a experiência de catalogar e encontrar seus livros uma brisa.</p>
+            <p>Com uma interface intuitiva e recursos inteligentes, ele
+            simplifica o gerenciamento do conteúdo de sua biblioteca, tornando a
+            experiência de catalogar e encontrar seus livros mais facil.</p>
         </div>
         <div class="somos-c__img">
             <img src="{% static "assets/img/somos.png" %}" alt="Quem somos">
@@ -34,8 +34,8 @@
 
 <hr>
 
-<section class="cursos">
-    <h2 class="section__titulo">Acesse Demo</h2>
+<section id="conta-demo" class="cursos">
+    <h2 class="section__titulo">Confira Uma Demontração</h2>
     <div class="cursos-c">
         <div class="curso">
             <img src="{% static "assets/img/004--Streamline-Zoo-Office.png" %}"
@@ -44,9 +44,10 @@
                 <h3 class="curso__titulo">Email: <span>demoUser@gmail.com</span></h3>
                 <h3 class="curso__titulo">Senha: <span>demoUser</span></h3>
             </div>
-
         </div>
+    </div>
 </section>
+
 <footer class="footer">
     <div class="footer-c">
         <div class="membros">
@@ -59,7 +60,25 @@
                 <li><a href="https://github.com/LuyysHenriqueKuromi">Luis</a></li>
             </ul>
         </div>
-        <div class="membros"><h3>linguagens</h3><ul><li>Python</li><li>JavaScript</li><li>Html5</li><li>CSS</li></ul></div>
+        <div class="membros">
+            <h3>linguagens</h3>
+            <ul>
+                <li>Python</li>
+                <li>JavaScript</li>
+                <li>Html5</li>
+                <li>CSS</li>
+            </ul>
+        </div>
+        <div class="membros">
+            <h3>Navegação</h3>
+            <ul>
+                <li><a href="#banner">Capa</a></li>
+                <li><a href="#oque-e">O que é?</a></li>
+                <li><a href="#conta-demo">Conta demo</a></li>
+                <li><a href="{% url 'userauths:sign-in' %}">Login</a></li>
+                <li><a href="{% url 'userauths:sign-up' %}"></a></li>
+            </ul>
+        </div>
     </div>
     <p>Abril 2024</p>
 </footer>

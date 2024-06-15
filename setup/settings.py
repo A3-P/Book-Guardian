@@ -24,7 +24,6 @@ CSRF_TRUSTED_ORIGINS = [
 # Application definition
 
 INSTALLED_APPS = [
-    "whitenoise.runserver_nostatic",
     "jazzmin",  # Theme
     "django.contrib.admin",
     "django.contrib.auth",

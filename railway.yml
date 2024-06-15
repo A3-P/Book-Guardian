@@ -1,4 +1,0 @@
-
-plugins:
-  - name: nginx
-    config: ./nginx.conf.erb

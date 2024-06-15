@@ -153,8 +153,8 @@ USE_I18N = True
 USE_TZ = True
 
 LOGIN_URL = "userauths:sign-in"
-LOGIN_REDIRECT_URL = "/index"
-LOGOUT_REDIRECT_URL = "/"
+LOGIN_REDIRECT_URL = "bookguardian:index"
+LOGOUT_REDIRECT_URL = "bookguardian:ladinpage"
 
 SITE_ID = 1
 

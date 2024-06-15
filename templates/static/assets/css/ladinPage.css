@@ -44,10 +44,7 @@ body {
     background-color: var(--color-bg);
     color: var(--color-fg);
     margin: 0;
-
-    font-family: "lato", serif;
-    font-optical-sizing: auto;
-    font-style: normal;
+    font-family: var(--ff-primary);
 }
 
 
@@ -61,6 +58,7 @@ hr {
 
 p {
     padding: 0 10px;
+    line-height: 21.82px;
 }
 
 .section__titulo {
@@ -159,9 +157,12 @@ header{
     .cabecalho-menu-item2{
         font-size: calc(2rem - 15px);
     }
-
 }
-
+@media (max-width: 400px) {
+    .cabecalho-menu-item2{
+        font-size: calc(1.2rem - 5px);
+    }
+}
 @media (max-width: 340px) {
     .menu__logo{
        display: none;
@@ -193,7 +194,7 @@ header{
     width: 100%;
     margin: 0;
     padding: 1rem;
-    font-size: 25px;
+    font-size: 18px;
     background-color: #ffaee0;
     flex-direction: column;
 }
@@ -214,6 +215,7 @@ header{
     flex: 6 1 160px;
     background-color: #fff;
     color: #1f5692;
+    letter-spacing: 4px;
     padding: 10px;
     border-radius: 10px;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
@@ -221,6 +223,8 @@ header{
 
 .somos-c__texto2 {
     flex: 6 1 160px;
+    word-spacing: normal;
+    letter-spacing: 4px;
 }
 
 .somos-c__img {
@@ -320,23 +324,17 @@ header{
 .membros ul li a{
     text-decoration: none;
     text-transform: capitalize;
-    color: var(--color-fg);
+    color: #222;
 }
 .membros ul li{
     margin-bottom: 10px;
 }
 .membros ul li a:hover{
-    color: var(--color-fg-hover);
-}
-@media (max-width: 400px) {
-    .cabecalho-menu-item2{
-        font-size: calc(1.2rem - 5px);
-    }
-
+    color: #444;
 }
 @media (max-width: 600px){
     .demo{
-        padding: 10px;
+        padding: 1rem;
         width: 100%;
         font-size: 20px;
     }

@@ -24,7 +24,6 @@ CSRF_TRUSTED_ORIGINS = [
 # Application definition
 
 INSTALLED_APPS = [
-    "whitenoise.runserver_nostatic",
     "jazzmin",  # Theme
     "django.contrib.admin",
     "django.contrib.auth",
@@ -113,6 +112,7 @@ DATABASES = {
     }
 }
 
+
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
@@ -162,6 +162,15 @@ LOGOUT_REDIRECT_URL = "bookguardian:ladinpage"
 
 SITE_ID = 1
 
+# STORAGES = {
+#     "default": {
+#         "BACKEND": "django.core.files.storage.FileSystemStorage",
+#     },
+#     "staticfiles": {
+#         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+#     },
+# }
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
@@ -171,9 +180,12 @@ STATIC_URL = "/static/"
 MEDIA_URL = "/media/"
 
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "templates/static")]
 
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+if DEBUG:
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, "templates/static")]
+else:
+    STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # Default primary key field type

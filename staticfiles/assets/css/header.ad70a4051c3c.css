@@ -1,0 +1,328 @@
+header {
+    display: flex;
+    position: sticky;
+    overflow: visible;
+    top: 0;
+    margin-bottom: 1rem;
+    width: 50%;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--color-card);
+    color: var(--color-fg);
+    border-radius: 0 0 25px 25px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+#mobileMenu {
+    display: none;
+}
+#mainHeader {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 3;
+}
+header h1 {
+    text-transform: uppercase;
+    font-weight: 900;
+    width: 40%;
+}
+#search {
+    background-color: var(--color-subCard);
+    border: none;
+    width: 86%;
+}
+#searchDiv {
+    border: none; /*1px solid var(--color-fg); */
+    background-color: var(--color-subCard);
+    padding: 7px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 40%;
+}
+#searchDiv i {
+    border-left: 1px solid var(--color-fg);
+    padding-left: 8px;
+    cursor: pointer;
+}
+
+#searchDiv input:focus {
+    outline: none;
+}
+header h6 {
+    height: 100%;
+    width: 4%;
+    flex-direction: column;
+}
+#profileBtn {
+    background-color: var(--color-main);
+    outline: var(--color-main);
+    padding: 1px;
+    border-radius: 100%;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+#profileBtn:hover {
+    background-color: var(--color-main-hover);
+    color: var(--color-fg-hover);
+}
+#profileBtn,
+header h6 {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+#profileMenuHeader {
+    z-index: 4;
+    background-color: var(--color-card);
+    position: fixed;
+    width: 10rem;
+    height: auto;
+    top: 6rem;
+    right: 25%;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 1rem;
+    border-radius: 15px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+#profileMenuHeader a {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    text-decoration: none;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 15px 0 15px 0;
+}
+#profileMenuHeader button {
+    border-radius: 8px;
+    height: 2.4rem;
+    width: 90%;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+#goToLoginPage:hover {
+    background-color: var(--color-main-hover);
+}
+#goToLoginPage {
+    color: var(--color-fg);
+    background-color: var(--color-main);
+    border: none;
+}
+#goToRegisterPage {
+    color: var(--color-fg);
+    background-color: transparent;
+    border: 3px solid var(--color-main);
+}
+#goToRegisterPage:hover {
+    background-color: var(--color-main-hover);
+    border: none;
+}
+#logout,
+#changeAccont {
+    color: var(--color-main);
+    font-size: 1rem;
+    background-color: transparent;
+    align-self: flex-start;
+    text-align: left;
+    width: 100%;
+    justify-self: left;
+    justify-content: left;
+}
+#logout:hover,
+#changeAccont:hover {
+    color: var(--color-main-hover);
+}
+#filter {
+    z-index: 2;
+    width: 95%;
+    height: 2rem;
+    display: none;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: left;
+    margin-bottom: 20px;
+    flex-direction: row;
+    padding: 10px;
+}
+
+#filter label {
+    font-weight: 900;
+}
+#filter select {
+    margin-right: 1rem;
+    background-color: var(--color-subCard);
+    color: var(--color-fg);
+    border: none;
+    height: 100%;
+    padding: 5px;
+    border-radius: 5px;
+}
+#filter button {
+    background-color: var(--color-main);
+    color: var(--color-fg);
+    border: none;
+    cursor: pointer;
+    height: 100%;
+    width: 7rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    padding: 5px;
+}
+#filter button:hover {
+    background-color: var(--color-main-hover);
+    color: var(--color-fg-hover);
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-100%);
+    }
+}
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+@keyframes slideLeft {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+
+
+@media (max-width: 600px) {
+    header {
+        width: 80%;
+        height: auto;
+        padding: 0 12px 0 12px;
+        margin-bottom: 3rem;
+    }
+    header #logo {
+        display: none;
+    }
+    #mainHeader {
+        align-self: flex-start;
+        height: auto;
+        margin: 0;
+        padding: 0;
+    }
+    #searchDiv {
+        width: 74%;
+    }
+    #mobileMenu {
+        display: flex;
+    }
+    #menuBtn {
+        display: block;
+        font-size: 1.4rem;
+        cursor: pointer;
+        border-radius: 10px;
+        padding: 6px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        display: flex;
+    }
+    #menuBtn:hover {
+        background-color: var(--color-subCard);
+    }
+    #profileH6,
+    #subMobileMenu {
+        display: none;
+    }
+
+    #mobileMenuContainer {
+        z-index: 4;
+        background-color: var(--color-card);
+        position: fixed;
+        width: auto;
+        height: auto;
+        top: 6rem;
+        right: 5%;
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 1rem;
+        border-radius: 15px;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    }
+    #mobileMenuContainer a {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        text-decoration: none;
+        width: 100%;
+        height: auto;
+        padding: 0;
+        color: var(--color-main);
+        font-size: 1.4rem;
+        margin: 10px 8px 10px 8px;
+    }
+    #mobileMenuContainer a:hover {
+        color: var(--color-main-hover);
+    }
+    #mobileMenuContainer button {
+        border-radius: 8px;
+        height: 2.4rem;
+        width: 90%;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+    #subMobileMenu {
+        position: fixed;
+        top: 6rem;
+        right: 7rem;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+        background-color: var(--color-card);
+        border-radius: 8px;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+        min-width: 5rem;
+        min-height: 2rem;
+    }
+    #subMobileMenu a {
+        text-decoration: none;
+        text-transform: capitalize;
+        color: var(--color-main);
+        font-size: 1rem;
+    }
+    #subMobileMenu a:hover {
+        color: var(--color-main-hover);
+    }
+    #applyFilters{
+        font-size: 12px;
+    }
+}

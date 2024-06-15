@@ -45,7 +45,7 @@ body {
     color: var(--color-fg);
     margin: 0;
 
-    font-family: "BioRhyme", serif;
+    font-family: "lato", serif;
     font-optical-sizing: auto;
     font-style: normal;
 }
@@ -159,12 +159,9 @@ header{
     .cabecalho-menu-item2{
         font-size: calc(2rem - 15px);
     }
+
 }
-@media (max-width: 400px) {
-    .cabecalho-menu-item2{
-        font-size: calc(1.2rem - 5px);
-    }
-}
+
 @media (max-width: 340px) {
     .menu__logo{
        display: none;
@@ -330,4 +327,23 @@ header{
 }
 .membros ul li a:hover{
     color: var(--color-fg-hover);
+}
+@media (max-width: 400px) {
+    .cabecalho-menu-item2{
+        font-size: calc(1.2rem - 5px);
+    }
+
+}
+@media (max-width: 600px){
+    .demo{
+        padding: 10px;
+        width: 100%;
+        font-size: 20px;
+    }
+    .curso__titulo{
+        font-size: 20px;
+    }
+    .curso__titulo span{
+        font-size: 23px;
+    }
 }

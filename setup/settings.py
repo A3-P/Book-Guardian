@@ -24,6 +24,7 @@ CSRF_TRUSTED_ORIGINS = [
 # Application definition
 
 INSTALLED_APPS = [
+    "whitenoise.runserver_nostatic",
     "jazzmin",  # Theme
     "django.contrib.admin",
     "django.contrib.auth",
@@ -168,7 +169,6 @@ SITE_ID = 1
 #
 STATIC_URL = "/static/"
 MEDIA_URL = "/media/"
-STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "templates/static")]
@@ -178,6 +178,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
+STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # if DEBUG == True:

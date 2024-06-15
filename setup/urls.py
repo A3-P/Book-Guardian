@@ -5,12 +5,12 @@ from django.conf import settings
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.urls import include, path, re_path
-from django.views.static import serve
 from django.conf.urls.static import static
 social_urlpatterns = [
     path("", include(google_urlpatterns)),
 ]
 
+from django.views.static import serve
 
 urlpatterns = [
     re_path(r"^media/(?P<path>.*)$", serve, {"document_root": settings.MEDIA_ROOT}),

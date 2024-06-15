@@ -18,7 +18,7 @@
 
         <input class="button" type="submit" value="Register" id="registerBtnSubimit">
     </form>
-    <a href="{% provider_login_url "google" %}?next=/index"><img id="google" src="{% static "assets/img/google.png" %}"></a>
+    <a id="googleIcon" href="{% provider_login_url "google" %}?next=/index"><img id="google" src="{% static "assets/img/google.png" %}"></a>
     <p>Ja possui uma conta ? <a href="{% url 'userauths:sign-in' %}" id="logIn" class="signup-link">Entre aqui</a></p>
 </div>
 <script>

@@ -124,9 +124,29 @@ hr {
 }
 
 @media (max-width: 700px) {
+    .login-container{
+        width: 100%;
+        padding: 2rem 1.2rem 1rem 1.2rem;
+    }
     .login-container p{
         text-align: center;
         display: flex;
         flex-direction: column;
     }
+}
+@media (max-width: 400px) {
+    .login-container{
+        width: 80%;
+        padding: 2rem 1.2rem 1rem 1.2rem;
+    }
+}
+#passwordForget{
+   color: var(--color-fg);
+   text-decoration: none;
+}
+#passwordForget span{
+   color: var(--color-fg-alt);
+}
+#passwordForget span:hover{
+   color: var(--color-main-hover);
 }

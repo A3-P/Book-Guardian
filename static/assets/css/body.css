@@ -59,3 +59,14 @@ section{
     height: 100%;
     justify-content: center;
 }
+@media (max-width: 600px){
+    main{
+        padding: 0;
+        align-items: center;
+        justify-content: center;
+    }
+    section{
+        margin: 0;
+        justify-content: center;
+    }
+}

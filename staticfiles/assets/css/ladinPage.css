@@ -70,15 +70,27 @@ img {
     display: block;
     max-width: 100%;
 }
-
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e1efff;
+    flex-direction: column;
+}
 /**********************************/
 /* 2. Menu
 /**********************************/
 
+#banner{
+    align-self: center;
+    background-color: #e1efff;
+    margin-top: 6rem;
+    z-index: 1;
+}
 
 
 .menu {
-    background-color: var(--color-card);
+    background-color: #e1efff;
     margin: 0;
     height: 5rem;
     width: 100%;
@@ -86,6 +98,12 @@ img {
     align-items: center;
     justify-content: space-between;
 	flex-wrap: wrap;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    z-index: 2;    
 }
 
 .menu__logo {
@@ -118,11 +136,11 @@ img {
     font-weight: 400;
     font-size: calc(0.9em + 0.6vw);
 
-    background-color: var(--color-main);
+    background-color: #1c5490;
     transition: all 0.3s ease;
     border: none;
     text-decoration: none;
-    text-transform: uppercase;
+    text-transform: capitalize;
     text-align: center;
 
     border-radius: 12px;
@@ -178,9 +196,13 @@ img {
     margin: 0;
     padding: 1rem;
     font-size: 18px;
+    background-color: #ffaee0;
     flex-direction: column;
 }
-
+.somos .section__titulo{
+    color: #fff;
+    margin-bottom: 1rem;
+}
 .somos-c, .somos {
     display: flex;
 	flex-wrap: wrap;
@@ -193,6 +215,12 @@ img {
 .somos-c__texto {
     flex: 6 1 160px;
     letter-spacing: 4px;
+    background-color: #fff;
+    color: #1f5692;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+
 }
 
 .somos-c__texto2 {

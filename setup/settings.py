@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+
 import dotenv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -12,14 +13,18 @@ SECRET_KEY = "django-insecure-nxjvm_=1vo=io18_+vz1ott6uu2qm(=6f#!#aemnwtwwppt*@e
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False if os.environ.get("DEBUGDB") == "False" else True
 
-ALLOWED_HOSTS = ['web-production-2e20.up.railway.app', '127.0.0.1']
+ALLOWED_HOSTS = ["web-production-2e20.up.railway.app", "127.0.0.1"]
 
-CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1', 'https://web-production-2e20.up.railway.app']
+CSRF_TRUSTED_ORIGINS = [
+    "http://127.0.0.1",
+    "https://web-production-2e20.up.railway.app",
+]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    "whitenoise.runserver_nostatic",
     "jazzmin",  # Theme
     "django.contrib.admin",
     "django.contrib.auth",
@@ -30,7 +35,7 @@ INSTALLED_APPS = [
     # My apps
     "bookguardian",
     "userauths",
-    #allauth
+    # allauth
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
@@ -46,13 +51,11 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "allauth.account.middleware.AccountMiddleware",
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 AUTHENTICATION_BACKENDS = [
-
     "django.contrib.auth.backends.ModelBackend",
     "allauth.account.auth_backends.AuthenticationBackend",
-
 ]
 SOCIALACCOUNT_PROVIDERS = {
     "google": {
@@ -158,30 +161,24 @@ LOGIN_REDIRECT_URL = "bookguardian:index"
 LOGOUT_REDIRECT_URL = "bookguardian:ladinpage"
 
 SITE_ID = 1
-WHITENOISE_MEDIA = True
 
 
-STATICFILES_FINDERS = [
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-]
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 #
 STATIC_URL = "/static/"
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "templates/static")]
-
 MEDIA_URL = "/media/"
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-
 STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "templates/static")]
+
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
-
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # if DEBUG == True:

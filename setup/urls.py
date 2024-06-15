@@ -1,19 +1,20 @@
 from django.conf import settings
-from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
-from django.urls import include, path
+from django.urls import include, path, re_path
 from allauth.socialaccount.providers.google.urls import (
     urlpatterns as google_urlpatterns,
 )
-
-
+from django.conf.urls.static import static
+from django.views.static import serve
 social_urlpatterns = [
     path("", include(google_urlpatterns)),
 ]
 
 
 urlpatterns = [
+    re_path(r"^media/(?P<path>.*)$", serve, {"document_root": settings.MEDIA_ROOT}),
+    re_path(r"^static/(?P<path>.*)$", serve, {"document_root": settings.STATIC_ROOT}),
     path("admin/", admin.site.urls),
     path("", include("bookguardian.urls")),
     path("user/", include("userauths.urls")),
@@ -36,9 +37,4 @@ urlpatterns = [
         auth_views.PasswordResetCompleteView.as_view(),
         name="password_reset_complete",
     ),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-
-if settings.DEBUG:
-    urlpatterns = [] + urlpatterns
-
+]

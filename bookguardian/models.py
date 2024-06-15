@@ -1,5 +1,6 @@
-from userauths.models import User
 from django.db import models
+
+from userauths.models import User
 
 
 class BookGuardian(models.Model):

@@ -15,23 +15,24 @@ def RegisterView(request):
         form = UserRegisterForm(request.POST)
         if form.is_valid():
             # form.save()
-            new_user = form.save() # new_user.email
+            new_user = form.save()  # new_user.email
             username = form.cleaned_data.get("username")
             # username = request.POST.get("username")
-            messages.success(request, f"Hey {username}, your account was created successfully.")
+            messages.success(
+                request, f"Hey {username}, your account was created successfully."
+            )
             # new_user = authenticate(username=form.cleaned_data.get('email'))
-            new_user = authenticate(username=form.cleaned_data['email'],
-                                    password=form.cleaned_data['password1'])
+            new_user = authenticate(
+                username=form.cleaned_data["email"],
+                password=form.cleaned_data["password1"],
+            )
             login(request, new_user)
             return redirect("bookguardian:index")
 
     else:
         form = UserRegisterForm()
-    context = {
-        "form": form
-    }
+    context = {"form": form}
     return render(request, "userauths/sign-up.html", context)
-
 
 
 def register_view(request):
@@ -42,11 +43,13 @@ def register_view(request):
             new_user = form.save()
 
             username = form.cleaned_data.get("username")
-            messages.success(request, f"Hello {username} your account was created success.")
+            messages.success(
+                request, f"Hello {username} your account was created success."
+            )
 
             new_user = authenticate(
                 username=form.cleaned_data["email"],
-                password=form.cleaned_data["password1"]
+                password=form.cleaned_data["password1"],
             )
 
             login(request, new_user)
@@ -59,9 +62,7 @@ def register_view(request):
 
     else:
         form = UserRegisterForm()
-    context = {
-        "form": form
-    }
+    context = {"form": form}
     return render(request, "sign-up.html", context)
 
 
@@ -74,7 +75,7 @@ def login_view(request):
             user = User.objects.get(email=email)
             user = authenticate(request, email=email, password=password)
 
-            if user is not None: # if there is a user
+            if user is not None:  # if there is a user
                 login(request, user)
                 messages.success(request, "You are logged.")
                 return redirect("bookguardian:index")
@@ -89,6 +90,7 @@ def login_view(request):
         return redirect("bookguardian:index")
 
     return render(request, "sign-in.html")
+
 
 def logout_view(request):
     logout(request)

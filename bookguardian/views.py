@@ -1,48 +1,55 @@
-from django.urls import reverse_lazy
-from django.views.generic.list import ListView
-from django.views.generic import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic.detail import DetailView
-from . import models
-from django.views import View
 from django.shortcuts import render
+from django.urls import reverse_lazy
+from django.views import View
+from django.views.generic import CreateView, DeleteView, UpdateView
+from django.views.generic.detail import DetailView
+from django.views.generic.list import ListView
+
+from . import models
+
 
 class LadinPage(ListView):
     model = models.BookGuardian
     template_name = "ladinpage.html"
     context_object_name = "bookguardian"
 
+
 class PageNewBook(LoginRequiredMixin, CreateView):
     model = models.BookGuardian
-    fields = ['book_image', 'title', 'description', 'category', 'author_book',  'read']
-    success_url = reverse_lazy('bookguardian:index')  #
-    template_name = 'addBook.html'
+    fields = ["book_image", "title", "description", "category", "author_book", "read"]
+    success_url = reverse_lazy("bookguardian:index")  #
+    template_name = "addBook.html"
 
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super(PageNewBook, self).form_valid(form)
 
+
 class PageDetailBook(LoginRequiredMixin, DetailView):
     model = models.BookGuardian
-    context_object_name = 'bookguardian'
-    template_name = 'bookPage.html'
+    context_object_name = "bookguardian"
+    template_name = "bookPage.html"
 
 
 class PageUpdateBook(LoginRequiredMixin, UpdateView):
     model = models.BookGuardian
-    context_object_name = 'bookguardian'
-    fields = ['book_image', 'title', 'description', 'category', 'author_book',  'read']
-    success_url = reverse_lazy('bookguardian:index')  #
-    template_name = 'updateBook.html'
+    context_object_name = "bookguardian"
+    fields = ["book_image", "title", "description", "category", "author_book", "read"]
+    success_url = reverse_lazy("bookguardian:index")  #
+    template_name = "updateBook.html"
+
 
 class PageDeleteBook(LoginRequiredMixin, DeleteView):
     model = models.BookGuardian
-    context_object_name = 'bookguardian'
-    success_url =  reverse_lazy("bookguardian:index")
-    template_name = 'bookguardian_confirm_delete.html'
+    context_object_name = "bookguardian"
+    success_url = reverse_lazy("bookguardian:index")
+    template_name = "bookguardian_confirm_delete.html"
+
     def get_queryset(self):
         owner = self.request.user
         return self.model.objects.filter(user=owner)
+
 
 class PageConfig(ListView):
     model = models.BookGuardian
@@ -54,7 +61,7 @@ class HomeList(LoginRequiredMixin, ListView):
     model = models.BookGuardian
     template_name = "index.html"
     context_object_name = "bookguardian"
-    login_url = '/login/'
+    login_url = "/login/"
 
     def get_queryset(self):
         user = self.request.user
@@ -109,7 +116,6 @@ class HomeList(LoginRequiredMixin, ListView):
 #     return HttpResponseRedirect(reverse_lazy("bookguardian:ladinpage"))
 
 
-
 class Custom404View(View):
     def get(self, request, exception=None):
-        return render(request, '404.html', {}, status=404)
+        return render(request, "404.html", {}, status=404)

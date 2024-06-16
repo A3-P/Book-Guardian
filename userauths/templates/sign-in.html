@@ -4,21 +4,34 @@
 {% block title %} Login {% endblock title %}
 {% block content %}
 
-<div class ="login-container show" id="logincontainer" >
+<div class="login-container show" id="logincontainer">
     <h2>Login</h2>
     <form method="POST">
         {% csrf_token %}
-        <input type="text" name="email" placeholder="Digite o seu email" required>
+        {{ form.email }}
+        {{ form.password }}
         <br>
-        <input type="password" name="password" placeholder="Senha" required>
-        <br>
+        <div class="error-messages">
+            {% if form.non_field_errors %}
+                <ul>
+                    {% for error in form.non_field_errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            {% for field in form %}
+                {% for error in field.errors %}
+                    <p>{{ error }}</p>
+                {% endfor %}
+            {% endfor %}
+        </div>
         <input type="submit" value="Login">
     </form>
-    <a id="googleIcon" href="{% provider_login_url "google" %}?next=/index"><img id="google" src="{% static "assets/img/google.png" %}"></a>
+    <a id="googleIcon" href="{% provider_login_url "google" %}?next=/index">
+        <img id="google" src="{% static "assets/img/google.png" %}">
+    </a>
     <p>Não possui uma conta? <a href="{% url 'userauths:sign-up' %}" id="singIn" class="signup-link">Registre-se aqui</a></p>
     <a href="{% url "password_reset" %}" id="passwordForget">Esqueceu a senha? <span>Clique aqui.</span></a>
 </div>
 
 {% endblock content %}
-
-

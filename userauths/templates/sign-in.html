@@ -11,7 +11,7 @@
         {{ form.email }}
         {{ form.password }}
         <br>
-        <div class="error-messages">
+        <div class="error-messages" style="color: red;">
             {% if form.non_field_errors %}
                 <ul>
                     {% for error in form.non_field_errors %}

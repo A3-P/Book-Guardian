@@ -4,13 +4,27 @@ from django.shortcuts import redirect, render
 
 from userauths.forms import UserRegisterForm
 from userauths.models import User
-
+from django.views import View
 from .forms import UserLoginForm
 
+class RegisterView(View):
+    template_name = 'sign-up.html'
+    form_class = UserRegisterForm
 
-def register_view(request):
-    if request.method == "POST":
-        form = UserRegisterForm(request.POST)
+    def get(self, request, *args, **kwargs):
+        if request.user.is_authenticated:
+            messages.warning(request, "Você já está logado.")
+            return redirect("bookguardian:index")
+        form = self.form_class()
+        context = {'form': form}
+        return render(request, self.template_name, context)
+
+    def post(self, request, *args, **kwargs):
+        if request.user.is_authenticated:
+            messages.warning(request, "Você já está logado.")
+            return redirect("bookguardian:index")
+
+        form = self.form_class(request.POST)
         if form.is_valid():
             new_user = form.save()
             username = form.cleaned_data.get("username")
@@ -25,20 +39,27 @@ def register_view(request):
             return redirect("bookguardian:index")
         else:
             messages.error(request, "Por favor, corrija os erros abaixo.")
-    else:
-        form = UserRegisterForm()
 
-    if request.user.is_authenticated:
-        messages.warning(request, "Você já está logado.")
-        return redirect("bookguardian:index")
+        context = {'form': form}
+        return render(request, self.template_name, context)
 
-    context = {"form": form}
-    return render(request, "sign-up.html", context)
+class LoginView(View):
+    template_name = 'sign-in.html'
+    form_class = UserLoginForm
 
+    def get(self, request, *args, **kwargs):
+        if request.user.is_authenticated:
+            messages.warning(request, "Você já está logado.")
+            return redirect("bookguardian:index")
+        form = self.form_class()
+        return render(request, self.template_name, {'form': form})
 
-def login_view(request):
-    if request.method == "POST":
-        form = UserLoginForm(request.POST)
+    def post(self, request, *args, **kwargs):
+        if request.user.is_authenticated:
+            messages.warning(request, "Você já está logado.")
+            return redirect("bookguardian:index")
+
+        form = self.form_class(request.POST)
         if form.is_valid():
             email = form.cleaned_data.get("email")
             password = form.cleaned_data.get("password")
@@ -47,16 +68,12 @@ def login_view(request):
                 login(request, user)
                 messages.success(request, "Você está logado")
                 return redirect("bookguardian:index")
+            else:
+                messages.warning(request, "Credenciais inválidas.")
         else:
             messages.warning(request, "Por favor, corrija os erros abaixo.")
-    else:
-        form = UserLoginForm()
 
-    if request.user.is_authenticated:
-        messages.warning(request, "Você já está logado.")
-        return redirect("bookguardian:index")
-
-    return render(request, "sign-in.html", {"form": form})
+        return render(request, self.template_name, {'form': form})
 
 
 def logout_view(request):

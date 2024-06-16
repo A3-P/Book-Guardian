@@ -13,12 +13,11 @@ SECRET_KEY = "django-insecure-nxjvm_=1vo=io18_+vz1ott6uu2qm(=6f#!#aemnwtwwppt*@e
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False if os.environ.get("DEBUGDB") == "False" else True
 
-ALLOWED_HOSTS = ["web-production-2e20.up.railway.app","book-guardian-production.up.railway.app", "127.0.0.1"]
+ALLOWED_HOSTS = ["book-guardian-production.up.railway.app", "127.0.0.1"]
 
 CSRF_TRUSTED_ORIGINS = [
     "http://127.0.0.1",
-    "https://web-production-2e20.up.railway.app",
-    "https://book-guardian-production.up.railway.app"
+    "https://book-guardian-production.up.railway.app",
 ]
 
 
@@ -104,7 +103,7 @@ WSGI_APPLICATION = "setup.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE":  os.environ.get("DATABASE_ENGINE"),
+        "ENGINE": os.environ.get("DATABASE_ENGINE"),
         "NAME": os.environ.get("PGDATABASE"),
         "USER": os.environ.get("PGUSER"),
         "PASSWORD": os.environ.get("PGPASSWORD"),
@@ -183,7 +182,7 @@ MEDIA_URL = "/media/"
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "templates/static")]
 
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 MEDIA_ROOT = os.environ.get("RAILWAY_VOLUME_MOUNT_PATH")
 
 

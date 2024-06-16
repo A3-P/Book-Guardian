@@ -41,7 +41,20 @@ Certifique-se de ter um arquivo `requirements.txt` com as dependências do seu p
 
 
 
-### 4. Configuração do Banco de Dados
+### 4. Remova o "-example do arquivo .env"
+
+Para configurar corretamente o arquivo `.env`, remova o sufixo `-example` do nome do arquivo.
+
+Exemplo:
+
+![Remova o "-example do arquivo .env"](utils/img/env-example.png)
+
+Deixa assim:
+
+![.env](utils/img/env.png)
+
+
+### 5.  Configuração do Banco de Dados
 
 Este projeto carrega dados do banco de dados utilizando o gerenciador Python `makemigrations` e `migrate`.
 
@@ -61,5 +74,57 @@ python manage.py runserver
 
 O servidor de desenvolvimento será iniciado e você poderá acessar o projeto em `http://localhost:8000/`.
 
+
+
+# Configuração extra OPCIONAL `.env`:
+
+### DEBUG
+
+Enquanto estiver programando deixe o debug em True, recomendado deixa False quando for fazer o deploy da aplicação
+
+```bash
+DEBUGDB='True'
+```
+
+### API-Gmail
+Api do gmail para poder habilitar login via google
+
+Cria sua api [aqui](https://console.cloud.google.com/project).
+`https://console.cloud.google.com/project`
+```bash
+CLIENT_ID="COLOQUE AQUI SUA CLIENT-ID DO API DO GMAIL"
+SECRET="COLOQUE AQUI A SECRECT-KEY DO GMAIL"
+```
+
+### Enviar-Email
+
+Habilita Configuração para poder enviar email pro usuario
+
+```bash
+EMAIL_HOST = 'SEU PROVEDOR EMAIL'
+EMAIL_POST = 'USA PORTA'
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER ='SEU EMAIL APP'
+EMAIL_HOST_PASSWORD ='SUA SENHA APP EMAIL'
+```
+### Usa-database-Postgres
+
+Se deseja altera o banco de dados adicione essa configuração
+#### Postgres
+
+```bash
+DATABASE_ENGINE = 'django.db.backends.postgresql'
+PGDATABASE = "NOME SUA DATABSE"
+PGUSER = "NOME DE USER"
+PGPASSWORD = "SENHA DO DB"
+PGHOST = "HOST-DB"
+PGPORT = "PORT-DB"
+```
+
+#### Config-MEDIA_ROOT:
+padrao: "media"
+```bash
+RAILWAY_VOLUME_MOUNT_PATH = "media"
+```
 
 

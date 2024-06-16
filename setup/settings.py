@@ -13,11 +13,12 @@ SECRET_KEY = "django-insecure-nxjvm_=1vo=io18_+vz1ott6uu2qm(=6f#!#aemnwtwwppt*@e
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False if os.environ.get("DEBUGDB") == "False" else True
 
-ALLOWED_HOSTS = ["web-production-2e20.up.railway.app", "127.0.0.1"]
+ALLOWED_HOSTS = ["web-production-2e20.up.railway.app","book-guardian-production.up.railway.app", "127.0.0.1"]
 
 CSRF_TRUSTED_ORIGINS = [
     "http://127.0.0.1",
     "https://web-production-2e20.up.railway.app",
+    "https://book-guardian-production.up.railway.app"
 ]
 
 

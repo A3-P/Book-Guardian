@@ -65,7 +65,7 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
-### 5. Execução do Projeto
+### 6. Execução do Projeto
 Após instalar as dependências, você pode rodar o projeto:
 
 ```bash

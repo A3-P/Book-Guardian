@@ -1,7 +1,7 @@
 # Introdução
 Este é um guia para  projeto BookGuardian. Ele inclui instruções sobre como configurar um ambiente virtual, instalar pacotes necessários e executar o projeto.
 
-Demo: https://web-production-2e20.up.railway.app/
+Demo: https://book-guardian-production.up.railway.app/
 
 
 ## Recomendado:

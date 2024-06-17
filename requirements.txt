@@ -31,5 +31,5 @@ requests-oauthlib==2.0.0
 sqlparse==0.5.0
 taskipy==1.12.2
 tomli==2.0.1
-urllib3==2.2.1
+urllib3==2.2.2
 whitenoise==6.6.0

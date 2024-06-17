@@ -13,10 +13,7 @@ body{
     overflow-y: auto;
     overflow-x: hidden;
 }
-::selection {
-    background-color: var(--color-main);
-    color: var(--color-main-hover);
-}
+
 input {
     caret-color: var(--color-fg);
     color: var(--color-fg);

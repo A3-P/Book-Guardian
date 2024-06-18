@@ -27,14 +27,34 @@
                 {% endfor %}
             {% endfor %}
         </div>
-        <input class="button" type="submit" value="Registrar" id="registerBtnSubimit">
+        <input class="button" type="submit" value="Registrar" id="registerBtnSubmit" disabled>
     </form>
-    <a id="googleIcon" href="{% provider_login_url "google" %}?next=/index"><img id="google" src="{% static "assets/img/google.png" %}"></a>
+    <a id="googleIcon" href="{% provider_login_url "google" %}?next=/index">
+        <img id="google" src="{% static "assets/img/google.png" %}">
+    </a>
     <p>Já possui uma conta? <a href="{% url 'userauths:sign-in' %}" id="logIn" class="signup-link">Entre aqui</a></p>
 </div>
 <script>
     const passwordAlert = document.getElementById("passwordStatus");
     const passwordInput = document.getElementById("id_password1");
+    const usernameInput = document.getElementById("id_username");
+    const emailInput = document.getElementById("id_email");
+    const password2Input = document.getElementById("id_password2");
+    const registerButton = document.getElementById("registerBtnSubmit");
+
+    function checkFormValidity() {
+        const isUsernameValid = usernameInput.value.trim().length > 0;
+        const isEmailValid = emailInput.value.trim().length > 0;
+        const isPasswordValid = passwordInput.value.length >= 8;
+        const isPassword2Valid = password2Input.value.trim().length > 0;
+        const doPasswordsMatch = passwordInput.value === password2Input.value;
+        
+        if (isUsernameValid && isEmailValid && isPasswordValid && isPassword2Valid && doPasswordsMatch) {
+            registerButton.disabled = false;
+        } else {
+            registerButton.disabled = true;
+        }
+    }
 
     passwordInput.addEventListener("input", function() {
         const passwordValue = passwordInput.value;
@@ -48,11 +68,16 @@
             passwordAlert.innerHTML = "✓ Mínimo de 8 letras";
             passwordAlert.style.backgroundColor = "#57ff419f";
         }
+        checkFormValidity();
     });
 
     passwordInput.addEventListener("blur", function() {
         passwordAlert.style.display = "none";
         passwordAlert.style.animation = "slideUp 10s ease forwards";
     });
+
+    usernameInput.addEventListener("input", checkFormValidity);
+    emailInput.addEventListener("input", checkFormValidity);
+    password2Input.addEventListener("input", checkFormValidity);
 </script>
 {% endblock content %}

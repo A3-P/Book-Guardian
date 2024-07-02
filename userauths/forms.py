@@ -58,14 +58,14 @@ class UserRegisterForm(UserCreationForm):
 
 class UserLoginForm(forms.Form):
     email = forms.EmailField(
-        widget=forms.EmailInput(attrs={"placeholder": "Digite o seu email"}),
+        widget=forms.EmailInput(attrs={"placeholder": "Digite o seu email", "value": "testdemo@gmail.com"}),
         error_messages={
             "required": "Este campo é obrigatório.",
             "invalid": ("Informe um endereço de email válido."),
         },
     )
     password = forms.CharField(
-        widget=forms.PasswordInput(attrs={"placeholder": "Senha"}),
+        widget=forms.PasswordInput(attrs={"placeholder": "Senha", "value": "demo1234"}),
         error_messages={"required": "Este campo é obrigatório."},
     )
 

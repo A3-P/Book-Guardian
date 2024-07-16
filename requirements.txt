@@ -7,7 +7,7 @@ click==8.1.7
 colorama==0.4.6
 cryptography==42.0.8
 defusedxml==0.7.1
-Django==5.0.6
+Django==5.0.7
 django-allauth==0.61.0
 django-jazzmin==3.0.0
 gunicorn==22.0.0

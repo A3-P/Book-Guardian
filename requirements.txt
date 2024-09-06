@@ -5,7 +5,7 @@ cffi==1.16.0
 charset-normalizer==3.3.2
 click==8.1.7
 colorama==0.4.6
-cryptography==42.0.8
+cryptography==43.0.1
 defusedxml==0.7.1
 Django==5.0.8
 django-allauth==0.61.0
